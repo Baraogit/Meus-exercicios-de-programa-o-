@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int inteiro;
+    float ponto_flutuante;
+    char caractere;
+    printf("Digite um numero inteiro, ponto flutuante e um caractere: ");
+    scanf("%d %f %c", &inteiro, &ponto_flutuante, &caractere);
+    printf("Separados por espaco: %d   %.2f   %c\n", inteiro, ponto_flutuante, caractere);
+    printf("Tabulacao horizontal : %d\t%.2f\t%c\t\n", inteiro, ponto_flutuante, caractere);
+    printf("Uma em cada linha: %d\n%.2f\n%c\n", inteiro, ponto_flutuante, caractere);
+
+    return 0;
+}

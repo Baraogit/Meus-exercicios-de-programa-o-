@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char caractere = 'W';
+    printf("Caractere entre aspas : \"%c\" ", caractere);
+
+    return 0;
+}

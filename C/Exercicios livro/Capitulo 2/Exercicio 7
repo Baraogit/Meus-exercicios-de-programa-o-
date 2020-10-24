@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    char caractere;
+    printf("Digite um caractere e imprima em inteiro: ");
+    scanf("%c", &caractere);
+    printf("Correspondente do caractere em decimal: %d", caractere);
+
+
+    return 0;
+}
