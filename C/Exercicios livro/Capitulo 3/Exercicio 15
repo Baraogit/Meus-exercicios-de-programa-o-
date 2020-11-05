@@ -1,1 +1,21 @@
+15) Faça um programa para ler um número inteiro positivo de três dígitos. Em seguida, calcule e mostre o número formado pelos dígitos invertidos do número lido.
+Exemplo:
+ Número lido = 123
+Número gerado = 321
 
+#include <stdio.h>
+
+int main()
+{
+    short int numero, numero_invertido; 
+    printf("Digite um valor com 3 digititos:\n"); 
+    scanf("%i", &numero);
+    
+    numero_invertido = ((numero % 10) * 100) + (numero / 10) ;
+    
+    printf("%i", numero_invertido);
+
+    return 0;
+}
+
+NÃO TERMINADO 
