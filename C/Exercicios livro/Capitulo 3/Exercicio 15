@@ -30,7 +30,9 @@ int main()
     
     encontra_centena = ((numero % 10) * 100); // isola a unidade e multiplica por 100 = achou a centena
     encontra_dezena = numero % 100; // isola a dezena
-    subtrai_dezena_pela_unidade = encontra_dezena - (encontra_dezena % 10); //subtrai a unidade da dezena pela dezena, deixando dezena com final 0
+    subtrai_dezena_pela_unidade = encontra_dezena - (encontra_dezena % 10); /*subtrai a unidade da dezena encontrada,  
+    pela própria dezena, deixando a unidade com valor 0. Ex.: 23 - 3 = 20 */
+
     encontra_unidade = (numero / 100); // isola a unidade
     numero_invertido = encontra_centena + subtrai_dezena_pela_unidade + encontra_unidade;// soma
     
@@ -38,3 +40,5 @@ int main()
 
     return 0;
 }
+
+em construção
