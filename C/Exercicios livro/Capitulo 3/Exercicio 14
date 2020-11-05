@@ -1,8 +1,6 @@
 14) Faça um programa que converta uma letra maiúscula em letra minúscula. Use a
 tabela ASCII para isso.
 
-
-
 //////////////////////Usando a bilblioteca ctype.h //////////////////////// 
 #include <stdio.h>
 #include <ctype.h> // para inclusao da função tolower
