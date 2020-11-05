@@ -3,6 +3,23 @@ Exemplo:
  Número lido = 123
 Número gerado = 321
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IMPORTANTE! Esses dois algoritmos não resolvem o problema, quando digitado 0 na casa da centena. Trabalhando ainda na solução. 
 #include <stdio.h>
 
 int main()
@@ -18,7 +35,7 @@ int main()
 }
 
 
-Outra sintaxe:
+Outro algoritmo:
 
 #include <stdio.h>
 
