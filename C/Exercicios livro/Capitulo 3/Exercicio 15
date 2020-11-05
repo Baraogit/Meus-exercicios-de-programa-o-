@@ -7,15 +7,34 @@ Número gerado = 321
 
 int main()
 {
-    short int numero, numero_invertido; 
+    short int numero, numero_invertido, encontra_dezena; 
     printf("Digite um valor com 3 digititos:\n"); 
     scanf("%i", &numero);
-    
-    numero_invertido = ((numero % 10) * 100) + (numero / 10) ;
-    
+    encontra_dezena = numero % 100;
+    numero_invertido = ((numero % 10) * 100) + (numero / 100) + (encontra_dezena - (encontra_dezena % 10));
     printf("%i", numero_invertido);
 
     return 0;
 }
 
-NÃO TERMINADO 
+
+Outra sintaxe:
+
+#include <stdio.h>
+
+int main()
+{
+    short int numero, numero_invertido, encontra_dezena, encontra_unidade, encontra_centena,subtrai_dezena_pela_unidade ; 
+    printf("Digite um valor com 3 digititos:\n"); 
+    scanf("%i", &numero);
+    
+    encontra_centena = ((numero % 10) * 100); // isola a unidade e multiplica por 100 = achou a centena
+    encontra_dezena = numero % 100; // isola a dezena
+    subtrai_dezena_pela_unidade = encontra_dezena - (encontra_dezena % 10); //subtrai a unidade da dezena pela dezena, deixando dezena com final 0
+    encontra_unidade = (numero / 100); // isola a unidade
+    numero_invertido = encontra_centena + subtrai_dezena_pela_unidade + encontra_unidade;// soma
+    
+    printf("%i", numero_invertido);
+
+    return 0;
+}
