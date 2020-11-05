@@ -31,7 +31,7 @@ int main()
     return 0;
 }
 -----------------------------------------------------------------------------------------------------------
-//////////////////////Outra maneira de resolver usando uma linha de comando a menos(não sei se isso é uma boa prática) //////////////////////// 
+//////////////////////Outra maneira de resolver usando uma linha de comando  e uma variável a menos(não sei se isso é uma boa prática) //////////////////////// 
 #include <stdio.h>
 
 int main()
