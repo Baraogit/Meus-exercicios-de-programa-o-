@@ -1,1 +1,52 @@
+14) Faça um programa que converta uma letra maiúscula em letra minúscula. Use a
+tabela ASCII para isso.
+
+
+
+//////////////////////Usando a bilblioteca ctype.h //////////////////////// 
+#include <stdio.h>
+#include <ctype.h> // para inclusao da função tolower
+
+int main()
+{
+    char letra_maiuscula, letra_minuscula; 
+    printf("Digite uma letra maiuscula:\n");
+    scanf("%c", &letra_maiuscula);
+    letra_minuscula = tolower(letra_maiuscula);
+    printf("Letra convertida para minuscula : %c", letra_minuscula);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+/////////////////// Outra maneira de resolver, muito parecida com as duas cima, com um leve diferencial(não sei se isso é uma boa prática)//////////////
+
+#include <stdio.h>
+
+int main()
+{
+    char letra_maiuscula;
+    short int converte_para_minusculo, converte_para_decimal; 
+    printf("Digite uma letra maiuscula:\n");
+    scanf("%c", &letra_maiuscula);
+    converte_para_decimal = letra_maiuscula; // converte o caractere ao seu correspondente em decimal da ASCII
+    converte_para_minusculo = letra_maiuscula + 32;// soma o valor do caractere em decimal por 32
+    printf("Letra convertida para minuscula : %c", converte_para_minusculo); // o resultado da soma é convertida para o tipo char
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+//////////////////////Outra maneira de resolver usando uma linha de comando a menos(não sei se isso é uma boa prática) //////////////////////// 
+#include <stdio.h>
+
+int main()
+{
+    char letra_maiuscula;
+    short int converte_para_minusculo; 
+    printf("Digite uma letra maiuscula:\n");
+    scanf("%c", &letra_maiuscula);
+    converte_para_minusculo = letra_maiuscula + 32; // converte o caractere ao seu correspondente em decimal da ASCII e soma
+    printf("Letra convertida para minuscula : %c", converte_para_minusculo); // o resultado da soma é convertida para o tipo char
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------
+
+
 
