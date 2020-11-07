@@ -1,11 +1,8 @@
-17) Escreva um programa que leia um número inteiro e mostre o seu complemento
-bit a bit.
-
 #include <stdio.h>
 
 int main()
 {
-    short int numero;
+    short int numero; 
     printf("Digite um numero:\n");
     scanf("%d", &numero);
     
@@ -13,3 +10,12 @@ int main()
 
     return 0;
 }
+
+/* dependendo do modificador, muda o quanto bits comporta a varivável, certo? 
+   short int tem 16 bits
+   ou seja: 0000000000000001 = 1 decimal,  usando o operador not (~)  fica = 1111111111111110 = 65534 decimal
+   int(ou long int) tem 32 bits 
+   ou seja= 00000000000000000000000000000001 = 1 decimal,  usando o operador not (~)  fica 11111111111111111111111111111110= um nº decimal diferente do de cima
+   
+   perceba que tudo munda, dependendo do tipo e modificador que tu usa?
+   */ 
