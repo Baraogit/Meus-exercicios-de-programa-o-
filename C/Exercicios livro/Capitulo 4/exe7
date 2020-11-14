@@ -5,3 +5,40 @@ de erro.
 Estado  MG  SP   RJ   MS
 Imposto 7%  12%  15%  8%
 
+USANDO SWITCH
+
+#include <stdio.h>
+
+int main()
+{
+    float valorProduto; 
+    int cod_estado; 
+    
+    printf("Digite o valor do produto: ");
+    scanf("%f", &valorProduto);
+    
+    printf("Cod. 1 - Tarifa estadual : MG\n");
+    printf("Cod. 2 - Tarifa estadual : SP\n");
+    printf("Cod. 3 - Tarifa estadual : RJ\n");
+    printf("Cod. 4 -Tarifa estadual : MS\n");
+    printf("\n"); 
+    
+    printf("Informe o estado de destino: ");
+    scanf("%d", &cod_estado); 
+    
+    switch (cod_estado){
+        case 1: printf("Valor do produto + roubo : %.2f ",(valorProduto * 7 / 100) + valorProduto);
+        break; 
+        case 2: printf("Valor do produto + roubo : %.2f ",(valorProduto * 12 / 100) + valorProduto);
+        break;
+        case 3: printf("Valor do produto + roubo : %.2f ",(valorProduto * 15 / 100) + valorProduto);
+        break;
+        case 4: printf("Valor do produto + roubo : %.2f ",(valorProduto * 8 / 100) + valorProduto);
+        break;
+    }
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+
+USANDO IF ELSE
