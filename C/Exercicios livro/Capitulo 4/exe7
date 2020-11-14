@@ -26,13 +26,13 @@ int main()
     scanf("%d", &cod_estado); 
     
     switch (cod_estado){
-        case 1: printf("Valor do produto + roubo : %.2f ", (valorProduto * 7 / 100) + valorProduto);
+        case 1: printf("Valor do produto + roubo : %.2f ", (valorProduto * 0.07) + valorProduto);
                 break; 
-        case 2: printf("Valor do produto + roubo : %.2f ", (valorProduto * 12 / 100) + valorProduto);
+        case 2: printf("Valor do produto + roubo : %.2f ", (valorProduto * 0.12) + valorProduto);
                 break;
-        case 3: printf("Valor do produto + roubo : %.2f ", (valorProduto * 15 / 100) + valorProduto);
+        case 3: printf("Valor do produto + roubo : %.2f ", (valorProduto * 0.15) + valorProduto);
                 break;
-        case 4: printf("Valor do produto + roubo : %.2f ", (valorProduto * 8 / 100) + valorProduto);
+        case 4: printf("Valor do produto + roubo : %.2f ", (valorProduto * 0.08) + valorProduto);
                 break;
         default: printf("Valor do produto + sonegação: %.2f", valorProduto);
     }
