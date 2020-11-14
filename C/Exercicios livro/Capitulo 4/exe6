@@ -14,7 +14,7 @@ int main()
     
     printf("digite sua altura: ");
     scanf("%f", &altura);
-    setbuf(stdin,NULL);// limpar o buffer do teclado, quando não se usa, no proximo scanf usará a sujeira do buffer 
+    setbuf(stdin,NULL);// limpa o buffer do teclado. Quando não se usa, o proximo scanf poderá usar a sujeira do buffer. Faça o teste com e sem setbuf
     printf("digite seu sexo (m/f): ");
     scanf("%c", &sexo); 
     
