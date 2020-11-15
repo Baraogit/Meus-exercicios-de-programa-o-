@@ -12,7 +12,8 @@ int main()
     
     if (!(numero % 3 == 0 && numero % 5 == 0))
        if (numero % 3 == 0 || numero % 5 == 0)
-       printf("%d eh Divisível por 3 ou 5 ", numero);
+           printf("%d eh Divisível por 3 ou 5 ", numero);
  
     return 0;
 }
+
