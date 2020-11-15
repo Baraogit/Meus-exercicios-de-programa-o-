@@ -35,7 +35,7 @@ int main()
         }
         case '*':{
             short int multiplicacao = a * b;
-            printf("%d * %d = %d\n", a, b, multiplicacao);break;
+            printf("%d * %d = %d\n", a, b, multiplicacao); break;
         }
     }
 
