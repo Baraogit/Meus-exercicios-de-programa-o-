@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    short int numero1, numero2; 
+    
+    printf("Digite dois numeros:\n");
+    scanf("%d %d", &numero1, &numero2);
+    
+    if (numero1 > numero2){
+        printf("%d eh maior que %d\n", numero1, numero2);
+        printf("Diferença entre eles = %d\n", numero1 - numero2);
+    }
+    else
+        if (numero2 > numero1){
+            printf("%d eh maior que %d\n", numero2, numero1);
+            printf("Diferença entre eles = %d\n", numero1 - numero2);
+        }
+
+    return 0;
+}
