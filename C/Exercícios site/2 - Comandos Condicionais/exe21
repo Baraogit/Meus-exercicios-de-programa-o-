@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+    short int opcao;
+    float numero1, numero2;
+    
+    printf("Digite dois numeros: "); 
+    scanf("%f %f", &numero1, &numero2);
+    
+    printf("1 - Soma de 2 numeros.\n");
+    printf("2 - Diferenca entre 2 numeros (maior pelo menor).\n");
+    printf("3 - Produto entre dois numeros.\n");
+    printf("4 - Divisao entre 2 numeros.\n");
+    printf("Digite a opcao: ");
+    scanf("%d", &opcao);
+    
+    
+    switch (opcao){
+        case 1: printf("Soma = %f", numero1 + numero2); 
+            break;
+        case 2:
+            if (numero1 > numero2)
+                printf("Diferenca = %f", numero1 - numero2);
+            else
+                if (numero2 > numero1)
+                    printf("Diferenca = %f", numero2 - numero1);
+            break;
+        case 3: printf("Produto entre os dois numeros = %f", numero1 * numero2);
+            break;
+        case 4: 
+            if (numero2 != 0)
+               printf("Divisao entre os dois numeros =  %f", numero1 / numero2);
+            else 
+               printf("Denominador igual a zero");
+            break;
+        default: printf("Opcao incorreta");
+    }
+
+    return 0;
+}
