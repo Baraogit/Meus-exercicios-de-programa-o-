@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    float baseMenor, baseMaior, altura, area;
+    printf("Digite a base menor, base maior e altura:\n");
+    scanf("%f %f %f", &baseMenor, &baseMaior, &altura);
+    
+    if (baseMenor > 0 && baseMaior > 0){
+        area = (baseMenor + baseMaior) * altura / 2; 
+        printf("Valor da area = %.2f", area);
+    }
+    else
+        printf("Base menor ou base maior menor que zero");
+        
+    return 0;
+}
