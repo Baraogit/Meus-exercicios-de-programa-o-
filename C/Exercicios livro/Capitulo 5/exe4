@@ -8,7 +8,7 @@ int main()
     int numero, i;
 
     printf("Os cincos primeiros multiplos de 3 sao:\n");
-    for (i = 1; i <= 4; i++){
+    for (i = 1; i <= 5; i++){
          numero = numero + 3;
          printf("%d\n", numero);
     }
