@@ -3,9 +3,8 @@ valores e apresente o resultado na tela.
 
 int main()
 {
-    int i, valor, somaValor;
+    int i, valor, somaValor = 0;
     
-    somaValor = 0; 
     for (i=1; i <= 10; i++){
         printf("Digite um valor: ");
         scanf("%d", &valor);
@@ -24,7 +23,7 @@ int main()
 {
     int i, valor, somaValor;
     
-    for (i=1, somaValor = 0; i <= 10; somaValor += valor, i++){
+    for (i=0, somaValor = 0; i < 10; somaValor += valor, i++){
         printf("Digite um valor: ");
         scanf("%d", &valor);
     }
@@ -39,11 +38,9 @@ int main()
 
 int main()
 {
-    int i, valor, somaValor;
-    
-    somaValor = 0; 
-    i = 1;
-    while (i <= 10){
+    int i = 0, valor, somaValor = 0;
+
+    while (i < 10){
         printf("Digite um valor: ");
         scanf("%d", &valor);
         somaValor += valor;
