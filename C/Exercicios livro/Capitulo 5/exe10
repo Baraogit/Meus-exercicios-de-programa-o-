@@ -1,1 +1,53 @@
+10) Faça um programa que leia 10 inteiros positivos, ignorando não positivos, e imprima sua média.
+
+#include <stdio.h>
+
+int main()
+{
+    int cont = 0, somaPositivos = 0, numero;
+
+    while(cont < 10){
+        printf("Digite um numero: ");
+        scanf("%d", &numero);
+        if(numero > 0){
+            somaPositivos += numero;
+            cont++;
+        }
+        else
+            printf("Voce digitou um numero negativo!\n");
+    }
+
+    printf("Media dos numeros positivos = %f\n", somaPositivos / 10.0);
+
+    return 0;
+}
+
+/* eu usei o modificador "short" no "int", e por algum motivo a variável "somaPositivos" não estava recebendo as somas, mas sim e somente, os valores da variável "numero". 
+Isso no code blocks. 
+Já no https://www.onlinegdb.com, o que  ocorria era um loop infinito onde infinitamente ficava digitando os valores, mesmo sendo esses valores positivos. 
+Só foi dar certo quando retirei o modificador "short", deixando somente "int". 
+Ainda não entendi o motivo, talvez dentro de um loop os compiladores não aceitem o tipo short, por ter um intervalo menor. Não sei. Fica essa questão. */
+
+-----------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int  cont, somaPositivos = 0, numero;
+
+    for (cont = 0; cont < 10;  ){
+        printf("Digite um valor: ");
+        scanf("%d", &numero);
+        if (numero > 0){
+            somaPositivos += numero;
+            cont++;
+        }
+    }
+
+    printf("Media dos numeros positivos = %f\n", somaPositivos / 10.0);
+
+    return 0;
+}
+
 
