@@ -21,14 +21,18 @@ int main()
     return 0;
 }
 
-Eu usei o modificador "short" no "int", e por algum motivo a variável "somaPositivos" não estava recebendo as somas, mas sim e somente, os valores da variável "numero". 
-Isso no code blocks. 
+Eu usei o modificador "short" no "int", e por algum motivo a variável "somaPositivos" não estava recebendo as somas, mas sim e somente, os valores da variável "numero", 
+não soma. OU seja, fica substituindo os valores a cada nova leitura da variável "numero.  Isso no code blocks. 
+
 Já no https://www.onlinegdb.com, o que  ocorria era um loop infinito onde infinitamente ficava digitando os valores, mesmo sendo esses valores positivos. 
-Só foi dar certo quando retirei o modificador "short", deixando somente "int". 
-Ainda não entendi o motivo, talvez dentro de um loop os compiladores não aceitem o tipo short, por ter um intervalo menor. Não sei. Fica essa questão. 
 
 Usando o debug, quando o programa está na linha scanf("%d", &numero) e digita o valor, a variável "somaPositivos", volta a receber o valor 0, depois recebe o valor da variável
 "numero", mas não guarda as somas. 
+
+Só foi dar certo quando retirei o modificador "short", deixando somente "int". 
+Ainda não entendi o motivo, talvez dentro de um loop os compiladores não aceitem o tipo short, por ter um intervalo menor. Não sei. Fica essa questão. 
+
+
 
 -----------------------------------------------------------------------------------
 
