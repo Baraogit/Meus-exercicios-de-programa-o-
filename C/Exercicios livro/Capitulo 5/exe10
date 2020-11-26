@@ -39,6 +39,8 @@ Atualização 3
 A resposta talvez seja o fato que não dá para somar short com short. 
 https://www.guj.com.br/t/soma-com-short/84769/3
 
+Talvez por motivo de segurança, é impedido de somar short dentro de loops, quando não se sabe qual valor será inserido no scanf, podendo ultrapassar o intervalo de short. 
+
 
 
 
