@@ -34,7 +34,7 @@ int main()
     return 0;
 }
 
-// se a variável i receber valor ZERO, de inicialização, o algoritimo não imprime os divisores. Verificando o motivo disso!!
+// se a variável i receber valor ZERO, de inicialização, o algoritmo não imprime os divisores.
 Ao usar o debug no code block, quando o programa chega na condição "if (numero % i == 0)", ocorre essa mensagem:  #0 0x40144d	main() (D:\Arquivos no HDD\c\teste\main.c:11)
 
 
