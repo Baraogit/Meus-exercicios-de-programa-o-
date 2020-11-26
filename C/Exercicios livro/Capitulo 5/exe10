@@ -27,7 +27,7 @@ Já no https://www.onlinegdb.com, o que  ocorria era um loop infinito onde infin
 Só foi dar certo quando retirei o modificador "short", deixando somente "int". 
 Ainda não entendi o motivo, talvez dentro de um loop os compiladores não aceitem o tipo short, por ter um intervalo menor. Não sei. Fica essa questão. 
 
-Usando o debug, quando o programa está na linha scanf("%d", &numero) e digita o valor, a variável "sompaPositivos", volta a receber o valor 0, depois recebe o valor da variável
+Usando o debug, quando o programa está na linha scanf("%d", &numero) e digita o valor, a variável "somaPositivos", volta a receber o valor 0, depois recebe o valor da variável
 "numero", mas não guarda as somas. 
 
 -----------------------------------------------------------------------------------
