@@ -34,3 +34,5 @@ int main()
     return 0;
 }
 
+// se a variável i receber valor ZERO, de inicialização, o algoritimo não imprime os divisores. Verificando o motivo disso!!
+
