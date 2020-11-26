@@ -5,11 +5,11 @@ considerando números maiores que 0.
 
 int main()
 {
-    int numero, i;
+    int numero= 0, i;
 
     printf("Os cincos primeiros multiplos de 3 sao:\n");
     for (i = 1; i <= 5; i++){
-         numero = numero + 3;
+         numero +=  3;
          printf("%d\n", numero);
     }
     return 0;
