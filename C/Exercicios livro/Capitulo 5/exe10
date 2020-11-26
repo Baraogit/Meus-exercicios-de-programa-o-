@@ -16,7 +16,6 @@ int main()
         else
             printf("Voce digitou um numero negativo!\n");
     }
-
     printf("Media dos numeros positivos = %f\n", somaPositivos / 10.0);
 
     return 0;
@@ -44,7 +43,6 @@ int main()
             cont++;
         }
     }
-
     printf("Media dos numeros positivos = %f\n", somaPositivos / 10.0);
 
     return 0;
