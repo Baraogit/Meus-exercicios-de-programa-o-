@@ -10,7 +10,7 @@ int main()
     printf("Digite um numero: ");
     scanf("%d", &numero);
 
-    if (numero >= 0){
+    if (numero >= 0){ // essa condição impede que seja dado saída em valores negativo, caso seja digitado no scanf acima. 
         maiorNumero = numero;
         menorNumero = numero;
     }
