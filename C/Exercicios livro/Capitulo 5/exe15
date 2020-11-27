@@ -1,5 +1,5 @@
 15) Elabore um programa que faça a leitura de vários números inteiros até que se digite um número negativo. O programa tem de retornar o maior e o menor número
-lido. (entendi que não deve ser impresso o número negativo lido)
+lido. (não está tão explícito assim, mas acho que não deve ser impresso o número negativo lido)
 
 #include <stdio.h>
 
