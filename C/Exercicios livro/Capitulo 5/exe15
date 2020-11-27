@@ -1,1 +1,32 @@
+15) Elabore um programa que faça a leitura de vários números inteiros até que se digite um número negativo. O programa tem de retornar o maior e o menor número
+lido. (entendi que não deve ser impresso o número negativo lido)
 
+#include <stdio.h>
+
+int main()
+{
+    int numero, maiorNumero = 0, menorNumero = 0;
+
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+
+    if (numero >= 0){
+        maiorNumero = numero;
+        menorNumero = numero;
+    }
+    while (numero >= 0){
+        if (numero > maiorNumero)
+            maiorNumero = numero;
+        else
+            if (numero < menorNumero)
+                menorNumero = numero;
+
+        printf("Digite um numero: ");
+        scanf("%d", &numero);
+    }
+    printf("Numero maior = %d\nNumero menor = %d", maiorNumero, menorNumero);
+
+    return 0;
+}
+------------------------------------------------------------------------------
+Jeito 2 : resolvendo tudo dentro do loop; 
