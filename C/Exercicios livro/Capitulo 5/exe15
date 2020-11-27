@@ -6,7 +6,6 @@ lido. (entendi que não deve ser impresso o número negativo lido)
 int main()
 {
     int numero, maiorNumero = 0, menorNumero = 0;
-
     printf("Digite um numero: ");
     scanf("%d", &numero);
 
@@ -25,8 +24,7 @@ int main()
         scanf("%d", &numero);
     }
     printf("Numero maior = %d\nNumero menor = %d", maiorNumero, menorNumero);
-
     return 0;
 }
-------------------------------------------------------------------------------
-Jeito 2 : resolvendo tudo dentro do loop; 
+
+
