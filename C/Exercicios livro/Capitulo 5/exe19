@@ -26,8 +26,8 @@ s = 1/1 + 3/2+ 5/3+ 7/4 + ...99/55
 
 
 
------------------------------------------------- Eu entendi a questão errada rsrs--------------------------------------------------------
-// eu achei que a questão consistia em chegar no resultado 99/55 e fazer a divisão. Mas a burrice deve ser lembrada para que não se repita, então, deixo aqui. 
+------------------------------------------------ Eu entendi a questão de forma errada rsrs--------------------------------------------------------
+// eu achei que a questão consistia em chegar no resultado 99/55 e fazer a divisão. Mas a burrice e a pressa deve ser lembrada para que não se repita, então, deixo-a aqui. 
 #include <stdio.h>
 
 int main()
