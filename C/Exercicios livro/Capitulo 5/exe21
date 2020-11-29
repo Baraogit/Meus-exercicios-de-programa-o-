@@ -15,10 +15,8 @@ int main(){
     while (i < qtoNumeros){
         printf("Digite um numero: ");
         scanf("%d", &numero);
-        if(numero == maiorNumero){
+        if(numero == maiorNumero)
             contMaiorNumero++;
-            i++;
-        }
         if (numero > maiorNumero){
             maiorNumero = numero;
             contMaiorNumero = 0;
