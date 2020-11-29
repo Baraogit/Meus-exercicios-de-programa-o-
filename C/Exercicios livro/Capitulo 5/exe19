@@ -45,7 +45,7 @@ int main()
     printf("S = %f", (float) i/ j);
     return 0;
 }
----------------------------------------------  sem uso do break, onde é necessário retirar o operador relacionar "=" das condições------------------------------
+---------------------------------------------  sem uso do break, onde é necessário retirar o operador relacional  "=" das condições------------------------------
 #include <stdio.h>
 
 int main()
