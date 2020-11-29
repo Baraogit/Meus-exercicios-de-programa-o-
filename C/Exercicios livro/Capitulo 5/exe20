@@ -17,7 +17,7 @@ int main(){
         for (k = 1;k <= i; k++){
              fat = fat * k;
         }
-        e += 1.0 /  fat;
+        e += 1.0 / fat;
         i++;
     }
     printf("E = %f", e);
@@ -25,3 +25,26 @@ int main(){
     return 0;
 }
 ----------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(){
+
+    int i , k,  fat, numero;
+    float e;
+
+    printf("Digite um inteiro e positivo para calcular E: ");
+    scanf("%d", &numero);
+
+    for (i = 1, e = 0; i <= numero; i++){
+        fat = 1;
+        for (k = 1; k <= i; k++){
+            fat = fat * k;
+        }
+        e += 1.0 / fat;
+    }
+    printf("E = %f", e);
+
+    return 0;
+}
+
