@@ -1,1 +1,27 @@
+20) Faça um programa que leia um valor inteiro e positivo N, calcule o mostre o valor
+E, conforme a fórmula a seguir:
+E = 1/1! + 1/2! +... 1 /n!
 
+#include <stdio.h>
+
+int main(){
+
+    int i = 1, k,  fat, numero;
+    float e = 0.0;
+
+    printf("Digite um inteiro e positivo para calcular E: ");
+    scanf("%d", &numero);
+
+    while (i <= numero){
+        fat = 1;
+        for (k = 1;k <= i; k++){
+             fat = fat * k;
+        }
+        e += 1.0 /  fat;
+        i++;
+    }
+    printf("E = %f", e);
+
+    return 0;
+}
+----------------------------------------------------------------------
