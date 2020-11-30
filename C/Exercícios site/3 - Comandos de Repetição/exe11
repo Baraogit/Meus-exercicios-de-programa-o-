@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(){
+
+    int i, number;
+
+    printf("Type an integer: ");
+    scanf("%d", &number);
+
+    for (i = 1; i <= number; i++){
+        printf("%d ", i);
+    }
+    return 0;
+}
