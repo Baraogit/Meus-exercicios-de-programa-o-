@@ -4,7 +4,7 @@ int main(){
 
     int i, number;
 
-    printf("Type an integer: ");
+    printf("Type a positive integer and even: ");
     scanf("%d", &number);
 
     for (i = 1; i <= number; i++){
