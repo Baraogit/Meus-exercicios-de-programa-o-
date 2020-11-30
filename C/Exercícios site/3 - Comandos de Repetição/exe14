@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+
+    int i = 0, number;
+
+    printf("Type an positive integer and even: ");
+    scanf("%d", &number);
+
+    while ( number >= i){
+        printf("%d ", number);
+        number -= 2;
+    }
+    return 0;
+}
+
+------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+    int i = 0, number;
+
+    printf("Type an positive integer and even: ");
+    scanf("%d", &number);
+
+    for (i = 0; number >= i; number -= 2){
+        printf("%d ", number);
+    }
+    return 0;
+}
