@@ -9,7 +9,6 @@ int main(){
 
     for (i = 1; i <= 1; i++){
         recebeNumeroAleatorio = rand() % 1000;
-        printf("%d\n", recebeNumeroAleatorio);
     }
     while (numeroDigitado != recebeNumeroAleatorio){
         printf("Digite um numero (1 - 1000) e descubra o numero secreto: ");
@@ -21,7 +20,7 @@ int main(){
                 printf("Mais acima\n", numeroDigitado);
             else
                 if (numeroDigitado == recebeNumeroAleatorio)
-                    printf("voce encontrou\n");
+                    printf("Voce encontrou\n");
     }
     return 0;
 }
