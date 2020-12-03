@@ -13,7 +13,7 @@ int main(){
         printf("3 - divisao\n");
         printf("4 - multiplicacao\n");
         printf("5 - sair\n");
-        printf("escolha uam opcao: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao){
