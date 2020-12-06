@@ -25,6 +25,8 @@ int main()
 ------------------------------------------------
 //If e else somente com um comando, tornam as chaves optativas.
 // mas são necessárias as chaves no último else, para vinculá-lo hierarquicamente ao primeiro if. 
+// Retirei as chaves do else e funcionou perfeitamente. Isso deve talvez ao fato do segundo IF está subordinado ao primeiro ELSE
+// sobrando para o primeiro IF o último(segundo) ELSE.
 #include <stdio.h>
 
 int main()
