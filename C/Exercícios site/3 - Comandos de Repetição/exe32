@@ -26,4 +26,5 @@ int main(){
 // Isso faz com quem se perca o primeiro algarismo (algarismo "0") e ganhe mais um (algarismo "6")
 // É como estivéssemos deslocando bits. 
 
+//Se quiséssemos imprimir números negativos, no intervalo de -1 à -6, faremos deste modo: rand() % 6-6;
     
