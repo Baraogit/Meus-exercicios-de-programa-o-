@@ -9,10 +9,9 @@ int main(){
 
     srand(time(NULL));
 
-
     for(i = 0; i < numeroDeLancamentos; i++){
-        d1 = rand() % 6 ;//falta como fazer para que imprima um numero aleatorio que não seja 0 
-        d2 = rand() % 6 ;
+        d1 = rand() % 6+1; // um modo de imprimir algarismos aleatórios no intervalo de 1 à 6, sem que saia o algarismo zero, é somando 6+1
+        d2 = rand() % 6+1;
         if (d1 > d2)
             printf("Dado um %d > %d dado dois\n", d1, d2);
         else
@@ -23,5 +22,4 @@ int main(){
                      printf("Dado um %d = %d dado dois\n", d1, d2);
     }
 
-    return 0;
-}
+    
