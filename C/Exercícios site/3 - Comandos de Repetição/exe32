@@ -22,4 +22,7 @@ int main(){
                      printf("Dado um %d = %d dado dois\n", d1, d2);
     }
 
+// Para imprimir 6 algarismos no intervalo de: 1 - 6, acrescentasse +1 (% 6+1)
+// Isso faz com quem se perca o primeiro algarismo (algarismo "0") e ganhe mais um (algarismo "6")
+
     
