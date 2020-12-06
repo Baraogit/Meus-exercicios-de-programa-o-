@@ -2,7 +2,7 @@
 
 
 int main(){
-    int i, j, numeroDeLancamentos, d1 = 0, d2 = 0;
+    int i, numeroDeLancamentos, d1 = 0, d2 = 0;
 
     printf("Informe o numero de lancamentos dos dados: ");
     scanf("%d", &numeroDeLancamentos);
