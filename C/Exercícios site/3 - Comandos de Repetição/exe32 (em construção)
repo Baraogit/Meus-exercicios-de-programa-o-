@@ -11,11 +11,16 @@ int main(){
 
 
     for(i = 0; i < numeroDeLancamentos; i++){
-        d1 = rand()  % 6 ;
-        d2 = rand()  % 6 ;
-        printf("Dado 1 = %d\n", d1);
-        printf("Dado 2 = %d\n", d2);
-
+        d1 = rand() % 6 ;  // falta como fazer para que não imprima um numero aleatorio que não seja 0 
+        d2 = rand() % 6 ;
+        if (d1 > d2)
+            printf("Dado um %d > %d dado dois\n", d1, d2);
+        else
+            if (d1 < d2)
+                printf("Dado um %d < %d dado dois\n", d1, d2);
+            else
+                if (d1 == d2)
+                     printf("Dado um %d = %d dado dois\n", d1, d2);
     }
 
     return 0;
