@@ -14,3 +14,30 @@ int main(){
     printf("Em %d anos, Ze sera maior que Chico", ano);
     return 0;
 }
+----------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+    float alturaChico, alturaZe;
+    int ano = 0;
+
+    for (alturaChico = 1.50, alturaZe = 1.10; alturaChico > alturaZe; alturaChico += 0.02, alturaZe += 0.03, ano++){
+    }
+    printf("Em %d anos, Ze sera maior que Chico", ano);
+    return 0;
+}
+-----------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+    float alturaChico, alturaZe;
+    int ano = 0;
+
+    for (alturaChico = 1.50, alturaZe = 1.10; alturaChico > alturaZe; ){
+         alturaChico += 0.02;
+         alturaZe += 0.03;
+         ano++;
+    }
+    printf("Em %d anos, Ze sera maior que Chico", ano);
+    return 0;
+}
