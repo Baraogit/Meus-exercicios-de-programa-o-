@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+    float alturaChico = 1.50, alturaZe = 1.10;
+    int ano;
+
+    for (ano = 1; ano; ano++){
+        alturaChico += 0.02;
+        alturaZe += 0.03;
+        if (alturaZe > alturaChico){
+            break;
+        }
+    }
+    printf("Em %d anos, Ze sera maior que Chico", ano);
+    return 0;
+}
