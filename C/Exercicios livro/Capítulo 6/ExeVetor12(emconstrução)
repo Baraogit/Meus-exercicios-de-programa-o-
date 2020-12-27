@@ -9,7 +9,7 @@ int main(){
        printf("Digite um numero: ");
        scanf("%d", &vet[i]);
     }
-    for (i = 0; i < 9; i++){
+    for (i = 0; i < 10; i++){
         for (j = i+1; j < 10; j++){
             if (vet[i] == vet[j])
                 printf("Valor que se repete = %d\n", vet[j]);
