@@ -4,7 +4,7 @@ iguais e os escreva na tela.
 #include <stdio.h>
 
 int main(){
-    int vet[10],  i, j, igual;
+    int vet[10],  i, j;
     for(i = 0; i < 10; i++){
        printf("Digite um numero: ");
        scanf("%d", &vet[i]);
