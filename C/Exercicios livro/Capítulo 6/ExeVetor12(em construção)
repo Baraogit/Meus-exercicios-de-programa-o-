@@ -20,7 +20,6 @@ int main(){
     return 0;
 }
 -------------------------------------------------------------------------
-
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
@@ -35,8 +34,8 @@ int main(){
         for (j = i+1; j < 10; j++){
             flag = 0;
             if (vet[i] == vet[j]){
-                for (w = 0; w < 10; w++){
-                    if (iguais[w] == vet[j])/* se o elemento já estiver nesse vetor de iguais, flag recebe 1 e só.
+                for (w = 0; w < 10; w++){ // loop para rodar vetor iguais[10] e compara se há elementos iguais no vet[10] 
+                    if (iguais[w] == vet[j])/* se o elemento já estiver nesse vetor de iguais[10], flag recebe 1 e só.
                     digamos que não fosse, o programa pula para a condicional abaixo */
                         flag = 1;
                 }
@@ -58,4 +57,12 @@ int main(){
 
     return 0;
 }
+// Primeiro: Dois loops para rodar vet[10] e flag recebe valor zero. Dentro do segundo loop, há a primeira condicional.
+// Essa primeira condicional, testa  se há  elementos iguais dentro de vet[10].
+// Se são iguais: 
+//   - Cai em um loop para rodar vetor iguais[10], nesse loop há duas condicionais:
+//      - Na primeira condicional, compara se o elemento dentro de iguais[10] é igual ao elemento dentro de vet[10]; se for, flag recebe 1.
+//      - Se não for iguais, significa que não existe ainda dentro de iguais[10], esse número repetido; então cai na segunda condicional que faz com que,
+//        iguais[10], receba elemento de vet[10], elemento esse que se repete,  mas inédito para iguais[10]. 
+
 
