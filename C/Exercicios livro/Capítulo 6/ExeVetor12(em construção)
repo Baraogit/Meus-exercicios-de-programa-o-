@@ -25,31 +25,37 @@ int main(){
 #include <stdlib.h>
 int main(){
     int a = 0, i, j, w, flag;
-    int vetor[10], iguais[10];
+    int vet[10], iguais[10];
 
     for (i = 0; i < 10; i++){
-        printf("Entre com o elemento[ %2d ] : ", i + 1);
-        scanf("%d", &vetor[i]);
+        printf("Entre com o elemento: ");
+        scanf("%d", &vet[i]);
     }
     for (i = 0; i < 9; i++){
         for (j = i+1; j < 10; j++){
             flag = 0;
-            if (vetor[i] == vetor[j]){
+            if (vet[i] == vet[j]){
                 for (w = 0; w < 10; w++){
-                    if (iguais[w] == vetor[j])/* se o numero já estiver nesse vetor de iguais */
+                    if (iguais[w] == vet[j])/* se o elemento já estiver nesse vetor de iguais, flag recebe 1 e só.
+                    digamos que não fosse, o programa pula para a condicional abaixo */
                         flag = 1;
                 }
+                /* se flag for zero em um determinado loop, significa que  dentro do vetor iguais[10]
+                 não há elemento igual dentro do vetor Vet[10], logo, iguais[10] recebe o elemento
+                 inédito de vet[10]*/
                 if (flag == 0){
-                    iguais[a] = vetor[i];/* para escrever o numero apenas uma vez */
-                    a++;
+                    iguais[a] = vet[i];// para escrever o numero apenas uma vez
+                    a++; /* var "a" recebe incremento, cada vez que cai nessa condição, e vale como referência
+                    para os índices do vetor iguais[10]*/
                 }
             }
         }
     }
-    printf("\n\nSaida -->  ");
-    for (i = 0; i < a; i++){
+    printf("Numeros repetidos: ");
+    for (i = 0; i < a; i++){ // condição para será 
         printf("%d ", iguais[i]);
     }
 
     return 0;
 }
+
