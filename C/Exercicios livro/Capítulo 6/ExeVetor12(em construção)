@@ -20,29 +20,7 @@ int main(){
     return 0;
 }
 -------------------------------------------------------------------------
-#include <stdio.h>
 
-int main(){
-    int vet[10],repete[10] = {0}, i, j;
-    for(i = 0; i < 10; i++){
-       printf("Digite um numero: ");
-       scanf("%d", &vet[i]);
-    }
-    for (i = 0; i < 9; i++){
-        for (j = i+1; j < 10; j++){
-            if (vet[i] == vet[j]){
-                repete[i] = vet[i];
-                break;
-            }
-        }
-    }
-    for (i = 0; i < 10; i++){
-         if (repete[i] != 0)
-             printf("Valor que se repete = %d\n", repete[i]);
-    }
-    return 0;
-}
------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
