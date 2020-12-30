@@ -1,25 +1,7 @@
 12) Faça um programa que leia um vetor de 10 posições. Verifique se existem valores
 iguais e os escreva na tela.
 
-#include <stdio.h>
 
-int main(){
-    int vet[10],  i, j;
-    for(i = 0; i < 10; i++){
-       printf("Digite um numero: ");
-       scanf("%d", &vet[i]);
-    }
-    for (i = 0; i < 9; i++){
-        for (j = i+1; j < 10; j++){
-            if (vet[i] == vet[j]){
-                printf("Valor que se repete = %d\n", vet[i]);
-                break;
-            }    
-        }
-    }
-    return 0;
-}
--------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
@@ -57,12 +39,33 @@ int main(){
 
     return 0;
 }
-// Primeiro: Dois loops para rodar vet[10] e flag recebe valor zero. Dentro do segundo loop, há a primeira condicional.
+// Dois loops para rodar vet[10] e flag recebe valor zero. Dentro do segundo loop, há a primeira condicional.
 // Essa primeira condicional, testa  se há  elementos iguais dentro de vet[10].
 // Se são iguais: 
 //   - Cai em um loop para rodar vetor iguais[10], nesse loop há duas condicionais:
 //      - Na primeira condicional, compara se o elemento dentro de iguais[10] é igual ao elemento dentro de vet[10]; se for, flag recebe 1.
 //      - Se não for iguais, significa que não existe ainda dentro de iguais[10], esse número repetido; então cai na segunda condicional que faz com que,
 //        iguais[10], receba elemento de vet[10], elemento esse que se repete,  mas inédito para iguais[10]. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+Esse algoritmo funciona quando se é para imprimir numeros que se repetem, mas imprime varias vezes um mesmo número. 
+#include <stdio.h>
+
+int main(){
+    int vet[10],  i, j;
+    for(i = 0; i < 10; i++){
+       printf("Digite um numero: ");
+       scanf("%d", &vet[i]);
+    }
+    for (i = 0; i < 9; i++){
+        for (j = i+1; j < 10; j++){
+            if (vet[i] == vet[j]){
+                printf("Valor que se repete = %d\n", vet[i]);
+                break;
+            }    
+        }
+    }
+    return 0;
+}
 
