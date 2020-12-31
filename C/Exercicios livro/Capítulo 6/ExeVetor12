@@ -15,7 +15,7 @@ int main(){
         for (j = i+1; j < 10; j++){
             flag = 0;
             if (vet[i] == vet[j]){// se houver elementos iguais dentro de vet[10]
-                for (k = 0; k < 10; k++){// loop para rodar vetor iguais[10] e compara se há elementos iguais no vet[10]
+                for (k = 0; k < 10; k++){// loop para rodar vetor iguais[10] e compara se há seus elementos iguais no vet[10]
                     if (iguais[k] == vet[j])/* se o elemento já estiver nesse vetor de iguais[10], flag recebe 1 e só.
                     digamos que não fosse, o programa pula para a condicional abaixo */
                         flag = 1;
