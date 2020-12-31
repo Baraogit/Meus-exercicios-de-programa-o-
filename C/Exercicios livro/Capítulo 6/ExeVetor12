@@ -44,6 +44,9 @@ int main(){
 //      - Na primeira condicional, compara se o elemento dentro de iguais[10] é igual ao elemento dentro de vet[10]; se for, flag recebe 1.
 //      - Se não for iguais, significa que não existe ainda dentro de iguais[10], esse número repetido; então cai na segunda condicional que faz com que,
 //        iguais[10], receba elemento de vet[10], elemento esse que se repete,  mas inédito para iguais[10]. 
+
+
+Algoritmo tirado de: https://www.clubedohardware.com.br/topic/1331397-leia-um-vetor-de-10-posições-e-verifique-se-existem-valores-iguais-e-os-escreva/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
