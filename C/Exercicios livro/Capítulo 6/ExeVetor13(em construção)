@@ -4,28 +4,35 @@ digitado pelo usuário deve ser pesquisado no vetor, verificando se ele existe e
 os números que já foram fornecidos. Exiba na tela o vetor final que foi digitado.
 
 #include <stdio.h>
-
+#include <stdlib.h>
 int main(){
-    int vet[10], valorDigitado, i, j;
-    for(i = 0; i < 10; i++){
-       printf("Digite um numero: ");
-       scanf("%d", &valorDigitado);
-       for (j = 0; j < 10; j++){
-            if (valorDigitado != vet[j]){
-                vet[i] = valorDigitado;
-            }
-            if (valorDigitado == vet[j]){
-                while (valorDigitado == vet[j]){
-                        printf("Valor repetdo, digite um outro numero: ");
-                        scanf("%d", &vet[i]);
-                        break;
-                }
-            }
-       }
-    }
-    printf("Valores digitados: ");
+    int vet[10], repetidos[10];
+    int i, j, flag, numero;
+
     for (i = 0; i < 10; i++){
-         printf("%d ", vet[i]);
+        printf("Digite um numero: ");
+        scanf("%d", &numero);
+        flag = 0;
+          for (j = 0; j < i; j++){
+               if (numero == vet[i]){
+                   printf("Voce ja digitou esse numero, digite outro: ");
+                   scanf("%d", &vet[i]); // o problema esteja na volta, na c
+                   flag = 1;
+                   break;
+               }
+          }
+          if (flag == 0)
+              vet[i] = numero;
     }
+    printf("Numeros digitados: ");
+    for (i = 0; i < 10; i++){
+        printf("%d ", vet[i]);
+
+    }
+
+
+
+
+
     return 0;
 }
