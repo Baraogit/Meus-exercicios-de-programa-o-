@@ -3,6 +3,37 @@ vetor. Os números deverão ser armazenados no vetor na ordem em que forem lidos
 digitado pelo usuário deve ser pesquisado no vetor, verificando se ele existe entre
 os números que já foram fornecidos. Exiba na tela o vetor final que foi digitado.
 
+
+Peguei na internet.
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int vet[10];
+    int i, j;
+
+    for (i = 0; i < 10; i++){
+        printf("Digite um numero: ");
+        scanf("%d", &vet[i]);
+        for (j = 0; j < i; j++){
+            if (vet[i] == vet[j]){
+                printf("Numero repetido. Tente outra vez\n.");
+                i--;
+                continue;
+            }
+        }
+    }
+    printf("Numeros digitados: ");
+    for (i = 0; i < 10; i++){
+        printf("%d ", vet[i]);
+    }
+    return 0;
+}
+
+
+---------------------------------------------------------------------------------
+
+Outras tentativas, que não deram certo:
+
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
@@ -28,7 +59,7 @@ int main(){
     return 0;
 }
 -----------------------------------------------------------------------------------------
-Outras tentativas, que não deram certo:
+
 
 #include <stdio.h>
 #include <stdlib.h>
