@@ -6,6 +6,33 @@ os números que já foram fornecidos. Exiba na tela o vetor final que foi digita
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
+    int vet[10];
+    int i, j, numero;
+
+    for (i = 0; i < 10; i++){
+        printf("Digite um numero: ");
+        scanf("%d", &vet[i]);
+        for (j = 0; j < 10; j++){
+            if (vet[i] == vet[j] && i != j){
+                while (vet[i] == vet[j]){
+                       printf("Nmero reptido. Digite um  outro numero: ");
+                       scanf("%d", &vet[i]);
+                }
+            }
+        }
+    }
+    printf("Numeros digitados: ");
+    for (i = 0; i < 10; i++){
+        printf("%d ", vet[i]);
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------
+Outras tentativas, que não deram certo:
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
     int vet[10], repetidos[10];
     int i, j, flag, numero;
 
