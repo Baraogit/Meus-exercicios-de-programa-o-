@@ -8,7 +8,7 @@ int main(){
     int mat[4][4];
     int i, j, maior, linha, coluna;
 
-    printf("Digite 9 valores:\n");
+    printf("Digite 16 valores:\n");
     for (i = 0; i < 4; i++){
         for (j = 0; j < 4; j++){
              scanf("%d", &mat[i][j]);
