@@ -13,7 +13,6 @@ int main(){
         for (j = 0; j < 4; j++){
              scanf("%d", &mat[i][j]);
         }
-        printf("\n");
     }
     maior = mat[0][0];
     for (i = 0; i < 4; i++){
