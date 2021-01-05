@@ -1,1 +1,31 @@
 
+2) Faça um programa que leia uma matriz de tamanho 4 × 4. Imprima na tela o
+maior valor contido nessa matriz e a sua localização (linha e coluna).
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int mat[4][4];
+    int i, j, maior, linha, coluna;
+
+    printf("Digite 9 valores:\n");
+    for (i = 0; i < 4; i++){
+        for (j = 0; j < 4; j++){
+             scanf("%d", &mat[i][j]);
+        }
+        printf("\n");
+    }
+    maior = mat[0][0];
+    for (i = 0; i < 4; i++){
+        for (j = 0; j < 4; j++){
+            if (mat[i][j] > maior)
+                maior = mat[i][j];
+                linha = i;
+                coluna = j;
+        }
+    }
+    printf("Maior valor mat[%d][%d]= %d", linha, coluna, maior);
+
+    return 0;
+}
+
