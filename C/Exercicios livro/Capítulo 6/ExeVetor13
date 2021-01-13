@@ -14,10 +14,12 @@ int main(){
     for (i = 0; i < 10; i++){
         printf("Digite um numero: ");
         scanf("%d", &vet[i]);
-        for (j = 0; j < i; j++){
+        for (j = 0; j < i; j++){ // condição: j menor que i, para que J nunca seja maior que I
             if (vet[i] == vet[j]){
                 printf("Numero repetido. Tente outra vez\n.");
-                i--;
+                i--; // se for repetido, ele faz voltar ao laço , onde tem o elemento repetido
+                //ex: i = 3, i-- , i = 2, volta para o loop de i, onde i passa valer novamente 3
+                // enquanto no laço 3, for digitado valor repetido, ficará indo e voltando no mesmo laço(3)
                 continue;
             }
         }
