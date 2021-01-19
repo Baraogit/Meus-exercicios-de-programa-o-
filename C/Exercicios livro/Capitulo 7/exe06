@@ -13,7 +13,7 @@ int main(){
     printf("Digite uma string: ");
     gets(str);
     for (i = 0; str[i] != '\0'; i++){
-        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') // e continua str[i] == as maiúsculas
             contVogais++;
     }
     printf("Numero de vogais = %d\n", contVogais);
@@ -21,10 +21,76 @@ int main(){
     printf("Digite uma letra: ");
     scanf("%c", &letra);
     for (i = 0; str[i] != '\0'; i++){
-        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') // e continua str[i] == as maiúsculas
             str[i] = letra;
     }
     printf("Nova string = %s\n", str);
    return 0;
 }
+----------------------------------------------------------
+Ao invés de usar a condição str[i] != '\0', usa-se  i < strlen(str)(tamanho da string), para percorrer uma string.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    char str[20];
+    char letra;
+    int i, contVogais = 0;
+
+    printf("Digite uma string: ");
+    gets(str);
+    for (i = 0; i < strlen(str); i++){
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') // e continua str[i] == as maiúsculas
+            contVogais++;
+    }
+    printf("Numero de vogais = %d\n", contVogais);
+
+    printf("Digite uma letra: ");
+    scanf("%c", &letra);
+    for (i = 0; i < strlen(str); i++){
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') // e continua str[i] == as maiúsculas
+            str[i] = letra;
+    }
+    printf("Nova string = %s\n", str);
+   return 0;
+}
+---------------------------------------------------------------------------------------
+Maneira mais enxuta, do Backes. 
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    char str[20], vogais[11] ="aeiouAEIOU";
+    char letra;
+    int i, j, contVogais = 0;
+
+    printf("Digite uma string: ");
+    gets(str);
+    for (i = 0; i < strlen(str); i++){
+        for (j = 0; j < strlen(vogais); j++){
+            if (str[i] == vogais[j]){
+                contVogais++;
+                break;
+            }
+        }
+    }
+    printf("Numero de vogais = %d\n", contVogais);
+
+    printf("Digite uma letra: ");
+    scanf("%c", &letra);
+    for (i = 0; i < strlen(str); i++){
+        for (j = 0; j < strlen(vogais); j++){
+            if (str[i] == vogais[j]){
+                str[i] = letra;
+                break;
+            }
+        }
+    }
+    printf("Nova string = %s\n", str);
+   return 0;
+}
+
+
+
+
 
