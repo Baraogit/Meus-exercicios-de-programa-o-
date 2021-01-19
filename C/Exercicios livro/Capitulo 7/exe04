@@ -1,1 +1,18 @@
+4) Faça um programa que leia uma string e a imprima de trás para a frente.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    char str[20];
+    int i, tamanho;
+    
+    printf("Digite uma string: ");
+    gets(str);
+    tamanho = strlen(str);
+    for (i = tamanho ; i >= 0; i--){
+        printf("%c", str[i]);
+    }
+   return 0;
+}
+
 
