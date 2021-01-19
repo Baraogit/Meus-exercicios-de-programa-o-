@@ -14,6 +14,21 @@ int main(){
     }
    return 0;
 }
+-----------------------------------------------------------------------------------
+algoritmo do Backes
 
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    char str[20];
+    int i, tamanho;
+
+    printf("Digite uma string: ");
+    gets(str);
+    for (i = strlen(str) - 1 ; i >= 0; i--){ // - 1 para não pegar \0
+        printf("%c", str[i]);
+    }
+   return 0;
+}
 
 
