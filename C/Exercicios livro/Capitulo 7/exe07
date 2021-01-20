@@ -1,1 +1,30 @@
+7) Faça um programa que leia uma string e imprima uma mensagem dizendo se ela
+é um palíndromo ou não. Um palíndromo é uma palavra que tem a propriedade
+de poder ser lida tanto da direita para a esquerda como da esquerda para a direita.
+Exemplos: ovo, arara, rever, asa, osso etc.
 
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    char str[20], strInvertida[20];
+    int i, j;
+
+    printf("Digite uma string: ");
+    gets(str);
+
+    for (i = strlen(str)- 1, j = 0; i >= 0; i--, j++){
+        strInvertida[j] = str[i];
+    }
+    strInvertida[j] = '\0';
+    if (strcmp(str, strInvertida) == 0)
+        printf("Eh um palindromo");
+    else
+        printf("Nao eh um palindromo");
+    
+   return 0;
+}
+
+
+Consegui resolver sozinho. Achei que seria super difícil, até que tive uma ideia de copiar uma string para outra, invertendo. Se forem iguais, então, a palavra
+é um palíndromo. 
