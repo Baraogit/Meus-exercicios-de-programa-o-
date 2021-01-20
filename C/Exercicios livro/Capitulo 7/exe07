@@ -28,3 +28,28 @@ int main(){
 
 Consegui resolver sozinho. Achei que seria super difícil, até que tive uma ideia de copiar uma string para outra, invertendo. Se forem iguais, então, a palavra
 é um palíndromo. 
+----------------------------------------------------------------------
+https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%207/ex07.c
+
+
+#include <stdio.h>
+
+int main(){
+    char palavra[50];
+    int i, j, tamanho = 0;
+    scanf("%s", palavra);
+    
+    // obter o tamanho da palavra
+    for(i = 0; palavra[i] != '\0'; i++)
+        tamanho++;
+
+    for(i = 0, j = tamanho - 1; i <= j; i++, j--){
+        if(palavra[i] != palavra[j]){
+            printf("Nao eh Palindromo\n");
+            return 0; // se nao for palindromo, ja finaliza o programa
+        }
+    }
+    // so vai executar se o IF acima nao for executado
+    printf("Eh Palindromo\n");
+    return 0;
+}
