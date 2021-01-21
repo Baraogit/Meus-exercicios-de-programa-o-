@@ -4,6 +4,8 @@ armazenada na mesma variável. Em seguida, imprima a string invertida.
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 int main(){
     char str[20];
     int i, j, aux = 0;
