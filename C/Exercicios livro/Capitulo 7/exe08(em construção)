@@ -1,6 +1,9 @@
 8) Construa um programa que leia duas strings do teclado. Imprima uma mensagem
 informando se a segunda string lida está contida dentro da primeira.
 
+// Entendi que os caracteres da segunda string devem estar na primeira. 
+//xib está contido em abacaxi. 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,18 +16,32 @@ int main(){
     gets(palavra1);
     gets(palavra2);
 
-    for (i = 0; i < strlen(palavra2); i++){
-        for (j = 0; j < strlen(palavra1); j++){
-            if (palavra2[i] == palavra1[j]){
-                cont++;
-                break;
+    if (strlen(palavra2) <= strlen(palavra1)){// palavra2 tem que ser menor ou igual a palavra1
+        for (i = 0; i < strlen(palavra1); i++){
+            for (j = 0; j < strlen(palavra2); j++){
+                if (palavra1[i] == palavra2[j]){
+                    cont++;
+                    break;
+                }
             }
         }
     }
-    if (cont == strlen(palavra2))
+    printf("Valor de cont = %d\n", cont);
+    printf("Valor de palavra2 = %d\n", strlen(palavra2));
+
+    if (strlen(palavra2) <= cont)// se cont tiver o valor igual ao tamanho da palavra2
         printf("Esta contido");
     else
         printf("Nao esta contido");
 
     return 0;
 }
+
+acaba
+
+acbac
+
+esta contido. 
+
+algoritmo não funcionou 
+
