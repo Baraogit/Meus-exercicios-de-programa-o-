@@ -32,6 +32,8 @@ Ao invés de usar a condição str[i] != '\0', usa-se  i < strlen(str)(tamanho d
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 int main(){
     char str[20];
     char letra;
@@ -59,6 +61,8 @@ Maneira mais enxuta, do Backes.
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 int main(){
     char str[20], vogais[11] ="aeiouAEIOU";
     char letra;
