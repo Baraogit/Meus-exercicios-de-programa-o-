@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 int main(){
     char str[20];
     int i, tamanho;
@@ -19,6 +21,8 @@ algoritmo do Backes
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 int main(){
     char str[20];
     int i, tamanho;
