@@ -66,32 +66,33 @@ int main(){
 #include <string.h>
 
 int main(){
-    char palavra1[50], palavra2[50], palavra2Aux[50];
+    char palavra1[50], palavra2[50], aux[50];
     int i, j, k = 0;
 
-    printf("Digite duas strings: ");
+    printf("Digite a primeira string: ");
     gets(palavra1);
+    printf("Digite a segunda string: ");
     gets(palavra2);
 
-    if (strlen(palavra2) <= strlen(palavra1)){// palavra2 tem que ser menor ou igual a palavra1
-        for (i = 0; i < strlen(palavra1); i++){
-            for (j = 0; j < strlen(palavra2); j++){
+    if (strlen(palavra2) <= strlen(palavra1)){
+        for(i = 0; i < strlen(palavra1); i++){
+            for(j = 0; j < strlen(palavra2); j++){
                 if (palavra1[i] == palavra2[j]){
-                    palavra2Aux[k] = palavra1[i];
+                    aux[k] = palavra1[i];
                     k++;
                     break;
                 }
             }
         }
     }
-    palavra2Aux[k] = '\0';
-    printf("Auxiliar = %s\n", palavra2Aux);
-    if (strcmp(palavra2,palavra2Aux) == 0)
-        printf("Esta contido");
+    aux[k] = '\0';
+    printf("aux = %s\n", aux);
+    if (strcmp(palavra2, aux) == 0)
+        printf("%s contem em %s\n", palavra2, palavra1);
     else
-        printf("Nao esta contido");
-
+        printf("Nao contem\n");
     return 0;
 }
+
 
 
