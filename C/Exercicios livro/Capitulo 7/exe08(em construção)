@@ -1,6 +1,30 @@
 8) Construa um programa que leia duas strings do teclado. Imprima uma mensagem
 informando se a segunda string lida está contida dentro da primeira.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Minhas tentativas. 
 // Entendi que os caracteres da segunda string devem estar na primeira. 
 //xib está contido em abacaxi. 
 
@@ -36,13 +60,6 @@ int main(){
 
     return 0;
 }
-
-acaba
-acbac
-esta contido. 
-
-algoritmo não funcionou 
-
 -----------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,7 +67,7 @@ algoritmo não funcionou
 
 int main(){
     char palavra1[50], palavra2[50], palavra2Aux[50];
-    int i, j, cont = 0, flag = 0;
+    int i, j, k = 0;
 
     printf("Digite duas strings: ");
     gets(palavra1);
@@ -58,24 +75,23 @@ int main(){
 
     if (strlen(palavra2) <= strlen(palavra1)){// palavra2 tem que ser menor ou igual a palavra1
         for (i = 0; i < strlen(palavra1); i++){
-
             for (j = 0; j < strlen(palavra2); j++){
                 if (palavra1[i] == palavra2[j]){
-
-                    palavra2Aux[i] = palavra1[i];
+                    palavra2Aux[k] = palavra1[i];
+                    k++;
                     break;
                 }
             }
         }
     }
-    printf("Auxiliar %s\n", palavra2Aux);
-    printf("Valor de palavra2 = %d\n", strlen(palavra2));
-
-    if (palavra2 == palavra2Aux)// se  tamanho da palavra2 for menor ou igual a cont
-        printf("Esta contido"); // logo palavra2 está contido em palavra2
+    palavra2Aux[k] = '\0';
+    printf("Auxiliar = %s\n", palavra2Aux);
+    if (strcmp(palavra2,palavra2Aux) == 0)
+        printf("Esta contido");
     else
         printf("Nao esta contido");
 
     return 0;
 }
+
 
