@@ -38,10 +38,44 @@ int main(){
 }
 
 acaba
-
 acbac
-
 esta contido. 
 
 algoritmo não funcionou 
+
+-----------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    char palavra1[50], palavra2[50], palavra2Aux[50];
+    int i, j, cont = 0, flag = 0;
+
+    printf("Digite duas strings: ");
+    gets(palavra1);
+    gets(palavra2);
+
+    if (strlen(palavra2) <= strlen(palavra1)){// palavra2 tem que ser menor ou igual a palavra1
+        for (i = 0; i < strlen(palavra1); i++){
+
+            for (j = 0; j < strlen(palavra2); j++){
+                if (palavra1[i] == palavra2[j]){
+
+                    palavra2Aux[i] = palavra1[i];
+                    break;
+                }
+            }
+        }
+    }
+    printf("Auxiliar %s\n", palavra2Aux);
+    printf("Valor de palavra2 = %d\n", strlen(palavra2));
+
+    if (palavra2 == palavra2Aux)// se  tamanho da palavra2 for menor ou igual a cont
+        printf("Esta contido"); // logo palavra2 está contido em palavra2
+    else
+        printf("Nao esta contido");
+
+    return 0;
+}
 
