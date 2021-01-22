@@ -2,70 +2,48 @@
 informando se a segunda string lida está contida dentro da primeira.
 
 
-
+//meu algoritmo
 #include <stdio.h>
 #include <string.h>
 int main(){
     char palavra1[100], palavra2[50], aux[50];
-    int i, j = 0, tamanho, quantidade, cont = 0;
+    int i, j = 0, cont = 0;
 
     printf("Digite a primeira string: ");
     gets(palavra1);
     printf("Digite a segunda string: ");
     gets(palavra2);
 
+    //tira os espaços entre as palavras e reserva em uma nova string
     for (i = 0; i < strlen(palavra1); i++){
         if (palavra1[i] != ' '){
             aux[j] = palavra1[i];
             j++;
         }
-
     }
     aux[j] = '\0';
-    
-    
-    printf("String sem espaços = %s\n", aux);
-
-
-    return 0;
-}
-
-
--------------------------------------------------------------------------------------
-https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%207/ex08.c
-// Só funciona quando pega palavras inteiras , não caracteres. 
-#include <stdio.h>
-#include <string.h>
-
-int main(){
-    char palavra1[100], palavra2[50], auxiliar[50];
-    int i, j, tamanho;
-    gets(palavra1);
-    gets(palavra2);
-
-    for(i = 0, j = 0; palavra1[i] != '\0'; i++){
-        // enquanto nao for um espaco (delimitador de fim de palavra)
-        while(palavra1[i] != ' ' && palavra1[i] != '\0'){
-            auxiliar[j] = palavra1[i];
-            i++;
-            j++;
+    for (i = 0; i < strlen(palavra2); i++){
+        for (j = 0; j < strlen(aux); j++){
+            if (palavra2[i] == aux[j]){
+                cont++;
+                break;
+            }
         }
-        // colocando o caractere delimitador na string p/ fazer a comparacao
-        auxiliar[j] = '\0';
-        if(strcmp(auxiliar, palavra2) == 0){
-            printf("A segunda string aparece na primeira string\n");
-            return 0;
-        }else
-            // se nao eh igual, reinicia o j para prencher a variavel
-            // auxiliar a partir da posicao 0
-            j = 0;
     }
-    printf("A segunda string nao aparece na primeira string\n");
+    printf("Valor de cont = %d\n", cont);
+    printf("Valor de palavra2 = %d\n", strlen(palavra2));
+    if (strlen(palavra2) <= cont)
+        printf("Esta contido\n");
+    else
+        printf("Nao esta contido");
     return 0;
 }
+
+
+
 
 -----------------------------------------------------------------------------
-Minhas tentativas. 
+Minhas outras tentativas. 
 // Entendi que os caracteres da segunda string devem estar na primeira. 
 //xib está contido em abacaxi. 
 
