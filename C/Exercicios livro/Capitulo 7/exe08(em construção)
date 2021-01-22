@@ -1,7 +1,7 @@
 8) Construa um programa que leia duas strings do teclado. Imprima uma mensagem
 informando se a segunda string lida está contida dentro da primeira.
 
-// meu algoritmo para saber se um string(palavra) está contida dentro de string(frase)
+// meu algoritmo para saber se um string(palavra) está contida dentro de string(frase). Mas se colocar uma palavra errada, mas que tenha um caractere dentro da string, ela conta como contido.
 // diferente das debaixos, que procurava saber se os caracteres da palavra2  estava na palavra1. As debaixos não funcionavam para o seu propósito. Essa funciona procurando por palavra. 
 #include <stdio.h>
 #include <string.h>
