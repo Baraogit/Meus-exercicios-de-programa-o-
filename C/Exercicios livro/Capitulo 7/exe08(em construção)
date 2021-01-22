@@ -1,6 +1,53 @@
 8) Construa um programa que leia duas strings do teclado. Imprima uma mensagem
 informando se a segunda string lida está contida dentro da primeira.
 
+
+https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%207/ex08.c#L16
+#include <stdio.h>
+#include <string.h>
+
+/* 
+    Não sei se entendi bem o que é para fazer no exercicio
+    então vou resolver da seguinte maneira:
+    1º: Quebro a primeira string (frase) em palavras
+    2º: Vejo se a segunda string também aparece na primeira string
+ */
+
+int main(){
+    char palavra1[100], palavra2[50], auxiliar[50];
+    int i, j, tamanho;
+    fgets(palavra1, 100, stdin);
+    fgets(palavra2, 50, stdin);
+
+    for(i = 0, tamanho = 0; palavra1[i] != '\0'; i++)
+        tamanho++;
+    palavra1[tamanho-1] = '\0'; // tirando o caractere '\n' da string
+
+    for(i = 0, tamanho = 0; palavra2[i] != '\0'; i++)
+        tamanho++;
+    palavra2[tamanho-1] = '\0'; // tirando o caractere '\n' da string
+
+    for(i = 0, j = 0; palavra1[i] != '\0'; i++){
+        // enquanto nao for um espaco (delimitador de fim de palavra)
+        while(palavra1[i] != ' ' && palavra1[i] != '\0'){
+            auxiliar[j] = palavra1[i];
+            i++;
+            j++;
+        }
+        // colocando o caractere delimitador na string p/ fazer a comparacao
+        auxiliar[j] = '\0';
+        if(strcmp(auxiliar, palavra2) == 0){
+            printf("A segunda string aparece na primeira string\n");
+            return 0;
+        }else
+            // se nao eh igual, reinicia o j para prencher a variavel
+            // auxiliar a partir da posicao 0
+            j = 0;
+    }
+    printf("A segunda string nao aparece na primeira string\n");
+    return 0;
+}
+------------------------------------------------------------------------------
 // meu algoritmo para saber se um string(palavra) está contida dentro de string(frase). Mas se colocar uma palavra errada, mas que tenha um caractere dentro da string, ela conta como contido.
 // diferente das debaixos, que procurava saber se os caracteres da palavra2  estava na palavra1. As debaixos não funcionavam para o seu propósito. Essa funciona procurando por palavra. 
 #include <stdio.h>
