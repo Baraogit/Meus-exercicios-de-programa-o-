@@ -1,8 +1,8 @@
 8) Construa um programa que leia duas strings do teclado. Imprima uma mensagem
 informando se a segunda string lida está contida dentro da primeira.
 
-
-//meu algoritmo
+// meu algoritmo para saber se um string(palavra) está contida dentro de string(frase)
+// diferente das debaixos, que procurava saber se os caracteres da palavra2  estava na palavra1. As debaixos não funcionavam para o seu propósito. Essa funciona procurando por palavra. 
 #include <stdio.h>
 #include <string.h>
 int main(){
@@ -25,20 +25,19 @@ int main(){
     for (i = 0; i < strlen(palavra2); i++){
         for (j = 0; j < strlen(aux); j++){
             if (palavra2[i] == aux[j]){
-                cont++;
+                cont++;// conta quanta vezes há os mesmos caracteres entre as duas strings
                 break;
             }
         }
     }
     printf("Valor de cont = %d\n", cont);
     printf("Valor de palavra2 = %d\n", strlen(palavra2));
-    if (strlen(palavra2) <= cont)
-        printf("Esta contido\n");
+    if (strlen(palavra2) <= cont) // se  qto de caracteres da string palavra2 for menor ou igual de cont
+        printf("Esta contido\n");// é porque palavra2 está contida na string aux
     else
         printf("Nao esta contido");
     return 0;
 }
-
 
 
 
