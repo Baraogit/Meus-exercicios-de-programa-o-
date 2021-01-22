@@ -3,6 +3,35 @@ informando se a segunda string lida está contida dentro da primeira.
 
 
 
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char palavra1[100], palavra2[50], aux[50];
+    int i, j = 0, tamanho, quantidade, cont = 0;
+
+    printf("Digite a primeira string: ");
+    gets(palavra1);
+    printf("Digite a segunda string: ");
+    gets(palavra2);
+
+    for (i = 0; i < strlen(palavra1); i++){
+        if (palavra1[i] != ' '){
+            aux[j] = palavra1[i];
+            j++;
+        }
+
+    }
+    aux[j] = '\0';
+    
+    
+    printf("String sem espaços = %s\n", aux);
+
+
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------------
 https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%207/ex08.c
 // Só funciona quando pega palavras inteiras , não caracteres. 
 #include <stdio.h>
