@@ -9,11 +9,11 @@ int main(){
 
     printf("Digite uma string: ");
     gets(S);
-    printf("Digite dois valores entre 1 ate %d.\n", strlen(S)-1);
+    printf("Digite dois valores entre 1 ate %d.\n", strlen(S));
     scanf("%d %d", &i, &j);
     if (i <= j){
         printf("String contida entre %d a %d:\n", i, j);
-        for (; i-1 <= j; i++){
+        for (i = i-1; i <= j-1; i++){
             printf("%c", S[i]);
         }
     }
