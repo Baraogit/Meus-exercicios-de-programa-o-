@@ -11,8 +11,8 @@ int main(){
     gets(S);
     printf("Digite dois valores entre 1 ate %d.\n", strlen(S)-1);
     scanf("%d %d", &i, &j);
-    printf("String contida entre %d a %d:\n", i, j);
     if (i <= j){
+        printf("String contida entre %d a %d:\n", i, j);
         for (; i-1 <= j; i++){
             printf("%c", S[i]);
         }
