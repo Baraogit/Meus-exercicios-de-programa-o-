@@ -12,7 +12,8 @@ int main(){
     gets(palavra);
 
     for (i = 0; i < strlen(palavra); i++){
-        palavra[i]-= 32;
+        if (palavra[i] != ' ')
+            palavra[i]-= 32;
     }
     printf("Palavra = %s", palavra);
 
