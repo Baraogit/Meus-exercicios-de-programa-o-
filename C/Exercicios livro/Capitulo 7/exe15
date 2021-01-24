@@ -1,1 +1,32 @@
+15) Escreva um programa que leia duas strings e as imprima em ordem alfabética, a
+ordem em que elas apareceriam em um dicionário.
+
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char palavra1[100], palavra2[100];
+    int i, j;
+
+    printf("Digite a primeira string: ");
+    gets(palavra1);
+    printf("Digite a primeira string: ");
+    gets(palavra2);
+
+    for (i = 0,  j = 0; i < strlen(palavra1), j < strlen(palavra2); i++, j++){
+        if (palavra1[i] < palavra2[j]){
+             printf("1 = %s\n", palavra1);
+             printf("2 = %s\n", palavra2);
+             break;
+        }
+        else
+            if (palavra2[j] < palavra1[i]){
+             printf("1 = %s\n", palavra2);
+             printf("2 = %s\n", palavra1);
+             break;
+        }
+        else
+            continue;
+    }
+
+
 
