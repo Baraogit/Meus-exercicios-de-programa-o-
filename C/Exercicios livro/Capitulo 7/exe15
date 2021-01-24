@@ -25,9 +25,11 @@ int main(){
              break;
         }
     }
-    
+    return 0;
+}
+
     -------------------------------------------------------
-    Não usa o J. Eu cheguei a ter a ideia de não precisar usar a variável J, mas achei que daria errado. Eu deveria ter testado e verfificado se lógica ainda sim funciona. 
+    Não usa o J. Eu cheguei a ter a ideia de não precisar usar a variável J, mas achei que daria errado. Eu deveria ter testado e verfificado se lógica ainda sim funcionava. 
     https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%207/ex15.c
     
     #include <stdio.h>
