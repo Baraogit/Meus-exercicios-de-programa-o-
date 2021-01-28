@@ -26,7 +26,6 @@ int main(){
      scanf("%lf", &b.posicaoY);
 
      distanciaEntrePontos = sqrt(pow( (a.posicaoX - b.posicaoX ), 2) + pow( (a.posicaoY - b.posicaoY), 2) );
-
      printf("Distancia do ponto A para a origem = %lf\n", distanciaEntrePontos);
 
  return 0;
