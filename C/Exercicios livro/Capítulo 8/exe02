@@ -18,9 +18,10 @@ int main(){
      printf("Coordenada Y : ");
      scanf("%d", &posicao.posicaoY);
 
-     posicao.distanciaDaOrigem = sqrt(pow((posicao.posicaoX - 0), 2) + ((posicao.posicaoY - 0), 2));
+     posicao.distanciaDaOrigem = sqrt(pow( (posicao.posicaoX - 0), 2) + ( (posicao.posicaoY - 0), 2) );
 
-     printf("Distancia do ponto A para o ponto B (0,0) = %d\n", posicao.distanciaDaOrigem);
+     printf("Distancia do ponto A para a origem = %d\n", posicao.distanciaDaOrigem);
 
  return 0;
 }
+
