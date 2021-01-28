@@ -6,7 +6,7 @@ dele até a origem das coordenadas, isto é, a posição (0,0).
 #include <math.h>
 
 struct plano_cartesiano{
-   int posicaoX, posicaoY, distanciaDaOrigem;
+   double posicaoX, posicaoY, distanciaDaOrigem;
 };
 
 int main(){
@@ -14,13 +14,13 @@ int main(){
 
      printf("Digite as coordenadas do ponto A\n");
      printf("Coordenada X : ");
-     scanf("%d", &posicao.posicaoX);
+     scanf("%lf", &posicao.posicaoX);
      printf("Coordenada Y : ");
-     scanf("%d", &posicao.posicaoY);
+     scanf("%lf", &posicao.posicaoY);
 
      posicao.distanciaDaOrigem = sqrt(pow( (posicao.posicaoX - 0), 2) + pow( (posicao.posicaoY - 0), 2) );
 
-     printf("Distancia do ponto A para a origem = %d\n", posicao.distanciaDaOrigem);
+     printf("Distancia do ponto A para a origem = %.2lf\n", posicao.distanciaDaOrigem);
 
  return 0;
 }
