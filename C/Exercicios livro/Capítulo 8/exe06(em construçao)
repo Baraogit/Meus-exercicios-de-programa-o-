@@ -1,0 +1,36 @@
+6) Crie uma estrutura representando um aluno de uma disciplina. Essa estrutura
+deve conter o número de matrícula do aluno, seu nome e as notas de três provas.
+Agora, escreva um programa que leia os dados de cinco alunos e os armazena nessa
+estrutura. Em seguida, exiba o nome e as notas do aluno que possui a maior média
+geral dentre os cinco.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct aluno{
+    char nome[50];
+    int matricula;
+    float nota[3];
+};
+
+int main(){
+    struct aluno coletaDadosAluno[5];
+    int i, j;
+    float somaNotas[3] = {0};
+
+    printf("Coleta de dados dos alunos.\n");
+    for (i = 0; i < 5; i++){
+        printf("Digite o nome do aluno %d : ", i+1);
+        setbuf(stdin, NULL);
+        gets(coletaDadosAluno[i].nome);
+        printf("Numero da matricula: ");
+        scanf("%d", &coletaDadosAluno[i].matricula);
+        for(j = 0;  j < 3; j++){
+            printf("Nota %d = ", j+1);
+            scanf("%f", &coletaDadosAluno[i].nota[j]);
+        }
+    }
+
+
+ return 0;
+}
