@@ -28,14 +28,14 @@ int main(){
         for(j = 0;  j < 3; j++){
             printf("Nota %d = ", j+1);
             scanf("%f", &coletaDadosAluno[i].nota[j]); // coleta as notas 
-            somaNotas[j] += coletaDadosAluno[i].nota[j]; // soma as notas
+            somaNotas[i] += coletaDadosAluno[i].nota[j]; // soma as notas
         }
     }
     // calcula a media de cada aluno
     for ( i = 0; i < 5; i++){
         mediaNotas[i] = somaNotas[i] / 3; 
     }
-    
+    // descobre qual é a maior media 
     maiorMedia = mediaNotas[0];
     for (i = 0; i < 5; i++){
         if (mediaNotas[i] > maiorMedia){
@@ -43,14 +43,15 @@ int main(){
             flag = i; 
         }
     }
-    
-    printf("Aluno com a maior media\n"); 
-    printf("Aluno: %s  Matrícula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);
+    // imprime o struct-aluno com a maior media 
+    printf("\n"); 
+    printf("Aluno com a maior media:\n"); 
+    printf("Aluno: %s\nMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);
     printf("Notas:\n");
     for (i = 0; i < 3; i++){
         printf("%.2f\n", coletaDadosAluno[flag].nota[i]);
     }
-    printf("%.2f\n", maiorMedia);
+    printf("Media = %.2f\n", maiorMedia);
 
  return 0;
 }
