@@ -15,8 +15,8 @@ struct aluno{
 
 int main(){
     struct aluno coletaDadosAluno[5];
-    int i, j;
-    float somaNotas[3] = {0}, mediaNotas[3] = {0};
+    int i, j, flag = 0;
+    float somaNotas[3] = {0}, mediaNotas[3] = {0}, maiorMedia;
 
     printf("Coleta de dados dos alunos.\n");
     for (i = 0; i < 5; i++){
@@ -36,10 +36,21 @@ int main(){
         mediaNotas[i] = somaNotas[i] / 3; 
     }
     
+    maiorMedia = mediaNotas[0];
+    for (i = 0; i < 5; i++){
+        if (mediaNotas[i] > maiorMedia){
+            maiorMedia = mediaNotas[i];
+            flag = i; 
+        }
+    }
     
-    
-    
-
+    printf("Aluno com a maior media\n"); 
+    printf("Aluno: %s  Matrícula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);
+    printf("Notas:\n");
+    for (i = 0; i < 3; i++){
+        printf("%.2f\n", coletaDadosAluno[flag].nota[i]);
+    }
+    printf("%.2f\n", maiorMedia);
 
  return 0;
 }
