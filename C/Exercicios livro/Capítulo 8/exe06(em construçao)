@@ -16,20 +16,29 @@ struct aluno{
 int main(){
     struct aluno coletaDadosAluno[5];
     int i, j;
-    float somaNotas[3] = {0};
+    float somaNotas[3] = {0}, mediaNotas[3] = {0};
 
     printf("Coleta de dados dos alunos.\n");
     for (i = 0; i < 5; i++){
         printf("Digite o nome do aluno %d : ", i+1);
         setbuf(stdin, NULL);
-        gets(coletaDadosAluno[i].nome);
+        fgets(coletaDadosAluno[i].nome, 50, stdin);// coleta os nomes
         printf("Numero da matricula: ");
-        scanf("%d", &coletaDadosAluno[i].matricula);
+        scanf("%d", &coletaDadosAluno[i].matricula); // coleta  o número da matrícula 
         for(j = 0;  j < 3; j++){
             printf("Nota %d = ", j+1);
-            scanf("%f", &coletaDadosAluno[i].nota[j]);
+            scanf("%f", &coletaDadosAluno[i].nota[j]); // coleta as notas 
+            somaNotas[j] += coletaDadosAluno[i].nota[j]; // soma as notas
         }
     }
+    // calcula a media de cada aluno
+    for ( i = 0; i < 5; i++){
+        mediaNotas[i] = somaNotas[i] / 3; 
+    }
+    
+    
+    
+    
 
 
  return 0;
