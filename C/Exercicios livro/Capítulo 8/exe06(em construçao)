@@ -41,12 +41,12 @@ int main(){
         if (mediaNotas[i] > maiorMedia){
             maiorMedia = mediaNotas[i];
             flag = i; 
-        } 
+        }
     }
     // imprime o struct-aluno com a maior media 
     printf("\n"); 
     printf("Aluno com a maior media:\n"); 
-    printf("Aluno: %s\nMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);
+    printf("Aluno: %s\nMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);  //falta tirar o espaço "\n" da string, inserido por fgts
     printf("Notas:\n");
     for (i = 0; i < 3; i++){
         printf("%.2f\n", coletaDadosAluno[flag].nota[i]);
