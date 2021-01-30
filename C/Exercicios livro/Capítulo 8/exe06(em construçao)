@@ -15,7 +15,7 @@ struct aluno{
 
 int main(){
     struct aluno coletaDadosAluno[5];
-    int i, j, flag = 0;
+    int i, j, indice = 0;
     float somaNotas[5] = {0}, mediaNotas[5] = {0}, maiorMedia;
 
     printf("Coleta de dados dos alunos.\n");
@@ -40,16 +40,16 @@ int main(){
     for (i = 0; i < 5; i++){
         if (mediaNotas[i] > maiorMedia){
             maiorMedia = mediaNotas[i];
-            flag = i; 
+            indice = i; 
         }
     }
     // imprime o struct-aluno com a maior media 
     printf("\n"); 
     printf("Aluno com a maior media:\n"); 
-    printf("Aluno: %sMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);  //sem \n, depois de %s, pois fgets ja faz pular linha.
+    printf("Aluno: %sMatricula = %d\n", coletaDadosAluno[indice].nome, coletaDadosAluno[indice].matricula);  //sem \n, depois de %s, pois fgets ja faz pular linha.
     printf("Notas:\n");
     for (i = 0; i < 3; i++){
-        printf("%.2f\n", coletaDadosAluno[flag].nota[i]);
+        printf("%.2f\n", coletaDadosAluno[indice].nota[i]);
     }
     printf("Media = %.2f\n", maiorMedia);
 
