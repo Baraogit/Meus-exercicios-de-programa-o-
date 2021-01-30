@@ -46,7 +46,7 @@ int main(){
     // imprime o struct-aluno com a maior media 
     printf("\n"); 
     printf("Aluno com a maior media:\n"); 
-    printf("Aluno: %s\nMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);  //falta tirar o espaço "\n" da string, inserido por fgts
+    printf("Aluno: %sMatricula = %d\n", coletaDadosAluno[flag].nome, coletaDadosAluno[flag].matricula);  //sem \n, depois de %s, pois fgets ja faz pular linha.
     printf("Notas:\n");
     for (i = 0; i < 3; i++){
         printf("%.2f\n", coletaDadosAluno[flag].nota[i]);
