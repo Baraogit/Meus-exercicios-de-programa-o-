@@ -16,7 +16,7 @@ struct aluno{
 int main(){
     struct aluno coletaDadosAluno[5];
     int i, j, flag = 0;
-    float somaNotas[3] = {0}, mediaNotas[3] = {0}, maiorMedia;
+    float somaNotas[5] = {0}, mediaNotas[5] = {0}, maiorMedia;
 
     printf("Coleta de dados dos alunos.\n");
     for (i = 0; i < 5; i++){
