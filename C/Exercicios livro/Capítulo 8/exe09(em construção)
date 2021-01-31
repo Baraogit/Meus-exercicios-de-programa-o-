@@ -8,14 +8,14 @@ velho.
 #include <string.h>
 
 struct atleta{
-    char nome[50], tipoDeEsporte;
+    char nome[50], tipoDeEsporte[50];
     int idade;
     float altura; 
 };
 
 int main(){
     struct atleta coletaDadosAtleta[5];
-    int i, maisVelho;
+    int i, maisVelho ;
     float maisAlto; 
     
     printf("Coleta dados do atleta:\n");
