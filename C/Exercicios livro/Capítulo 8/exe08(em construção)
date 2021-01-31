@@ -4,6 +4,7 @@ exiba os nomes da pessoa mais nova e da mais velha
 
 
 #include <stdio.h>
+#include <string.h>
 
 struct pessoa{
     int dia, mes, ano;
@@ -13,7 +14,7 @@ struct pessoa{
 int main(){
     
     struct pessoa coletaPessoa[4];
-    int i, indiceVelho, indiceNovo; 
+    int i, indiceVelho = 0, indiceNovo = 0; 
     float maisVelho, maisNovo, dataDecimal[4];
     
     for (i = 0; i < 4; i++){
@@ -27,7 +28,7 @@ int main(){
     // converte a data convencional em uma forma dataDecimal e armazena em um vetor;
     for (i = 0; i < 4; i++){
         dataDecimal[i] = coletaPessoa[i].ano + (coletaPessoa[i].mes / 12.0) + (coletaPessoa[i].dia / 365.0);
-        printf("dataDecimal = %f", dataDecimal[i]); 
+        
     }
     // compara e descobre a pessoa mais velha e mais nova
     maisVelho = maisNovo = dataDecimal[0];
@@ -41,6 +42,7 @@ int main(){
             indiceNovo = i;
         }
     }
+     
     printf("Pessoa mais velha: %s", coletaPessoa[indiceVelho].nome);
     printf("Pessoa mais nova: %s",  coletaPessoa[indiceNovo].nome);
     
