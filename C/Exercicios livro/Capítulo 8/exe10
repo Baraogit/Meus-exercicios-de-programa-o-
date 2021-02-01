@@ -13,7 +13,7 @@ struct atleta{
 
 int main(){
     struct atleta coletaDadosAtleta[5], auxiliaNaTroca;
-    int i, j,  maisVelho ;
+    int i, j;
    
     printf("Coleta dados do atleta:\n");
     for (i = 0; i < 5; i++){
