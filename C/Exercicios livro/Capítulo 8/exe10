@@ -26,6 +26,7 @@ int main(){
         printf("Idade e altura:\n");
         scanf("%d %f", &coletaDadosAtleta[i].idade, &coletaDadosAtleta[i].altura);
     }
+    //faz a ordenação 
     for (i = 0; i < 4; i++){
         for (j = i+1; j < 5; j++){
             if (coletaDadosAtleta[i].idade < coletaDadosAtleta[j].idade){
@@ -35,7 +36,6 @@ int main(){
             }
         }
     }
-    // descobre os mais velhos
     printf("Do atleta mais velho  para o mais novo:\n"); 
     for (i = 0; i < 5; i++){
         printf("%s\n",coletaDadosAtleta[i].nome);
