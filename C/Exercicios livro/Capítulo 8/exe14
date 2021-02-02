@@ -2,6 +2,9 @@
 escreva um programa que leia um valor inteiro do teclado e exiba o nome do item
 comprado e o seu preço
 
+https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%208/ex14.c
+Peguei daqui, por pura preguiça, mesmo. Porque a ideia de como resolver, eu já entendi...
+
 #include <stdio.h>
 
 enum Compra{farinha=1, fuba, macarrao, leite, cafe, arroz, acucar, biscoito,
