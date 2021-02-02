@@ -5,8 +5,6 @@
 enum diasDaSemana {domingo = 1, segunda, terca, quarta, quinta, sexta, sabado}; 
 
 int main(){
-    
-    enum diasDaSemana dia; 
     int numero; 
     
     printf("Digite um numero de 1 a 7: "); 
