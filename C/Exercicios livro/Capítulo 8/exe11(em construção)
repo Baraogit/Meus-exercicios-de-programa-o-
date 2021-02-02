@@ -1,0 +1,47 @@
+11) Escreva um programa que contenha uma estrutura representando uma data válida. Essa estrutura deve conter os campos dia, mês e ano. Em seguida, leia duas datas e armazene nessa estrutura. Calcule e exiba o número de dias que decorreram
+entre as duas datas.
+
+
+#include <stdio.h>
+
+struct datas{
+    int dia, mes, ano;
+};
+
+int main(){
+    struct datas data[2]; 
+    int i, auxiliarDeTroca , recebeSomaDosDias = 0; 
+    
+    printf("Digite duas datas:\n ");
+    for (i = 0; i < 2; i++){
+        printf("Digite a %dº data: ", i+1); 
+        scanf("%d%d%d", &data[i].dia, &data[i].mes, &data[i].ano); 
+    }
+    // se a primeiro ano, mes e dia, digitados,  forem mais recente(a maior), troca de lugar com a segunda data(a menor) 
+    if (data[0].ano > data[1].ano){
+        auxiliarDeTroca = data[0].ano;
+        data[0].ano = data[1].ano; 
+        data[1].ano = auxiliarDeTroca;
+    }
+    if (data[0].mes > data[1].mes){
+        auxiliarDeTroca = data[0].mes;
+        data[0].mes = data[1].mes; 
+        data[1].mes = auxiliarDeTroca;
+    }
+    if (data[0].dia > data[1].dia){
+        auxiliarDeTroca = data[0].dia;
+        data[0].dia = data[1].dia; 
+        data[1].dia = auxiliarDeTroca;
+    }
+    
+    
+    
+    for (i = 0; i < 2; i++){
+         data[i].dia + data[i].mes + data[i].ano); 
+    }
+    
+    
+    
+    
+    return 0;
+}
