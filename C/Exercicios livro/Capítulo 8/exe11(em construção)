@@ -33,17 +33,19 @@ int main(){
         data[0].dia = data[1].dia; 
         data[1].dia = auxiliarDeTroca;
     }
+    recebeSomaDosDias = ((data[1].ano - data[0].ano) * 365) + ((data[1].mes - data[0].mes)  * 30) + (data[1].dia - data[0].dia); 
   
     if (data[0].mes == 1 || data[0].mes == 3 || data[0].mes == 5 || data[0].mes == 7 || data[0].mes == 8 || data[0].mes == 10 || data[0].mes == 12)
        recebeSomaDosDias += 1;
     if (data[1].mes == 1 || data[1].mes == 3 || data[1].mes == 5 || data[1].mes == 7 || data[1].mes == 8 || data[1].mes == 10 || data[1].mes == 12)
        recebeSomaDosDias += 1;
     if (data[0].mes == 2)
+       recebeSomaDosDias -= 2;
+    if (data[1].mes == 2)
+       recebeSomaDosDias -= 2;
+        
        
-    for (i = 0; i < 2; i++){
-        
-        
-    }
+    printf("Dias = %d", recebeSomaDosDias); 
     
     
     return 0;
