@@ -34,6 +34,13 @@ int main(){
         data[1].dia = auxiliarDeTroca;
     }
     recebeSomaDosDias = ((data[1].ano - data[0].ano) * 365) + ((data[1].mes - data[0].mes)  * 30) + (data[1].dia - data[0].dia); 
+    
+    // se o ano for bissexto, entao tem 366 dias, logo recebe +1 dia
+    for (i = data[0].ano; i <= data[1].ano; i++){
+        if (i % 400 == 0 || i % 4 == 0 && !(i % 100 == 0))
+           recebeSomaDosDias += 1; 
+    }
+        
   
     if (data[0].mes == 1 || data[0].mes == 3 || data[0].mes == 5 || data[0].mes == 7 || data[0].mes == 8 || data[0].mes == 10 || data[0].mes == 12)
        recebeSomaDosDias += 1;
