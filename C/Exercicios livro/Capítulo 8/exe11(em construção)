@@ -10,7 +10,7 @@ struct datas{
 
 int main(){
     struct datas data[2]; 
-    int i, auxiliarDeTroca , recebeSomaDosDias = 0; 
+    long int i, auxiliarDeTroca , recebeSomaDosDias = 0; 
     
     printf("Digite duas datas:\n ");
     for (i = 0; i < 2; i++){
@@ -33,14 +33,17 @@ int main(){
         data[0].dia = data[1].dia; 
         data[1].dia = auxiliarDeTroca;
     }
-    
-    
-    
+  
+    if (data[0].mes == 1 || data[0].mes == 3 || data[0].mes == 5 || data[0].mes == 7 || data[0].mes == 8 || data[0].mes == 10 || data[0].mes == 12)
+       recebeSomaDosDias += 1;
+    if (data[1].mes == 1 || data[1].mes == 3 || data[1].mes == 5 || data[1].mes == 7 || data[1].mes == 8 || data[1].mes == 10 || data[1].mes == 12)
+       recebeSomaDosDias += 1;
+    if (data[0].mes == 2)
+       
     for (i = 0; i < 2; i++){
-         data[i].dia + data[i].mes + data[i].ano); 
+        
+        
     }
-    
-    
     
     
     return 0;
