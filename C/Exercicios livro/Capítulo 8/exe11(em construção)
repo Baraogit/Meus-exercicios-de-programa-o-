@@ -11,10 +11,11 @@ struct datas{
 int main(){
     struct datas data[2]; 
     long int i, auxiliarDeTroca , recebeSomaDosDias = 0; 
+    long int mesB, anoB, diaB; 
     
     printf("Digite duas datas:\n ");
     for (i = 0; i < 2; i++){
-        printf("Digite a %dº data: ", i+1); 
+        printf("Digite a %d º data: ", i+1); 
         scanf("%d%d%d", &data[i].dia, &data[i].mes, &data[i].ano); 
     }
     // se a primeiro ano, mes e dia, digitados,  forem mais recente(a maior), troca de lugar com a segunda data(a menor) 
@@ -34,26 +35,28 @@ int main(){
         data[1].dia = auxiliarDeTroca;
     }
     recebeSomaDosDias = ((data[1].ano - data[0].ano) * 365) + ((data[1].mes - data[0].mes)  * 30) + (data[1].dia - data[0].dia); 
-    
     // se o ano for bissexto, entao tem 366 dias, logo recebe +1 dia
     for (i = data[0].ano; i <= data[1].ano; i++){
         if (i % 400 == 0 || i % 4 == 0 && !(i % 100 == 0))
            recebeSomaDosDias += 1; 
     }
+    // se mes do ano inicial, for depois de de fevereiro, deixa de conta 1 dias mais do ano bissexto 
+    if (data[0].mes > 2)
+       recebeSomaDosDias -= 1;
+    if (data[1].mes == 2 && data[1].dia < 29)
+       recebeSomaDosDias -= 1;
         
-  
-    if (data[0].mes == 1 || data[0].mes == 3 || data[0].mes == 5 || data[0].mes == 7 || data[0].mes == 8 || data[0].mes == 10 || data[0].mes == 12)
-       recebeSomaDosDias += 1;
-    if (data[1].mes == 1 || data[1].mes == 3 || data[1].mes == 5 || data[1].mes == 7 || data[1].mes == 8 || data[1].mes == 10 || data[1].mes == 12)
-       recebeSomaDosDias += 1;
-    if (data[0].mes == 2)
-       recebeSomaDosDias -= 2;
-    if (data[1].mes == 2)
-       recebeSomaDosDias -= 2;
-        
-       
-    printf("Dias = %d", recebeSomaDosDias); 
+    printf("Dias somados = %d\n", recebeSomaDosDias); 
     
+    
+    ////////////////////////////////////////////////////
+    anoB = (data[1].ano - data[0].ano) ;
+    mesB = data[1].mes - data[0].mes;
+    diaB = data[1].dia - data[0].dia; 
+    
+    printf("Dias = %d\n", diaB);
+    printf("meses = %d\n", mesB);
+    printf("anos = %d\n", anoB);
     
     return 0;
 }
