@@ -60,3 +60,25 @@ int main(){
     
     return 0;
 }
+-----------
+conta os meses (ex.: do mes 05/2020 ate 08/2021)
+
+#include <stdio.h>
+
+int main(){
+    int i, j,  recebeMeses = 0; 
+    
+    for (i = 5; i <= 12; i++){
+        recebeMeses += 1;
+        if (i == 12){
+            for (j = 1; j <= 8; j++){
+                recebeMeses += 1;
+            }
+        }
+    }
+    printf("Meses = %d", recebeMeses);
+     
+
+    return 0;
+}
+
