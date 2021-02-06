@@ -4,11 +4,11 @@
 
 Exercícios que faltam fazer:
 
-cap 4 - exe15 (não fiz, por pura preguiça)
+cap 4 - exe15 (não fiz, por pura preguiça) (matemático)
 
 cap 6 - exe 12/13 (estudar) (vetor) (algoritmos difíceis) 
 
-cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)
+cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)  (matemático)
 
 cap 6 - exe 10 (entender o enunciado) (matriz)
 
