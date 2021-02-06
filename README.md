@@ -6,7 +6,7 @@ Exercícios que faltam fazer:
 
 cap 4 - exe15 (não fiz, por pura preguiça)
 
-cap 6 - exe 12/13 (estudar) (vetor) (algoritmos difícieis) 
+cap 6 - exe 12/13 (estudar) (vetor) (algoritmos difíceis) 
 
 cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)
 
@@ -16,7 +16,7 @@ cap 8 - exe 04 (não entendi o enuciado)
 
 cap 8 - exe 05 (falta fazer, parecido com o exe04)
 
-cap 8 - exe 11 (algoritmos difícieis)
+cap 8 - exe 11 (algoritmos difíceis)
 
 
 
