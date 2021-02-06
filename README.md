@@ -12,7 +12,7 @@ cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)  (matemático)
 
 cap 6 - exe 10 (entender o enunciado) (matriz)
 
-cap 8 - exe 04 (não entendi o enuciado)
+cap 8 - exe 04 (não entendi o enuciado) (algoritmos difíceis)
 
 cap 8 - exe 05 (falta fazer, parecido com o exe04)
 
