@@ -14,7 +14,7 @@ void converteEmCelsius (float funcTempFahrenheit){
 int main(){
     float tempFahrenheit; 
     printf("Digite a temperatura em fahrenheit: ");
-    scanf("%d", &tempFahrenheit);
+    scanf("%f", &tempFahrenheit);
     
     converteEmCelsius(tempFahrenheit);
 
