@@ -18,7 +18,7 @@ float recebeDescontoGold(float preco){
 }
 
 int main(){
-    float precoProduto, precoProdutoAposDesconto20, precoProdutoAposDescontoGold; 
+    float precoProduto; 
     char nomeProduto[50]; 
     char resposta; 
     
@@ -33,16 +33,16 @@ int main(){
     setbuf(stdin, NULL);
     scanf("%c", &resposta);
     if (resposta == 's'){
-       precoProdutoAposDesconto20 = recebeDesconto20(precoProduto);
-       printf("Valor atualizado apos  desconto de 20 = %.2f\n", precoProdutoAposDesconto20);
+       precoProduto = recebeDesconto20(precoProduto);
+       printf("Valor atualizado apos  desconto de 20 = %.2f\n", precoProduto);
     }
     setbuf(stdin, NULL);
     
     printf("O cliente é gold? (s/n) ");
     scanf("%c", &resposta);
     if (resposta == 's'){
-       precoProdutoAposDescontoGold = recebeDescontoGold(precoProdutoAposDesconto20);
-        printf("Valor atualizado apos  desconto gold de 5 = %.2f\n", precoProdutoAposDescontoGold);
+       precoProduto = recebeDescontoGold(precoProduto);
+        printf("Valor atualizado apos  desconto gold de 5 = %.2f\n", precoProduto);
     }
     
     
