@@ -20,7 +20,7 @@ float recebeDescontoGold(float preco){
 int main(){
     float precoProduto; 
     char nomeProduto[50]; 
-    char resposta; 
+    char resposta, resposta2; 
     
     printf("Digite o nome do produto: ");
     fgets(nomeProduto, 50, stdin);
@@ -29,21 +29,24 @@ int main(){
     scanf("%f", &precoProduto); 
     printf("\n");
     
-    printf("Foi pego mais de um? (s/n) ");
+    /*printf("Foi pego mais de um? (s/n) ");
     setbuf(stdin, NULL);
     scanf("%c", &resposta);
     if (resposta == 's'){
        precoProduto = recebeDesconto20(precoProduto);
-       printf("Valor atualizado apos  desconto de 20 = %.2f\n", precoProduto);
-    }
-    setbuf(stdin, NULL);
+       printf("Voce recebe 20 por cento por ter pego mais de um item.\n");
+    }*/
     
     printf("O cliente é gold? (s/n) ");
-    scanf("%c", &resposta);
-    if (resposta == 's'){
+    setbuf(stdin, NULL); 
+    scanf("%c", &resposta2);
+    
+    if (resposta2 == 's'){
        precoProduto = recebeDescontoGold(precoProduto);
-        printf("Valor atualizado apos  desconto gold de 5 = %.2f\n", precoProduto);
+       printf("Voce recebe 5 por cento por ser cliente gold.\n");
     }
+    
+    printf("Valor a ser pago= %.2f\n", precoProduto);
     
     
     return 0;
