@@ -3,4 +3,50 @@ Criar um programa onde leia o nome e valor de um produto. Esse produto se compra
 O usuário precisa dizer se é ou não cliente gold, caso seja, recebe mais 5% de desconto em cima do valor já descontado. 
 - Esse novo valor tem que voltar ao programa principal. 
 
+#include <stdio.h>
+
+float recebeDesconto20(float preco){
+    float novoPreco;
+    novoPreco =  preco - (preco * 20 / 100); 
+    return novoPreco; 
+}
+
+float recebeDescontoGold(float preco){
+    float novoPreco;
+    novoPreco =  preco - (preco * 5 / 100);
+    return novoPreco; 
+}
+
+int main(){
+    float precoProduto, precoProdutoAposDesconto20, precoProdutoAposDescontoGold; 
+    char nomeProduto[50]; 
+    char resposta; 
+    
+    printf("Digite o nome do produto: ");
+    fgets(nomeProduto, 50, stdin);
+    setbuf(stdin, NULL); 
+    printf("Digite o preco do produto: ");
+    scanf("%f", &precoProduto); 
+    printf("\n");
+    
+    printf("Foi pego mais de um? (s/n) ");
+    setbuf(stdin, NULL);
+    scanf("%c", &resposta);
+    if (resposta == 's'){
+       precoProdutoAposDesconto20 = recebeDesconto20(precoProduto);
+       printf("Valor atualizado apos  desconto de 20 = %.2f\n", precoProdutoAposDesconto20);
+    }
+    
+    printf("O cliente é gold? (s/n) ");
+    setbuf(stdin, NULL);
+    scanf("%c", &resposta);
+    if (resposta == 's'){
+       precoProdutoAposDescontoGold = recebeDescontoGold(precoProdutoAposDesconto20);
+        printf("Valor atualizado apos  desconto gold de 5 = %.2f\n", precoProdutoAposDescontoGold);
+    }
+    
+    
+    return 0;
+}
+
 
