@@ -36,9 +36,9 @@ int main(){
        precoProdutoAposDesconto20 = recebeDesconto20(precoProduto);
        printf("Valor atualizado apos  desconto de 20 = %.2f\n", precoProdutoAposDesconto20);
     }
+    setbuf(stdin, NULL);
     
     printf("O cliente é gold? (s/n) ");
-    setbuf(stdin, NULL);
     scanf("%c", &resposta);
     if (resposta == 's'){
        precoProdutoAposDescontoGold = recebeDescontoGold(precoProdutoAposDesconto20);
@@ -48,5 +48,4 @@ int main(){
     
     return 0;
 }
-
 
