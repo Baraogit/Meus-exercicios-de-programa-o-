@@ -1,0 +1,6 @@
+Criar um programa onde leia o nome e valor de um produto. Esse produto se comprado dois itens dele, recebe um desconto de 20% na compra. 
+- O valor descontado deve voltar para o programa principal. 
+O usuário precisa dizer se é ou não cliente gold, caso seja, recebe mais 5% de desconto em cima do valor já descontado. 
+- Esse novo valor tem que voltar ao programa principal. 
+
+
