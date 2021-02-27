@@ -16,39 +16,35 @@ float recebeDescontoGold(float preco){
     novoPreco =  preco - (preco * 5 / 100);
     return novoPreco; 
 }
-
+ 
 int main(){
     float precoProduto; 
     char nomeProduto[50]; 
-    char resposta, resposta2; 
+    char resposta; 
     
     printf("Digite o nome do produto: ");
     fgets(nomeProduto, 50, stdin);
-    setbuf(stdin, NULL); 
+    
     printf("Digite o preco do produto: ");
     scanf("%f", &precoProduto); 
     printf("\n");
-    
-    /*printf("Foi pego mais de um? (s/n) ");
-    setbuf(stdin, NULL);
-    scanf("%c", &resposta);
+    ////////////////////////////////////////////////////////////////////////////
+    printf("Foi pego mais de um? (s/n): ");
+    scanf(" %c", &resposta); // problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
     if (resposta == 's'){
        precoProduto = recebeDesconto20(precoProduto);
        printf("Voce recebe 20 por cento por ter pego mais de um item.\n");
-    }*/
-    
-    printf("O cliente é gold? (s/n) ");
-    setbuf(stdin, NULL); 
-    scanf("%c", &resposta2);
-    
-    if (resposta2 == 's'){
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    printf("O cliente é gold? (s/n): ");
+    scanf(" %c", &resposta);/ problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
+    if (resposta == 's'){
        precoProduto = recebeDescontoGold(precoProduto);
        printf("Voce recebe 5 por cento por ser cliente gold.\n");
     }
-    
+    //////////////////////////////////////////////////////////////////////////
     printf("Valor a ser pago= %.2f\n", precoProduto);
     
     
     return 0;
 }
-
