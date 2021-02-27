@@ -24,7 +24,6 @@ int main(){
     
     printf("Digite o nome do produto: ");
     fgets(nomeProduto, 50, stdin);
-    
     printf("Digite o preco do produto: ");
     scanf("%f", &precoProduto); 
     printf("\n");
@@ -37,18 +36,16 @@ int main(){
     }
     ///////////////////////////////////////////////////////////////////////////
     printf("O cliente é gold? (s/n): ");
-    scanf(" %c", &resposta);/ problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
+    scanf(" %c", &resposta);// problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
     if (resposta == 's'){
        precoProduto = recebeDescontoGold(precoProduto);
        printf("Voce recebe 5 por cento por ser cliente gold.\n");
     }
     //////////////////////////////////////////////////////////////////////////
-    printf("Valor a ser pago= %.2f\n", precoProduto);
-    
+    printf("Valor a ser pago pelo  %s = %.2f\n", nomeProduto, precoProduto);
     
     return 0;
 }
-
 
  // problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
   Este espaço obriga o scanf a ignorar todos os caracteres brancos (espaços, TAB, return)
