@@ -1,7 +1,6 @@
 Receber valor de um carro, e criar perguntas sobre o seu estado. Dependendo do estado, criar um meio em que ele vai desvalorizando conforme:
 quilometragem, se teve batida, se foi roubado, se está com problema e etc. 
 Criar uma estrutura com suas características: modelo,placa e ano. 
-
 #include <stdio.h>
 
 struct automovel{
@@ -9,10 +8,37 @@ struct automovel{
     int placa, ano; 
     float valor; 
 };
-
+/////////////////////////////////////////////////////////////////////////////////
+float houveBatida (float valorParaDepreciar){
+    return valorParaDepreciar * 12 / 100;
+}
+//////////////////////////////////////////////////////////////////////////////////
+float informaQuilometragem (float valorParaDepreciar){
+    float km, recebeDepreciacao; 
+    printf("Informe a quilometragem do veiculo: "); 
+    scanf("%f", &km);
+    if (km <= 10000)
+       recebeDepreciacao = valorParaDepreciar * 5 / 100; 
+    else
+        if (km > 10000 && km <= 30000)
+            recebeDepreciacao = valorParaDepreciar * 8 / 100; 
+        else
+            recebeDepreciacao = valorParaDepreciar * 12 / 100;
+    return recebeDepreciacao; 
+}
+//////////////////////////////////////////////////////////////////////////////////
+float informaDefeito(float valorParaDepreciar){
+    return valorParaDepreciar * 15 / 100; 
+}
+/////////////////////////////////////////////////////////////////////////////////////
+float informaRoubo(float valorParaDepreciar){
+    return valorParaDepreciar * 5 / 100; 
+}
+//////////////////////////////////////////////////////////////////////////////////
 int main(){
     struct automovel carro;
     int opcao; 
+    float recebeRetornoFuncao, totalDepreciacao; 
     
     
     printf("Digite o modelo do carro: ");
@@ -24,19 +50,32 @@ int main(){
     
     printf("Escolha o que voce deseja informar sobre seu carro:\n");
     do{
-        printf("1 - Houve batida.\n");
-        printf("2 - Quilometragem.\n");
-        printf("3 - Ha algum defeito.\n");
-        printf("4 - Ja foi roubado.\n");
+        printf("1 - Houve batida.\n"); // 12
+        printf("2 - Quilometragem.\n"); // 20
+        printf("3 - Ha algum defeito.\n");// 15
+        printf("4 - Ja foi roubado.\n"); // 5
         printf("5 - Sair\n");
         printf("\n");
         printf("Escolha sua opção: ");
         scanf("%d", &opcao);
         
         switch (opcao){
-            case 1: 
+            case 1: recebeRetornoFuncao = houveBatida(carro.valor);
+                    totalDepreciacao += recebeRetornoFuncao;   
+            break; 
+            case 2: recebeRetornoFuncao = informaQuilometragem(carro.valor); 
+                    totalDepreciacao += recebeRetornoFuncao; 
+            break; 
+            case 3: recebeRetornoFuncao = informaDefeito(carro.valor);
+                    totalDepreciacao += recebeRetornoFuncao; 
+            break;
+            case 4: recebeRetornoFuncao = informaRoubo(carro.valor);
+                    totalDepreciacao += recebeRetornoFuncao;
         }
     }while(opcao <= 4);
+    
+    printf("Modelo: %sPlaca: %d\nAno: %d\n", carro.modelo, carro.placa, carro.ano); 
+    printf("valor apos depreciacao = %.2f\n", carro.valor - totalDepreciacao); 
 
     return 0;
 }
