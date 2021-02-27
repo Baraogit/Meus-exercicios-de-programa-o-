@@ -39,8 +39,7 @@ float informaRoubo(float valorParaDepreciar){
 int main(){
     struct automovel carro;
     int opcao; 
-    float recebeRetornoFuncao, totalDepreciacao; 
-    
+    float recebeRetornoFuncao, totalDepreciacao = 0; 
     
     printf("Digite o modelo do carro: ");
     fgets(carro.modelo, 50, stdin);
@@ -63,15 +62,24 @@ int main(){
         switch (opcao){
             case 1: recebeRetornoFuncao = houveBatida(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao;   
+                    printf("Depreciaca - Batida = %.2f\n", recebeRetornoFuncao);
+                    printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
             break; 
             case 2: recebeRetornoFuncao = informaQuilometragem(carro.valor); 
                     totalDepreciacao += recebeRetornoFuncao; 
+                    printf("Depreciaca - KM = %.2f\n", recebeRetornoFuncao);
+                    printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
             break; 
             case 3: recebeRetornoFuncao = informaDefeito(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao; 
+                    printf("Depreciaca - Defeito = %.2f\n", recebeRetornoFuncao);
+                    printf("Sub total da depreciacao= %.2f\n", totalDepreciacao);
             break;
             case 4: recebeRetornoFuncao = informaRoubo(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao;
+                    printf("Depreciaca - Roubo = %.2f\n", recebeRetornoFuncao);
+                    printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
+            break; 
         }
     }while(opcao <= 4);
     
