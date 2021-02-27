@@ -9,11 +9,11 @@ struct automovel{
     int placa, ano; 
     float valor; 
 };
-/////////////////////////////////////////////////////////////////////////////////
+
 float houveBatida (float valorParaDepreciar){
     return (valorParaDepreciar * 12 / 100);
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 float informaQuilometragem (float valorParaDepreciar){
     float km, recebeDepreciacao; 
     printf("Informe a quilometragem do veiculo: "); 
@@ -27,15 +27,15 @@ float informaQuilometragem (float valorParaDepreciar){
             recebeDepreciacao = valorParaDepreciar * 12 / 100;
     return recebeDepreciacao; 
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 float informaDefeito(float valorParaDepreciar){
     return (valorParaDepreciar * 15 / 100); 
 }
-/////////////////////////////////////////////////////////////////////////////////////
+
 float informaRoubo(float valorParaDepreciar){
     return (valorParaDepreciar * 5 / 100); 
 }
-//////////////////////////////////////////////////////////////////////////////////
+
 int main(){
     struct automovel carro;
     int opcao; 
@@ -62,22 +62,22 @@ int main(){
         switch (opcao){
             case 1: recebeRetornoFuncao = houveBatida(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao;   
-                    printf("Depreciaca - Batida = %.2f\n", recebeRetornoFuncao);
+                    printf("Tipo de depreciacao: Batida = %.2f\n", recebeRetornoFuncao);
                     printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
             break; 
             case 2: recebeRetornoFuncao = informaQuilometragem(carro.valor); 
                     totalDepreciacao += recebeRetornoFuncao; 
-                    printf("Depreciaca - KM = %.2f\n", recebeRetornoFuncao);
+                    printf("Tipo de depreciacao:  KM = %.2f\n", recebeRetornoFuncao);
                     printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
             break; 
             case 3: recebeRetornoFuncao = informaDefeito(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao; 
-                    printf("Depreciaca - Defeito = %.2f\n", recebeRetornoFuncao);
+                    printf("Tipo de depreciacao:  Defeito = %.2f\n", recebeRetornoFuncao);
                     printf("Sub total da depreciacao= %.2f\n", totalDepreciacao);
             break;
             case 4: recebeRetornoFuncao = informaRoubo(carro.valor);
                     totalDepreciacao += recebeRetornoFuncao;
-                    printf("Depreciaca - Roubo = %.2f\n", recebeRetornoFuncao);
+                    printf("Tipo de depreciacao: - Roubo = %.2f\n", recebeRetornoFuncao);
                     printf("Sub total da depreciacao = %.2f\n", totalDepreciacao);
             break; 
         }
