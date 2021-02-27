@@ -11,7 +11,7 @@ struct automovel{
 };
 
 float houveBatida (float valorParaDepreciar){
-    return (valorParaDepreciar * 12 / 100);
+    return valorParaDepreciar * 12 / 100;
 }
 
 float informaQuilometragem (float valorParaDepreciar){
@@ -29,11 +29,11 @@ float informaQuilometragem (float valorParaDepreciar){
 }
 
 float informaDefeito(float valorParaDepreciar){
-    return (valorParaDepreciar * 15 / 100); 
+    return valorParaDepreciar * 15 / 100; 
 }
 
 float informaRoubo(float valorParaDepreciar){
-    return (valorParaDepreciar * 5 / 100); 
+    return valorParaDepreciar * 5 / 100; 
 }
 
 int main(){
