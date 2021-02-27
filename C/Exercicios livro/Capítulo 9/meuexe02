@@ -1,2 +1,3 @@
 Receber valor de um carro, e criar perguntas sobre o seu estado. Dependendo do estado, criar um meio em que ele vai desvalorizando conforme:
 quilometragem, se teve batida, se foi roubado, se está com problema e etc. 
+Criar uma estrutura com suas características: modelo,placa e ano. 
