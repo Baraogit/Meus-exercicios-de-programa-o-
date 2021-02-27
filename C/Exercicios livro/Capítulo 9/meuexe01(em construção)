@@ -48,3 +48,7 @@ int main(){
     
     return 0;
 }
+
+
+ // problema em ler um caractere do teclado. fflush(stdin)  e setbuf(stdin, NULL);, não resolviam. Solução: deixar um espaço antes %c.
+  Este espaço obriga o scanf a ignorar todos os caracteres brancos (espaços, TAB, return)
