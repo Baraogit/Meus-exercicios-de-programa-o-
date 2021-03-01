@@ -1,0 +1,53 @@
+ 9) Crie uma estrutura representando um aluno de uma disciplina. Essa estrutura
+deve conter o número de matrícula do aluno, seu nome e as notas de três provas.
+Agora, escreva uma função que receba um vetor de tamanho N dessa estrutura.
+Essa função deve retornar o índice do aluno que possui a maior média geral entre
+todos os alunos.
+ 
+#include <stdio.h>
+
+struct aluno{
+    char nome[50];
+    int matricula;
+    float notas[3];
+};
+
+void coletaDados(struct aluno *funcAlunos[]){
+    int i, j; 
+    for (i = 0; i < 3; i++){
+        printf("Nome do aluno %d: ", i+1);
+        setbuf(stdin,NULL);
+        fgets(*funcAlunos[i].nome, 50, stdin);
+        printf("Digite o numero da matricula do aluno %s: ", *funcAlunos[i].nome);
+        scanf("%d", &funcAlunos[i].matricula);
+        printf("Informe suas notas:\n"); 
+        for (j = 0; j < 3; j++){
+            scanf("%f", &funcAlunos[i].notas[j]);
+        }
+    }
+}
+
+void imprimeDados(struct aluno *funcAlunos[]){
+    int i, j;
+    for (i = 0; i < 3; i++){
+        printf("Nome do aluno %s: ",funcAlunos[i].nome);
+        printf("Matricula do aluno %d\n: ", funcAlunos[i].matricula);
+        printf("Notas:\n"); 
+        for (j = 0; j < 3; j++){
+            printf("%.2f\n", &funcAlunos[i].notas[j]);
+        }
+        printf("\n");
+    }
+}
+
+int main(){
+    struct aluno alunos[4];
+    
+    printf("Informe os dados dos alunos\n");
+    coletaDados(&alunos);
+    imprimeDados(&alunos);
+    
+    
+    
+    return 0;
+}
