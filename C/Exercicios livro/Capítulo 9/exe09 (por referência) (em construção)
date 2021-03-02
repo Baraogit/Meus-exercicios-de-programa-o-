@@ -12,13 +12,13 @@ struct aluno{
     float notas[3];
 };
 
-void coletaDados(struct aluno *funcAlunos[]){
+void coletaDados(struct aluno *funcAlunos){
     int i, j; 
     for (i = 0; i < 3; i++){
         printf("Nome do aluno %d: ", i+1);
         setbuf(stdin,NULL);
-        fgets(*funcAlunos[i].nome, 50, stdin);
-        printf("Digite o numero da matricula do aluno %s: ", *funcAlunos[i].nome);
+        fgets(funcAlunos[i].nome, 50, stdin);
+        printf("Digite o numero da matricula do aluno %s: ", funcAlunos[i].nome);
         scanf("%d", &funcAlunos[i].matricula);
         printf("Informe suas notas:\n"); 
         for (j = 0; j < 3; j++){
@@ -27,7 +27,7 @@ void coletaDados(struct aluno *funcAlunos[]){
     }
 }
 
-void imprimeDados(struct aluno *funcAlunos[]){
+void imprimeDados(struct aluno *funcAlunos){
     int i, j;
     for (i = 0; i < 3; i++){
         printf("Nome do aluno %s: ",funcAlunos[i].nome);
@@ -41,7 +41,7 @@ void imprimeDados(struct aluno *funcAlunos[]){
 }
 
 int main(){
-    struct aluno alunos[4];
+    struct aluno alunos[1];
     
     printf("Informe os dados dos alunos\n");
     coletaDados(&alunos);
