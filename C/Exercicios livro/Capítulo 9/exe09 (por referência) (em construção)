@@ -11,7 +11,7 @@ struct aluno{
     int matricula;
     float notas[3];
 };
-/////////////////////////////////////////////////////////////////////////////////////
+
 int descobrirMaiorMedia (float *medias){
     float maior;
     int i, indice; 
@@ -27,7 +27,7 @@ int descobrirMaiorMedia (float *medias){
     }
     return indice;
 }
-////////////////////////////////////////////////////////////////////////////////
+
 int calcularMedia (struct aluno *funcAlunos, int funcQtoAlunos){
     int i, j, indiceMaiorMedia;
     float media[3], soma = 0; 
@@ -42,9 +42,10 @@ int calcularMedia (struct aluno *funcAlunos, int funcQtoAlunos){
     indiceMaiorMedia = descobrirMaiorMedia(media);
     return indiceMaiorMedia; 
 }
-/////////////////////////////////////////////////////////////////////////////////
+
 void coletarDados(struct aluno *funcAlunos, int funcQtoAlunos){
     int i, j; 
+    
     for (i = 0; i < funcQtoAlunos; i++){
         printf("Nome do aluno %d: ", i+1);
         setbuf(stdin,NULL);
@@ -57,19 +58,17 @@ void coletarDados(struct aluno *funcAlunos, int funcQtoAlunos){
         }
     }
 }
-////////////////////////////////////////////////////////////////////////////////
+
 int main(){
-    int recebeIndiceMaiorMedia, qtoAlunos; 
-    
-    printf("Quantos alunos voce quer: ");
+    printf("Quantos alunos voce irá cadastrar: ");
     scanf("%d", &qtoAlunos);
-    
+    int recebeIndiceMaiorMedia, qtoAlunos; 
     struct aluno alunos[qtoAlunos];
     
     printf("Informe os dados dos alunos\n");
     coletarDados(alunos, qtoAlunos);
+    printf("Calcula media das notas e retorna que teve a maior média:\m"); 
     recebeIndiceMaiorMedia = calcularMedia(alunos, qtoAlunos);
-    
     printf("Aluno com maior media é o %s", alunos[recebeIndiceMaiorMedia].nome);
   
     
