@@ -12,12 +12,37 @@ struct aluno{
     float notas[3];
 };
 
-void coletaDados(struct aluno *funcAlunos){
+float descobrirMaiorMedia (float *medias){
+    float maior;
+    int i; 
+    maior = medias[0];
+    for (i = 0; i < 3; i++){
+        if (maior < medias[i])
+           maior = medias[i];
+    }
+    return maior;
+    
+}
+
+float calcularMedia (struct aluno *funcAlunos){
+    int i, j;
+    float media[3], soma = 0, maiorMedia; 
+    for (i = 0; i < 1; i++){
+        for (j = 0; j < 3; j++){
+            soma += funcAlunos[i].notas[j]; 
+        }
+        media[i] = soma / 3; 
+    }
+    maiorMedia = descobrirMaiorMedia(media);
+    return maiorMedia; 
+}
+
+void coletarDados(struct aluno *funcAlunos){
     int i, j; 
     for (i = 0; i < 1; i++){
         printf("Nome do aluno %d: ", i+1);
         setbuf(stdin,NULL);
-        fgets(funcAlunos[i].nome, 50, stdin);
+        scanf("%s", funcAlunos[i].nome);
         printf("Digite o numero da matricula do aluno %s: ", funcAlunos[i].nome);
         scanf("%d", &funcAlunos[i].matricula);
         printf("Informe suas notas:\n"); 
@@ -27,26 +52,13 @@ void coletaDados(struct aluno *funcAlunos){
     }
 }
 
-void imprimeDados(struct aluno *funcAlunos){
-    int i, j;
-    for (i = 0; i < 1; i++){
-        printf("Nome do aluno %s: ",funcAlunos[i].nome);
-        printf("Matricula do aluno %d\n: ", funcAlunos[i].matricula);
-        printf("Notas:\n"); 
-        for (j = 0; j < 3; j++){
-            printf("%.2f\n", funcAlunos[i].notas[j]);
-        }
-        printf("\n");
-    }
-}
-
 int main(){
     struct aluno alunos[1];
     
     printf("Informe os dados dos alunos\n");
-    coletaDados(alunos);
-    imprimeDados(alunos);
-    
+    coletarDados(alunos);
+    calcularMedia(alunos);
+  
     
     
     return 0;
