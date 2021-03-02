@@ -23,7 +23,6 @@ int descobrirMaiorMedia (float *medias){
             maior = medias[i];
             indice = i; 
         }
-           
     }
     return indice;
 }
@@ -60,18 +59,16 @@ void coletarDados(struct aluno *funcAlunos, int funcQtoAlunos){
 }
 
 int main(){
+    int recebeIndiceMaiorMedia, qtoAlunos;
     printf("Quantos alunos voce irá cadastrar: ");
     scanf("%d", &qtoAlunos);
-    int recebeIndiceMaiorMedia, qtoAlunos; 
     struct aluno alunos[qtoAlunos];
     
     printf("Informe os dados dos alunos\n");
     coletarDados(alunos, qtoAlunos);
-    printf("Calcula media das notas e retorna que teve a maior média:\m"); 
+    printf("Calcula media das notas e retorna que teve a maior média:\n"); 
     recebeIndiceMaiorMedia = calcularMedia(alunos, qtoAlunos);
     printf("Aluno com maior media é o %s", alunos[recebeIndiceMaiorMedia].nome);
   
-    
-    
     return 0;
 }
