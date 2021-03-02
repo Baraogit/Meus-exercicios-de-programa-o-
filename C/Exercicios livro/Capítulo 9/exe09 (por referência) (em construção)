@@ -44,8 +44,8 @@ int main(){
     struct aluno alunos[1];
     
     printf("Informe os dados dos alunos\n");
-    coletaDados(&alunos);
-    imprimeDados(&alunos);
+    coletaDados(alunos);
+    imprimeDados(alunos);
     
     
     
