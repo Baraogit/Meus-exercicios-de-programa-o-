@@ -31,7 +31,7 @@ void lerElementosVetor(int *vetor, int qto){
 
 int main(){
     int qto; 
-    printf("Informe quantos numeros tera o vetor: ");
+    printf("Informe quantos valores tera o vetor: ");
     scanf("%d", &qto);
     int vetor[qto];
     
