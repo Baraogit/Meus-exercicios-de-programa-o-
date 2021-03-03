@@ -1,0 +1,45 @@
+13) Crie uma função que receba um vetor de tamanho N e ordene os seus valores.
+
+#include <stdio.h>
+
+void imprimirElementosVetor(int *vetor, int qto){
+    int i;
+    for(i = 0; i < qto; i++){
+        printf("%d ", vetor[i]);
+    }
+}
+
+void ordenarValoresVetor(int *vetor, int qto){
+    int i, j, troca; 
+    for (i = 0; i < qto -1; i++){
+        for (j = i+1; j < qto; j++){
+            if (vetor[i] > vetor[j]){
+                troca = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = troca; 
+            }
+        }
+    }
+}
+
+void lerElementosVetor(int *vetor, int qto){
+    int i; 
+    for (i = 0; i < qto; i++){
+        scanf("%d", &vetor[i]); 
+    }
+}
+
+int main(){
+    int qto; 
+    printf("Informe quantos numeros tera o vetor: ");
+    scanf("%d", &qto);
+    int vetor[qto];
+    
+    printf("Informe os %d elementos do vetor:\n", qto);
+    lerElementosVetor(vetor, qto);
+    ordenarValoresVetor(vetor, qto);
+    printf("Elementos ordenados\n"); 
+    imprimirElementosVetor(vetor, qto); 
+    
+    return 0;
+}
