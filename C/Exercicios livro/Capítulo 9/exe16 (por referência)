@@ -1,0 +1,42 @@
+16) Elabore uma função que receba um vetor contendo N valores e retorne por referência o maior elemento do vetor e o número de vezes que esse elemento ocorreu
+no vetor.
+
+#include <stdio.h>
+
+void descobrirRepeticoesMaior(int *vetor, int qto, int *maior, int *qtoMaior){
+    int i;
+    for (i = 0; i < qto; i++){
+        if (*maior == vetor[i])
+           *qtoMaior++; 
+    }
+    
+}
+
+void descobrirMaiorValor (int *vetor, int qto,int *maior){
+    int i, retornaRepeticoesMaior; 
+    *maior = vetor[0];
+    for (i = 0; i < qto; i++){
+        if (*maior < vetor[i])
+           *maior = vetor[i]; 
+    }
+   
+}
+
+int main(){
+    int i, qto, maior = 0, qtoMaior = 0;
+    printf("Digite quantos elementos tera o vetor: ");
+    scanf("%d", &qto);
+    int vetor[qto]; 
+    
+    printf("Digite %d valores:\n", qto);
+    for(i = 0; i < qto; i++){
+        scanf("%d", &vetor[i]); 
+    }
+    descobrirMaiorValor(vetor, qto, &maior);
+    descobrirRepeticoesMaior(vetor, qto, &maior, &qtoMaior);
+
+    printf("Maior valor = %d\n", maior);
+    printf("Quantidade que ele repete no vetor = %d\n", qtoMaior);
+
+    return 0;
+}
