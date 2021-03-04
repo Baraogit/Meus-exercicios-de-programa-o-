@@ -8,7 +8,8 @@ void descobrirRepeticoesMaior(int *vetor, int qto, int *maior, int *qtoMaior){
     
     for (i = 0; i < qto; i++){
         if (*maior == vetor[i]){
-            *qtoMaior += 1; // fazer *qtoMaior++;  não funcionou, não sei porque. 
+            *qtoMaior += 1;
+            printf("qtoMaior = %d\n", *qtoMaior);
         }
     }
 }
@@ -23,7 +24,7 @@ void descobrirMaiorValor (int *vetor, int qto,int *maior){
 }
 
 int main(){
-    int i, qto, maior = 0, qtoMaior1 = 0;
+    int i, qto, maior = 0, qtoMaior = 0;
     printf("Digite quantos elementos tera o vetor: ");
     scanf("%d", &qto);
     int vetor[qto]; 
@@ -33,10 +34,10 @@ int main(){
         scanf("%d", &vetor[i]); 
     }
     descobrirMaiorValor(vetor, qto, &maior);
-    descobrirRepeticoesMaior(vetor, qto, &maior, &qtoMaior1);
+    descobrirRepeticoesMaior(vetor, qto, &maior, &qtoMaior);
 
     printf("Maior valor = %d\n", maior);
-    printf("Quantidade que ele repete no vetor = %d\n", qtoMaior1);
+    printf("Quantidade que ele repete no vetor = %d\n", qtoMaior);
 
     return 0;
 }
