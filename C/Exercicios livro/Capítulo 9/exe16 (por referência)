@@ -7,10 +7,8 @@ void descobrirRepeticoesMaior(int *vetor, int qto, int *maior, int *qtoMaior){
     int i;
     
     for (i = 0; i < qto; i++){
-        if (*maior == vetor[i]){
+        if (*maior == vetor[i])
             *qtoMaior += 1;
-            printf("qtoMaior = %d\n", *qtoMaior);
-        }
     }
 }
 
