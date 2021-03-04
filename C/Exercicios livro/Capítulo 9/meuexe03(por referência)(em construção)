@@ -1,0 +1,18 @@
+Criar o jogo da forca
+
+#include <stdio.h>
+
+int main(){
+    char palavraSecreta[50], letra; 
+    printf("Digite a palavra secreta: ");
+    scanf("%s", palavraSecreta); 
+    
+    printf("Digite uma letra: "); 
+    scanf("%c", &letra); 
+    
+    
+    
+    
+
+    return 0;
+}
