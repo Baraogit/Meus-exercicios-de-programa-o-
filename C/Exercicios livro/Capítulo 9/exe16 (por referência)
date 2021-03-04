@@ -8,7 +8,7 @@ void descobrirRepeticoesMaior(int *vetor, int qto, int *maior, int *qtoMaior){
     
     for (i = 0; i < qto; i++){
         if (*maior == vetor[i])
-            *qtoMaior += 1;
+            *qtoMaior += 1;// *qtoMaior++; não funcionou, não contava corretamente. Não sei o motivo. 
     }
 }
 
