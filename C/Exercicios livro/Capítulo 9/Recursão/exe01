@@ -4,24 +4,24 @@ S = 13 + 23 + ... + n3
 #include <stdio.h>
 
 int calcularNcubos(int n){
-    int paraDevolver;
+    int devolveResultado;
     
     if (n == 1)
        return 0; 
     else
-       paraDevolver =  n * n * n  + calcularNcubos(n - 1);
-       return paraDevolver;
+       devolveResultado =  n * n * n  + calcularNcubos(n - 1);
+       return devolveResultado;
 }
 
 
 int main(){
-    int limite, resultado ; 
-    printf("Digite o limite do calculo : ");
-    scanf("%d", &limite);
+    int limiteNcubos, resultadoDaRecursao ; 
+    printf("Digite o limite do calculo de n cubos: ");
+    scanf("%d", &limiteNcubos);
     
-    resultado = calcularNcubos(limite);
+    resultadoDaRecursao = calcularNcubos(limiteNcubos);
     
-    printf("%d", resultado); 
+    printf("%d", resultadoDaRecursao); 
 
     return 0;
 }
