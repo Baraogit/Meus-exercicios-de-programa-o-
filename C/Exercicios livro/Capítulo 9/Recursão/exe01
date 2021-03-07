@@ -1,5 +1,5 @@
 1) Escreva uma função recursiva que calcule a soma dos primeiros n cubos:
-S = 13 + 23 + ... + n3
+S = 1(3) + 2(3) + ... + n3
 
 #include <stdio.h>
 
@@ -25,3 +25,32 @@ int main(){
 
     return 0;
 }
+--------------------------------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+float somarNcubos(int n){
+    float devolveResultado, cubosN;
+    
+    if (n == 1)
+       return pow(n, 3); 
+    else
+       cubosN = pow(n, 3);
+       devolveResultado =  cubosN  + somarNcubos(n - 1);
+       return devolveResultado;
+}
+
+
+int main(){
+    int limiteNcubos;  
+    float resultadoDaRecursao ; 
+    printf("Digite o limite do calculo de n cubos: ");
+    scanf("%d", &limiteNcubos);
+    
+    resultadoDaRecursao = somarNcubos(limiteNcubos);
+    
+    printf("%f", resultadoDaRecursao); 
+
+    return 0;
+}
+
