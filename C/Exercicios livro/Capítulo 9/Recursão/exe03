@@ -1,0 +1,28 @@
+3) Crie uma função recursiva que receba um número inteiro N e imprima todos os
+números naturais de 0 até N em ordem crescente.
+
+#include <stdio.h>
+
+int imprimirNumerosNaturais (int *vetor, int n){
+    int i;
+    if (n == 0)
+       return 0;
+    else{
+        for (i = 0; i < n; i++){
+            vetor[i] = imprimirNumerosNaturais(n - 1);
+        }
+    }
+}
+
+int main(){
+    int n, i;
+    printf("Digite o valor de N: "); 
+    scanf("%d", &n);
+    int vetor[n];
+    imprimirNumerosNaturais(vetor, n);
+    
+    
+    
+
+    return 0;
+}
