@@ -8,8 +8,10 @@ int somarNcubos(int n){
     
     if (n == 1)
        return 1; 
-    else
-       return n * n * n  + somarNcubos(n - 1);
+    else{
+      devolveResultado = n * n * n  + somarNcubos(n - 1);
+      return devolveResultado; 
+    }  
 }
 
 
