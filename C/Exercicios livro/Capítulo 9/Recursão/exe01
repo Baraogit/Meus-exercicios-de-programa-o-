@@ -7,7 +7,7 @@ int calcularNcubos(int n){
     int devolveResultado;
     
     if (n == 1)
-       return 0; 
+       return 1; 
     else
        devolveResultado =  n * n * n  + calcularNcubos(n - 1);
        return devolveResultado;
