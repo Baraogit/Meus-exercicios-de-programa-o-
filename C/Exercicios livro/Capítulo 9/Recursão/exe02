@@ -1,3 +1,24 @@
 2) Crie uma função recursiva que receba um número inteiro N e retorne o somatório
 dos números de 1 a N.
 
+#include <stdio.h>
+
+int  somar(int n){
+    int recebe = 0;
+    if (n == 0)
+       return 1; 
+    else
+       recebe = n + somar(n - 1);
+    printf("Recebe = %d\n", recebe);
+}
+
+int main(){
+    int n; 
+    printf("Digite n");
+    scanf("%d", &n);
+    
+    somar(n); 
+
+    return 0;
+}
+
