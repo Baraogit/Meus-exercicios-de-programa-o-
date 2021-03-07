@@ -15,12 +15,34 @@ int somarNcubos(int n){
 
 int main(){
     int limiteNcubos, resultadoDaRecursao ; 
-    printf("Digite o limite do calculo de n cubos: ");
+    printf("Digite o limite do calculo da soma de n cubos: ");
     scanf("%d", &limiteNcubos);
     
     resultadoDaRecursao = somarNcubos(limiteNcubos);
     
-    printf("%d", resultadoDaRecursao); // ou printf("%d", somarNcubos(limiteNcubos)); 
+    printf("%d", resultadoDaRecursao); 
+    
+    return 0;
+}
+---------------------------------------------------------------------------
+Algoritimo mais enxuto.
+#include <stdio.h>
+
+int somarNcubos(int n){
+    int devolveResultado;
+    
+    if (n == 1)
+       return 1; 
+    else
+       return n * n * n  + somarNcubos(n - 1);
+}
+
+int main(){
+    int limiteNcubos; 
+    printf("Digite o limite do calculo da soma de n cubos: ");
+    scanf("%d", &limiteNcubos);
+    
+    printf("%d", somarNcubos(limiteNcubos)); 
     
     return 0;
 }
@@ -43,7 +65,7 @@ float somarNcubos(int n){
 int main(){
     int limiteNcubos;  
     float resultadoDaRecursao ; 
-    printf("Digite o limite do calculo de n cubos: ");
+    printf("Digite o limite do calculo da soma de n cubos: ");
     scanf("%d", &limiteNcubos);
     
     resultadoDaRecursao = somarNcubos(limiteNcubos);
