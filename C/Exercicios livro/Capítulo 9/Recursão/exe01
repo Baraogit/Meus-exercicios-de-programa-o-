@@ -29,8 +29,6 @@ Algoritimo mais enxuto.
 #include <stdio.h>
 
 int somarNcubos(int n){
-    int devolveResultado;
-    
     if (n == 1)
        return 1; 
     else
@@ -39,7 +37,7 @@ int somarNcubos(int n){
 
 int main(){
     int limiteNcubos; 
-    printf("Digite o limite do calculo da soma de n cubos: ");
+    printf("Digite o limite do calculo de n cubos: ");
     scanf("%d", &limiteNcubos);
     
     printf("%d", somarNcubos(limiteNcubos)); 
