@@ -26,6 +26,7 @@ int main(){
     return 0;
 }
 --------------------------------------------------------------------------
+Outro jeito de resolver, copiado de https://github.com/misaelrezende/Exercicios-do-Livro-Linguagem-C-Completa-e-Descomplicada/blob/master/Capitulo%209/9.4.3/ex01.c
 #include <stdio.h>
 #include <math.h>
 
