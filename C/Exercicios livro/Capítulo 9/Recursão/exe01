@@ -20,7 +20,7 @@ int main(){
     
     resultadoDaRecursao = somarNcubos(limiteNcubos);
     
-    printf("%d", resultadoDaRecursao); // printf("%d", somarNcubos(limiteNcubos)); 
+    printf("%d", resultadoDaRecursao); // ou printf("%d", somarNcubos(limiteNcubos)); 
     
     return 0;
 }
