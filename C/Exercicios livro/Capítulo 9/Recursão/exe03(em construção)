@@ -10,8 +10,8 @@ void imprimirNumerosNaturais (int n){
     }
     else{
          imprimirNumerosNaturais(n - 1);
+         printf("%d ", n);
     }
-    printf("%d ", n);
 }
 
 int main(){
