@@ -12,7 +12,7 @@ int  somar(int n){
 
 int main(){
     int n; 
-    printf("Digite n");
+    printf("Digite n: ");
     scanf("%d", &n);
     
     printf(" %d\n", somar(n));
