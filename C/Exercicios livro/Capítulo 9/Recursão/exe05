@@ -1,31 +1,32 @@
  5) Crie uma função recursiva que retorne a soma dos elementos de um vetor de inteiros.
  https://www.youtube.com/watch?v=XSqzJ7iEXbE
- #include <stdio.h>
+ 
+#include <stdio.h>
 
-int somarElementosVetor(int *vetor, int n){
-    
-    if (n == 0)
-       return 0;
-    else{
-         return vetor[n - 1] + somarElementosVetor(vetor, n - 1);
-    }
-}
-
-int main(){
-    int n, i, resultado; 
-    printf("Informe quantos elementos terao o vetor: ");
-    scanf("%d", &n); 
-    int vetor[n];
-    
-    printf("Informe os valores do vetor:\n");
+void lerVetor (int *vetor, int n){
+    int i;
+    printf("Digite os valores:\n");
     for (i = 0; i < n; i++){
         scanf("%d", &vetor[i]);
     }
+}
+
+int somarElementosVetor (int *vetor, int n){
+    if (n == 0)
+       return 0;
+    else
+      return vetor[n - 1] + somarElementosVetor(vetor, n - 1); 
+}
+
+int main(){
+    int n; 
+    printf("Digite a quantidade de elementos do vetor: ");
+    scanf("%d", &n);
+    int vetor[n]; 
     
-   resultado = somarElementosVetor(vetor, n);
+    lerVetor(vetor, n);
     
-    printf("Resultado = %d", resultado);
-    
+    printf("Resultado = %d", somarElementosVetor(vetor, n));
 
     return 0;
 }
