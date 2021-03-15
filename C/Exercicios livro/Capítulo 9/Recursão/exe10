@@ -13,7 +13,7 @@ int calcularFibonacci(int numero){
 int main(){
    int numero; 
    printf("Digite um valor: ");
-   scanf("%d", numero);
+   scanf("%d", &numero);
    
    printf("Resutado = %d", calcularFibonacci(numero)); 
    
