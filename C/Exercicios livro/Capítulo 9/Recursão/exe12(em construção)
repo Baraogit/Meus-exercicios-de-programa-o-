@@ -18,14 +18,13 @@ Em construção - forma iterativa
 #include <stdio.h>
 
 int main(){
-  int numero, i, resto, cont = 0, aux;
+  int numero, i, resto, cont = 0, cloneValorNumero;
 
   printf("Digite um valor numero para conversao em binario: ");
   scanf("%d", &numero);
-  aux = numero;
+  cloneValorNumero = numero;
 
-  for(aux; aux > 0; aux /= 2){
-    resto = aux % 2;
+  for(cloneValorNumero; cloneValorNumero > 0; cloneValorNumero /= 2){
     cont++; // conta quantos loops houveram, a quantidade será a qto do array
   }
 
