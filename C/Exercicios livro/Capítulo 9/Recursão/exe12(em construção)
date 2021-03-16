@@ -27,9 +27,10 @@ int main(){
   for(cloneValorNumero; cloneValorNumero > 0; cloneValorNumero /= 2){
     cont++; // conta quantos loops houveram, a quantidade será a qto do array
   }
-
+ /* i tem o papel de começar o array de tras para frente, para quando for impresso
+ imprimir a sequência correta do número binário*/
   int binario[cont];
-  for(i = cont - 1, numero; numero > 0; numero /= 2, i--){
+  for(i = cont - 1, numero; numero > 0; numero /= 2, i--){ 
     resto = numero % 2;
     if (resto == 0)
        binario[i] = 0;
