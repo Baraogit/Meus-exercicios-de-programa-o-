@@ -23,21 +23,21 @@ int main(){
   printf("Digite um valor numero para conversao em binario: ");
   scanf("%d", &numero);
   aux = numero;
-  
+
   for(aux; aux > 0; aux /= 2){
     resto = aux % 2;
     cont++; // conta quantos loops houveram, a quantidade será a qto do array
   }
 
   int binario[cont];
-  for(i = 0, numero; numero > 0; numero /= 2, i++){
+  for(i = cont - 1, numero; numero > 0; numero /= 2, i--){
     resto = numero % 2;
     if (resto == 0)
        binario[i] = 0;
     else
        binario[i] = 1;
   }
-  for (i = cont - 1 ; i >= 0; i--){
+  for (i = 0 ; i < cont; i++){
     printf("%d", binario[i]);
   }
    return 0;
