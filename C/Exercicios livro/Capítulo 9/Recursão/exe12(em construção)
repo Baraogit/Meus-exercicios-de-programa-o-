@@ -28,7 +28,6 @@ int main(){
     resto = aux % 2;
     cont++; // conta quantos loops houveram, a quantidade será a qto do array
   }
-  printf("\n");
 
   int binario[cont];
   for(i = 0, numero; numero > 0; numero /= 2, i++){
