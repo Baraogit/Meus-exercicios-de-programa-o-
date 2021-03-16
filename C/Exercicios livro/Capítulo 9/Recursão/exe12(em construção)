@@ -18,18 +18,19 @@ Em construção - forma iterativa
 #include <stdio.h>
 
 int main(){
-  int numero, i, resto, cont = 0, cloneValorNumero;
+  int numero, i, resto, quantidadeIndice = 0, cloneValorNumero;
 
   printf("Digite um valor numero para conversao em binario: ");
   scanf("%d", &numero);
   cloneValorNumero = numero;
 
+// somente para saber quantos laços terá, a quantidade será o numero de elementos do array binario[]
   for(cloneValorNumero; cloneValorNumero > 0; cloneValorNumero /= 2){
-    cont++; // conta quantos loops houveram, a quantidade será a qto do array
+    quantidadeIndice++; // conta quantos loops houveram, a quantidade será a qto do array
   }
  /* i tem o papel de começar o array de tras para frente, para quando for impresso
  imprimir a sequência correta do número binário*/
-  int binario[cont];
+  int binario[quantidadeIndice];
   for(i = cont - 1, numero; numero > 0; numero /= 2, i--){ 
     resto = numero % 2;
     if (resto == 0)
@@ -42,3 +43,4 @@ int main(){
   }
    return 0;
 }
+
