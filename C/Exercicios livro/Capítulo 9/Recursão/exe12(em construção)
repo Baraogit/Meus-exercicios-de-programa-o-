@@ -26,17 +26,6 @@ int main(){
    return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------------------------
 Em construção - forma iterativa 
 #include <stdio.h>
