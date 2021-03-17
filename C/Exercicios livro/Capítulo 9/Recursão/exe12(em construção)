@@ -1,5 +1,30 @@
 12) Escreva uma função recursiva que receba um valor inteiro em base decimal e o imprima em base binária.
 
+#include <stdio.h>
+
+void converterBinario(int decimal){
+  int resto;
+  if (decimal <= 0)
+    return;
+  else{
+    resto = decimal % 2;
+    if (resto == 0)
+      printf("0");
+    else
+       printf("1");
+    converterBinario(decimal /= 2);
+  }
+}
+
+int main(){
+  int decimal;
+  printf("Digite um valor em decimal: ");
+  scanf("%d", &decimal);
+
+  converterBinario(decimal);
+   return 0;
+}
+
 
 
 
