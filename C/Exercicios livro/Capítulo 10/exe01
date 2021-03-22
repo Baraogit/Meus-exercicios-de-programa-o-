@@ -1,0 +1,17 @@
+1) Escreva um programa que contenha duas variáveis inteiras. Compare seus endereços e exiba o maior endereço.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int variavel1, variavel2;
+
+  if (&variavel1 > &variavel2)
+     printf("Variavel1 tem o endereco maior\n\n");
+  else
+     printf("Variavel2 tem o endereco maior\n\n");
+
+  printf("Endereco da variavel 1 = %p - %x - %d\n", &variavel1, &variavel1, &variavel1);
+  printf("Endereco da variavel 2 = %p - %x - %d\n", &variavel2, &variavel2, &variavel2);
+
+ return 0;
+}
