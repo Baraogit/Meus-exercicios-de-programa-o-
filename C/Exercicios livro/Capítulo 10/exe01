@@ -4,6 +4,27 @@
 #include <stdlib.h>
 int main(){
   int variavel1, variavel2;
+  int ponteiro1, ponteiro2;
+
+  ponteiro1 = &variavel1;
+  ponteiro2 = &variavel2;
+
+  if (ponteiro1 > ponteiro2)
+     printf("Variavel1 tem o endereco maior\n");
+  else
+     printf("Variavel2 tem o endereco maior\n\n");
+
+ return 0;
+}
+
+
+------------------------------------------
+Sem usar ponteiros
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  int variavel1, variavel2;
 
   if (&variavel1 > &variavel2)
      printf("Variavel1 tem o endereco maior\n\n");
