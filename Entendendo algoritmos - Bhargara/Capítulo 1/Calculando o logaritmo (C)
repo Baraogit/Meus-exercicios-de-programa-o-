@@ -23,5 +23,5 @@ int main(){
 Em que a base do log para cálculo, é sempre 2. 
 Motivo? A ideia é saber em quantas tentativas, usando pesquisa binária, serão necessários para descobrir n. 
 
-Em uma pesquisa de n números, a pesquisa binária precisa de no máximo log2n = x para retornar o número máximo de tentativas até acertar o número.
+Em uma pesquisa de n números, a pesquisa binária precisa de no máximo (log(2) n = x) para retornar o número máximo de tentativas até acertar o número.
 Em que x é o número de tentativas. 
