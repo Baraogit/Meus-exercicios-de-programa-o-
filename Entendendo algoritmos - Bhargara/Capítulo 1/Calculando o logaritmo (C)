@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int fatorarLogaritmando(int logaritmando){
-  int cont = 1;
+float fatorarLogaritmando(int logaritmando){
+  float cont = 1.0;
   if (logaritmando == 1)
      return 0;
   else{
-    return cont + fatorarLogaritmando(logaritmando / 2);
-    }
+    return cont + fatorarLogaritmando(logaritmando / 2.0);
+  }
 }
 
 int main(){
@@ -16,7 +16,10 @@ int main(){
     printf("Digite o valor do logaritimando: ");
     scanf("%d", &logaritmando);
 
-    printf("Valor do logaritmo = %d", fatorarLogaritmando(logaritmando));
+    printf("Valor do logaritmo = %f", fatorarLogaritmando(logaritmando));
+
+  return 0;
+}
     
     
 ----------------------------------------------------------------------------------------------------------
