@@ -5,6 +5,28 @@ colunas. Imprima o endereço de cada posição dessa matriz.
 #include <stdlib.h>
 int main(){
   float matriz[3][3], *ponteiro;
+  int i;
+  ponteiro = matriz;
+
+  printf("(ponteiro + i) = ");
+  for (i = 0; i < 9; i++){
+    printf("%x ", (ponteiro + i));
+  }
+  printf("\n\n");
+  printf("(*matriz + i) = ");
+  for (i = 0; i < 9; i++){
+    printf("%p ", (*matriz + i));
+  }
+
+
+ return 0;
+}
+-----------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  float matriz[3][3], *ponteiro;
   int i, j;
   ponteiro = matriz;
 
