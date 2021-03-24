@@ -6,7 +6,7 @@ void pesquisa_binaria(int *array, int indice, int numero){
 
   while (comeco <= final && flag == 0){
     meio = (comeco + final) / 2;
-    se (numero == array[meio])
+    if (numero == array[meio])
        flag = 1;
     else
        if (numero < array[meio])
