@@ -37,8 +37,8 @@ int main(){
  return 0;
 }
 ---------------------------------------------------
-Sem usar o array e sem usar array de ponteiro, somente pegando a primeira posição do array e imprimindo 
-as posição adjacentes na memória.
+Sem usar o array e sem usar array de ponteiro, somente pegando a primeira posição do array,
+passando para ponteiro e imprimindo as posições adjacentes na memória pelo ponteiro. 
 
 #include <stdio.h>
 #include <stdlib.h>
