@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int pesquisa_binaria (int *array, int indice, int numero){
+void pesquisa_binaria (int *array, int indice, int numero){
   int baixo = 0, alto = indice - 1, meio, chute, achei;
 
   while (baixo <= alto){
