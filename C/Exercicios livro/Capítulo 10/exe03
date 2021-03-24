@@ -1,0 +1,38 @@
+ 3) Crie um programa que contenha um array de float contendo 10 elementos. Imprima o endereço de cada posição desse array.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  float vetor[10];
+  float *ponteiro[10];
+  int i;
+
+
+ for (i = 0; i < 10; i++){
+   ponteiro[i] = &vetor[i];
+ }
+
+ printf("Ponteiro[i] = ");
+ for (i = 0; i < 10; i++){
+   printf("%p ", ponteiro[i]);
+ }
+
+ // sem ter precisado de um array de ponteiro, somente com o array
+ printf("\n\n");
+ printf("&vetor[i] = ");
+ for (i = 0; i < 10; i++){
+   printf("%p ", &vetor[i]);
+ }
+ printf("\n\n");
+ printf("(vetor + i) = ");
+ for (i = 0; i < 10; i++){
+   printf("%p ", (vetor + i));
+ }
+ printf("\n\n");
+ printf("&(*(vetor + i))) = ");
+ for (i = 0; i < 10; i++){
+   printf("%p ", &(*(vetor + i)));
+ }
+
+ return 0;
+}
