@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void pesquisa_binaria(int *array, int indice, int numero){
+  int comeco = 1, final = indice, meio, flag = 0;
+
+  while (comeco <= final && flag == 0){
+    meio = (comeco + final) / 2;
+    se (numero == array[meio])
+       flag = 1;
+    else
+       if (numero < array[meio])
+          final = meio - 1;
+       else
+          comeco = meio + 1;
+  }
+  if (flag == 1)
+     printf("%d foi encontrado na posicao %d", numero, meio);
+  else
+     printf("%d nao esta no array", numero);
+
+}
+
+int main(){
+  int array[10] = {1,2,3,4,5,6,7,8,9,10};
+  int numero;
+  printf("Digite um valor a ser pesquisado: ");
+  scanf("%d", &numero);
+
+  pesquisa_binaria(array, 10, numero);
+
+  return 0;
+}
