@@ -15,12 +15,12 @@ int main(){
   printf("\n\n");
   printf("(*matriz + i) = ");
   for (i = 0; i < 9; i++){
-    printf("%p ", (*matriz + i));
+    printf("%x ", (*matriz + i));
   }
-
 
  return 0;
 }
+
 -----------------------------------------
 
 #include <stdio.h>
