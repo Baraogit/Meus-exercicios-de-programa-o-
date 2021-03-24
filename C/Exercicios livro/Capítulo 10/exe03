@@ -36,3 +36,23 @@ int main(){
 
  return 0;
 }
+---------------------------------------------------
+Sem usar o array e sem usar array de ponteiro, somente pegando a primeira posição do array e imprimindo 
+as posição adjacentes na memória.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+  float vetor[10];
+  float *ponteiro;
+  int i;
+
+  ponteiro = vetor;
+
+  for (i = 0; i < 10; i++){
+    printf("%x ", (ponteiro + i));
+  }
+
+ return 0;
+}
+
