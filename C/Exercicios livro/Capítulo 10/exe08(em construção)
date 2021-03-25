@@ -1,0 +1,33 @@
+ 8) Crie uma função que receba dois parâmetros: um vetor e um valor do mesmo tipo
+do vetor. A função deverá preencher os elementos de vetor com esse valor. Não
+utilize índices para percorrer o vetor, apenas aritmética de ponteiros.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void alimentarVetor(int *ponteiro, int n){
+  *(ponteiro + 0) = n;
+  *(ponteiro + 1) = n;
+  *(ponteiro + 2) = n;
+  *(ponteiro + 3) = n;
+  *(ponteiro + 4) = n;
+
+  printf("%d", *(ponteiro + 0)); 
+}
+
+int main(){
+  int vetor[5], numero, *ponteiro;
+  ponteiro = vetor;
+
+  printf("Digite um valor para alimenter o vetor: ");
+  scanf("%d", &numero);
+
+
+  alimentarVetor(ponteiro, numero);
+
+
+
+
+ return 0;
+}
