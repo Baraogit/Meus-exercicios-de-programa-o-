@@ -6,28 +6,21 @@ utilize índices para percorrer o vetor, apenas aritmética de ponteiros.
 #include <stdio.h>
 #include <stdlib.h>
 
-void alimentarVetor(int *ponteiro, int n){
-  *(ponteiro + 0) = n;
-  *(ponteiro + 1) = n;
-  *(ponteiro + 2) = n;
-  *(ponteiro + 3) = n;
-  *(ponteiro + 4) = n;
-
-  printf("%d", *(ponteiro + 0)); 
+void alimentarVetor(int *vetor, int n, int elementoVetor){
+  int i;
+  for (i = 0; i < n; i++)
+      *(vetor + i) = elementoVetor;
+  for (i = 0; i < n; i++)
+      printf("%d ", *(vetor + i));
 }
 
 int main(){
-  int vetor[5], numero, *ponteiro;
-  ponteiro = vetor;
+  int vetor[5], elementoVetor;
 
   printf("Digite um valor para alimenter o vetor: ");
-  scanf("%d", &numero);
+  scanf("%d", &elementoVetor);
 
-
-  alimentarVetor(ponteiro, numero);
-
-
-
+  alimentarVetor(vetor, 5, elementoVetor);
 
  return 0;
 }
