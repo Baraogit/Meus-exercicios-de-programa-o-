@@ -2,15 +2,13 @@
 #include <stdlib.h>
 
 void pesquisa_binaria (int *array, int indice, int numero){
-  int baixo = 0, alto = indice - 1, meio, chute, achei;
+  int baixo = 0, alto = indice - 1, meio, chute;
 
   while (baixo <= alto){
     meio = (baixo + alto) / 2;
     chute = array[meio];
-    if (chute == numero){
-      achei = meio;
+    if (chute == numero)
       break;
-    }
     if (chute > numero)
         alto = meio - 1;
     else
