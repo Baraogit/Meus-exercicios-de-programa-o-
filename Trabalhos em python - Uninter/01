@@ -1,1 +1,25 @@
+while True:# condição é sempre verdadeira
+    nomeLutador = input('Digite o nome do lutador: ')  # fornece o nome do lutador
+    pesoLutador = float(input('Digite o seu peso: '))  # fornece o seu peso
 
+    if pesoLutador < 65: #caso peso fornecido seja  menor que 65
+        print('O lutador {} pesa {} kg e se enquadra na categoria Pena' .format(nomeLutador, pesoLutador)) # imprime as informações
+        break # sai do laço
+    elif (pesoLutador >= 65) and (pesoLutador < 72): #caso peso fornecido seja maior ou igual que 65 e menor que 72
+        print('O lutador {} pesa {} kg e se enquadra na categoria Leve' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
+    elif (pesoLutador >= 72) and (pesoLutador < 79): #caso peso fornecido seja maior ou igual que 72 e menor que 79
+        print('O lutador {} pesa {} kg e se enquadra na categoria Ligeiro' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
+    elif (pesoLutador >= 79) and (pesoLutador < 86): #caso peso fornecido seja maior ou igual que 79 e menor que 86
+        print('O lutador {} pesa {} kg e se enquadra na categoria Meio-Médio' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
+    elif (pesoLutador >= 86) and (pesoLutador < 93): #caso peso fornecido seja maior ou igual que 86 e menor que 93
+        print('O lutador {} pesa {} kg e se enquadra na categoria Médio' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
+    elif (pesoLutador >= 93) and (pesoLutador < 100): #caso peso fornecido seja maior ou igual que 93 e menor que 100
+        print('O lutador {} pesa {} kg e se enquadra na categoria Meio-pesado' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
+    else: #caso peso fornecido não seja nenhum dos casos acima, ele é maior que 100kg
+        print('O lutador {} pesa {} kg e se enquadra na categoria Pesado' .format(nomeLutador, pesoLutador))# imprime as informações
+        break # sai do laço
