@@ -1,15 +1,20 @@
-
-def entradaDados(string):
-    while (codigoProduto < 10000) or (codigoProduto > 3000):
+def validarEntradaDados(string):
+    while True:
         try:
             codigoProduto = int(input(string))
-            break
         except ValueError:
-            print("Numero invalido. Digite novamente!!"))
+            print('Valor inválido. Digite novamente!!')
+        else:
+            if (codigoProduto < 10000) or (codigoProduto > 30000):
+                print('Você digitou fora do intervalo. Digite novamente!!')
+                continue
+            else:
+                return codigoProduto
 
+#programa principal
+codigoProduto = validarEntradaDados('Digite o código do produto no intervalo de 10000 à 30000 : ')
 
-
-entradaDados('Digite o código do produto : ')
+print(codigoProduto)
 
 
 
