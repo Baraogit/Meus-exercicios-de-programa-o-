@@ -1,7 +1,8 @@
-def validarEntradaDados(string):
+
+def validarEntradaDados():
     while True:
         try:
-            codigoProduto = int(input(string))
+            codigoProduto = int(input('Digite o código do produto no intervalo de 10000 à 30000 : '))
         except ValueError:
             print('Valor inválido. Digite novamente!!')
         else:
@@ -11,10 +12,14 @@ def validarEntradaDados(string):
             else:
                 return codigoProduto
 
-#programa principal
-codigoProduto = validarEntradaDados('Digite o código do produto no intervalo de 10000 à 30000 : ')
 
-print(codigoProduto)
+def calcularDV(codigoProduto):
+
+
+
+#programa principal
+codigoProduto = validarEntradaDados()
+calcularDV(codigoProduto)
 
 
 
