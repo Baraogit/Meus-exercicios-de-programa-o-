@@ -1,0 +1,15 @@
+
+def entradaDados(string):
+    while (codigoProduto < 10000) or (codigoProduto > 3000):
+        try:
+            codigoProduto = int(input(string))
+            break
+        except ValueError:
+            print("Numero invalido. Digite novamente!!"))
+
+
+
+entradaDados('Digite o código do produto : ')
+
+
+
