@@ -14,12 +14,13 @@ def validarEntradaDados():
 
 
 def calcularDV(codigoProduto):
-
+    copiaCodigoProduto = codigoProduto
+for i in range(5):
+    digitosDeCodigoProduto %=10
 
 
 #programa principal
 codigoProduto = validarEntradaDados()
 calcularDV(codigoProduto)
-
 
 
