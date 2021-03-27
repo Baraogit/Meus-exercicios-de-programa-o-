@@ -1,4 +1,3 @@
-
 def validarEntradaDados():
     while True:
         try:
@@ -15,8 +14,11 @@ def validarEntradaDados():
 
 def calcularDV(codigoProduto):
     copiaCodigoProduto = codigoProduto
+    recebeUnidadeCodigoProduto = []
 for i in range(5):
-    digitosDeCodigoProduto %=10
+    copiaCodigoProduto %=10
+    recebeUnidadeCodigoProduto.append
+
 
 
 #programa principal
