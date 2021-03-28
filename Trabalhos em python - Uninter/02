@@ -1,7 +1,3 @@
-
-
-
-
 def validarEntradaDados(): #função para validar dado informado pelo usuário
     while True:
         try: # uma tentativa é feita: usuário informa o dado
@@ -15,7 +11,6 @@ def validarEntradaDados(): #função para validar dado informado pelo usuário
             else: # se não, a função retorna para o programa principal o dado digitado pelo o usuário
                 return codigoProduto
 
-
 def calcularDigitoVerificador(codigoProduto):
     armazenaDigitos = [] #lista para armazenar os digitos retirados a partir do valor de codigoProduto
     #esse laço tem como função armazenar os digitos(algarismos) de codigoProduto em uma lista
@@ -25,7 +20,6 @@ def calcularDigitoVerificador(codigoProduto):
         codigoProduto //= 10 #codigoProduto recebe um novo valor = codigoProduto menos o seu ultimo algarismo
 
     armazenaDigitos.reverse() #reverte a lista para ficar na ordem correta, mesma ordem de codigoProduto
-
 
     digitoVerificador = 0 #variavel onde será armazenada o valor do digito verificador, depois de passar por calculos
     peso = 2 #variavel auxiliar para calcular o valor parcial do DV
@@ -38,8 +32,6 @@ def calcularDigitoVerificador(codigoProduto):
 
     digitoVerificador = digitoVerificador % 7 #o valor parcial de digitoVerificador recebe o resto dele dividido por 7
     return digitoVerificador #o valor final de digitoVerificador retorna para o programa principal
-
-
 
 #programa principal
 
