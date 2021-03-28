@@ -1,14 +1,15 @@
 
 
+
 def validarEntradaDados(): #função para validar dado informado pelo usuário
     while True:
         try: # uma tentativa é feita: usuário informa o dado
-            codigoProduto = int(input('Digite o código do produto no intervalo de 10000 à 30000 : '))
+            codigoProduto = int(input('Digite o código do produto: '))
         except ValueError:# se o dado não for do tipo inteiro, lhe é informado o erro e lhe dá um nova tentativa
             print('Valor inválido. Tente novamente, digitando um valor sem letra ou numero com ponto')
         else: #digitando um numero do tipo inteiro, um novo teste será feito
             if (codigoProduto < 10000) or (codigoProduto > 30000):# se o valor digitado estiver fora do intervalo
-                print('Você digitou fora do intervalo. Digite novamente!!')#informa o erro
+                print('Você digitou fora do intervalo de 10000 à 30000. Digite novamente!!')#informa o erro
                 continue #e volta para o inicio do laço, para uma nova tentativa
             else: # se não, a função retorna para o programa principal o dado digitado pelo o usuário
                 return codigoProduto
@@ -16,13 +17,14 @@ def validarEntradaDados(): #função para validar dado informado pelo usuário
 
 def calcularDigitoVerificador(codigoProduto):
     armazenaDigitos = [] #lista para armazenar os digitos retirados a partir do valor de codigoProduto
-    #esse laço tem como função armazenar os digitos em uma lista
+    #esse laço tem como função armazenar os digitos(unidades) de codigoProduto em uma lista
     for i in range(5):
         digito = codigoProduto % 10 #reserva o resto da divisão a cada loop na variavel digito, a partir de codigoProduto
         armazenaDigitos.insert(i, digito)#esse digito é armazenado em uma lista, um a cada loop
         codigoProduto //= 10 #codigoProduto recebe um novo valor = codigoProduto menos o resto da divisão
 
     armazenaDigitos.reverse() #reverte a lista para ficar na ordem correta, mesma ordem de codigoProduto
+    
 
     digitoVerificador = 0 #variavel onde será armazenada o DV depois de passar por calculos
     peso = 2 #variavel auxiliar para calcular o valor parcial do DV
@@ -39,4 +41,5 @@ def calcularDigitoVerificador(codigoProduto):
 codigoProduto = validarEntradaDados() #dado verificado retorna e é armazenado na variavel codigoProduto
 #
 print('Codigo produto - dígito = {}-{}'.format(codigoProduto, calcularDigitoVerificador(codigoProduto)))
+
 
