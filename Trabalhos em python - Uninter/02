@@ -1,6 +1,7 @@
 
 
 
+
 def validarEntradaDados(): #função para validar dado informado pelo usuário
     while True:
         try: # uma tentativa é feita: usuário informa o dado
@@ -17,29 +18,34 @@ def validarEntradaDados(): #função para validar dado informado pelo usuário
 
 def calcularDigitoVerificador(codigoProduto):
     armazenaDigitos = [] #lista para armazenar os digitos retirados a partir do valor de codigoProduto
-    #esse laço tem como função armazenar os digitos(unidades) de codigoProduto em uma lista
+    #esse laço tem como função armazenar os digitos(algarismos) de codigoProduto em uma lista
     for i in range(5):
         digito = codigoProduto % 10 #reserva o resto da divisão a cada loop na variavel digito, a partir de codigoProduto
         armazenaDigitos.insert(i, digito)#esse digito é armazenado em uma lista, um a cada loop
-        codigoProduto //= 10 #codigoProduto recebe um novo valor = codigoProduto menos o resto da divisão
+        codigoProduto //= 10 #codigoProduto recebe um novo valor = codigoProduto menos o seu ultimo algarismo
 
     armazenaDigitos.reverse() #reverte a lista para ficar na ordem correta, mesma ordem de codigoProduto
-    
 
-    digitoVerificador = 0 #variavel onde será armazenada o DV depois de passar por calculos
+
+    digitoVerificador = 0 #variavel onde será armazenada o valor do digito verificador, depois de passar por calculos
     peso = 2 #variavel auxiliar para calcular o valor parcial do DV
+
     #esse laço tem como função calcular o valor parcial do digito verificador
     for i in range(5):
-        digitoVerificador += (armazenaDigitos[i] * peso) # cada valor(digito) da lista é multiplicado por pesp
-        peso += 1 #a cada loop, peso cresce
-    digitoVerificador = digitoVerificador % 7 #o valor parcial de digitoVerificador  é dividido
-    return digitoVerificador
+    # cada item(digito) da lista é multiplicado pela variavel peso, o resultado acumula-se na variavel digitoVerificador
+        digitoVerificador += (armazenaDigitos[i] * peso)
+        peso += 1 #a cada loop, peso cresce +1
+
+    digitoVerificador = digitoVerificador % 7 #o valor parcial de digitoVerificador recebe o resto dele dividido por 7
+    return digitoVerificador #o valor final de digitoVerificador retorna para o programa principal
 
 
 
 #programa principal
+
+#chamada da função para entrada e validação de dados
 codigoProduto = validarEntradaDados() #dado verificado retorna e é armazenado na variavel codigoProduto
-#
+
+#chamada da função para calcular o digitado verificador, com codigoProduto passado como argumento para parâmentro da função
 print('Codigo produto - dígito = {}-{}'.format(codigoProduto, calcularDigitoVerificador(codigoProduto)))
-
-
+#retorna o valor final de dígito verificador e imprime na tela junto com o codigo do produto
