@@ -1,37 +1,42 @@
 
-def validarEntradaDados():
+
+def validarEntradaDados(): #função para validar dado informado pelo usuário
     while True:
-        try:
+        try: # uma tentativa é feita: usuário informa o dado
             codigoProduto = int(input('Digite o código do produto no intervalo de 10000 à 30000 : '))
-        except ValueError:
-            print('Valor inválido. Digite novamente!!')
-        else:
-            if (codigoProduto < 10000) or (codigoProduto > 30000):
-                print('Você digitou fora do intervalo. Digite novamente!!')
-                continue
-            else:
+        except ValueError:# se o dado não for do tipo inteiro, lhe é informado o erro e lhe dá um nova tentativa
+            print('Valor inválido. Tente novamente, digitando um valor sem letra ou numero com ponto')
+        else: #digitando um numero do tipo inteiro, um novo teste será feito
+            if (codigoProduto < 10000) or (codigoProduto > 30000):# se o valor digitado estiver fora do intervalo
+                print('Você digitou fora do intervalo. Digite novamente!!')#informa o erro
+                continue #e volta para o inicio do laço, para uma nova tentativa
+            else: # se não, a função retorna para o programa principal o dado digitado pelo o usuário
                 return codigoProduto
 
 
 def calcularDigitoVerificador(codigoProduto):
-    armazenaDigitos = []
+    armazenaDigitos = [] #lista para armazenar os digitos retirados a partir do valor de codigoProduto
+    #esse laço tem como função armazenar os digitos em uma lista
     for i in range(5):
-        digito = codigoProduto % 10 #reserva um digito a cada loop na variavel
-        armazenaDigitos.insert(i, digito)#esse digito é armazenado na lista
-        codigoProduto //= 10 #
-    armazenaDigitos.reverse() #reverte a lista
+        digito = codigoProduto % 10 #reserva o resto da divisão a cada loop na variavel digito, a partir de codigoProduto
+        armazenaDigitos.insert(i, digito)#esse digito é armazenado em uma lista, um a cada loop
+        codigoProduto //= 10 #codigoProduto recebe um novo valor = codigoProduto menos o resto da divisão
 
-    digitoVerificador = 0
-    peso = 2
+    armazenaDigitos.reverse() #reverte a lista para ficar na ordem correta, mesma ordem de codigoProduto
+
+    digitoVerificador = 0 #variavel onde será armazenada o DV depois de passar por calculos
+    peso = 2 #variavel auxiliar para calcular o valor parcial do DV
+    #esse laço tem como função calcular o valor parcial do digito verificador
     for i in range(5):
-        digitoVerificador += (armazenaDigitos[i] * peso)
-        peso += 1
-    digitoVerificador //= 7
+        digitoVerificador += (armazenaDigitos[i] * peso) # cada valor(digito) da lista é multiplicado por pesp
+        peso += 1 #a cada loop, peso cresce
+    digitoVerificador = digitoVerificador % 7 #o valor parcial de digitoVerificador  é dividido
     return digitoVerificador
 
 
 
 #programa principal
-codigoProduto = validarEntradaDados()
+codigoProduto = validarEntradaDados() #dado verificado retorna e é armazenado na variavel codigoProduto
+#
 print('Codigo produto - dígito = {}-{}'.format(codigoProduto, calcularDigitoVerificador(codigoProduto)))
 
