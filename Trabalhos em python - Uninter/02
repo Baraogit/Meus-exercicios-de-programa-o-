@@ -1,4 +1,5 @@
 
+
 def validarEntradaDados():
     while True:
         try:
@@ -14,15 +15,23 @@ def validarEntradaDados():
 
 
 def calcularDV(codigoProduto):
-    copiaCodigoProduto = codigoProduto
-    recebeUnidadeCodigoProduto = []
+    armazenaDigitos = []
     for i in range(5):
-        unidade = copiaCodigoProduto % 10
-        recebeUnidadeCodigoProduto.insert(i, unidade)
-        copiaCodigoProduto //= 10
-    print(recebeUnidadeCodigoProduto)
+        digito = codigoProduto % 10 #reserva um digito a cada loop na variavel
+        armazenaDigitos.insert(i, digito)#esse digito é armazenado na lista
+        codigoProduto //= 10 #
+    armazenaDigitos.reverse() #reverte a lista
+
+    soma = 0
+    peso = 2
+    for i in range(5):
+        soma += (armazenaDigitos[i] * peso)
+        peso += 1
+    soma //= 7
+    return soma
+
 
 
 #programa principal
 codigoProduto = validarEntradaDados()
-calcularDV(codigoProduto)
+print('Codigo produto - dígito = {} - {}'.format(codigoProduto, calcularDV(codigoProduto)))
