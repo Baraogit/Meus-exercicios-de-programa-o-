@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int buscarMenorElemento(int *vetorDesordenado, int n){
+  int i,menorElemento = vetorDesordenado[0], menorIndice = 0;
+  for (i = 0; i < n; i++){
+    if (vetorDesordenado[i] < menorElemento && vetorDesordenado[i] != 0){
+      menorElemento = vetorDesordenado[i];
+      menorIndice = i;
+    }
+  }
+  return menorIndice;
+}
+
+void ordenacaoporSelecao(int *vetorDesordenado, int n, int *vetorOrdenado){
+  int i, menorIndice = 0;
+  for (i = 0; i < n; i++){
+    menorIndice = buscarMenorElemento(vetorDesordenado, 10);
+    vetorOrdenado[i] = vetorDesordenado[menorIndice];
+    vetorDesordenado[menorIndice] = 0;
+  }
+}
+
+int main(){
+  int vetorDesordenado[10] = {2, 4, 5, 6, 10, 1, 7, 8, 9, 3};
+  int vetorOrdenado[10];
+  int i;
+
+  ordenacaoporSelecao(vetorDesordenado, 10, vetorOrdenado);
+
+  printf("Vetor ordenado: ");
+  for (i = 0; i < 10; i++){
+    printf("%d ", vetorOrdenado[i]);
+  }
+
+   return 0;
+}
