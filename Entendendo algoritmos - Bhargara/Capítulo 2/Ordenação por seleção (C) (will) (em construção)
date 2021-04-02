@@ -1,3 +1,8 @@
+Tentativa de criar um algoritmo de ordenação por seleção, se baseando no algortimo em python do livro. 
+Não deu certo, pela dificuldade de eliminar um elemento no array.
+tentei colocar NUll e literal zero, não deu certo. 
+
+
 #include <stdio.h>
 
 int buscarMenorElemento(int *vetorDesordenado, int n){
