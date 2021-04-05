@@ -15,5 +15,25 @@ lista = sorted(agenda_com_contatos_lista, key=itemgetter('nome'))#ordena os dict
 
 print(lista)
 
+----------------------------------------------------------------------------------------------------------
+erro!!
+from operator import itemgetter
+
+
+agenda_com_contatos_lista = []
+while True:
+    nome_contato = input('Informe o nome do contato: ')
+    if nome_contato == '':
+        break
+    else:
+        contatos_dict = {nome_contato: []}
+        contatos_dict[nome_contato].append(int(input('Informe a idade: ')))
+        contatos_dict[nome_contato].append(int(input('Informe o telefone: ')))
+        agenda_com_contatos_lista.append(contatos_dict.copy())
+
+lista = sorted(agenda_com_contatos_lista, key=itemgetter(nome_contato))
+print(lista)
+
+
 
 
