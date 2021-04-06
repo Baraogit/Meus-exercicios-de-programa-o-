@@ -1,0 +1,38 @@
+7) Faça uma função que retorne o ponteiro para um vetor de N elementos inteiros
+alocados dinamicamente. O array deve ser preenchido com valores de 0 a N − 1.
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+int criarPonteiroParaVetor(int indice){
+  int i, *vetor;
+  vetor = malloc(indice * sizeof(int));
+  if (vetor == NULL){
+    printf("Nao ha espaco na memoria para fazer a alocacao");
+    exit(1);
+  }
+  for (i = 0; i < indice; i++){
+    *(vetor + i) = i;
+  }
+  return vetor;
+}
+
+int main(){
+  int i, indice_vetor_ponteiro, *vetor;
+
+  printf("Digite um valor para o indice do vetor: ");
+  scanf("%d", &indice_vetor_ponteiro);
+
+  vetor = criarPonteiroParaVetor(indice_vetor_ponteiro);
+
+  for (i = 0; i < indice_vetor_ponteiro; i++){
+    printf("%d", *(vetor + i));
+  }
+
+
+  free(vetor);
+  vetor = NULL;
+
+   return 0;
+}
