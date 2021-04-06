@@ -5,7 +5,7 @@ alocados dinamicamente. O array deve ser preenchido com valores de 0 a N − 1.
 #include <string.h>
 #include <stdio.h>
 
-int criarPonteiroParaVetor(int indice){
+int* criarPonteiroParaVetor(int indice){
   int i, *vetor;
   vetor = malloc(indice * sizeof(int));
   if (vetor == NULL){
