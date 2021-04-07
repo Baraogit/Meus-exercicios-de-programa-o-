@@ -1,0 +1,27 @@
+
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+char* inverterString(char *palavra){
+  int i, j;
+  char *palavra_invertida = malloc((strlen(palavra) + 1) * sizeof(char));
+  for (i = strlen(palavra) - 1, j = 0; i >= 0; i--, j++){
+    *(palavra_invertida + j) = *(palavra + i);
+  }
+  *(palavra + j) = '\0';
+  return palavra_invertida;
+}
+
+int main(){
+  char palavra[50] = "willkimen";
+  char *palavra_invertida = inverterString(palavra);
+
+  printf("Palavra invertida = %s", palavra_invertida);
+
+
+  free(palavra_invertida);
+
+  return 0;
+}
