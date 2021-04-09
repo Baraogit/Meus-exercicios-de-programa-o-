@@ -6,7 +6,7 @@ matriz A pelo vetor B.
 #include <string.h>
 #include <stdio.h>
 
-void alimentarArrays(int indice, int *matrizA[][indice], int *vetorB){
+void alimentarArrays(int indice, int matrizA[][indice], int *vetorB){
   int i, j;
   printf("Digite os valores do vetor.\n");
   for(i = 0; i < indice; i++)
@@ -17,15 +17,16 @@ void alimentarArrays(int indice, int *matrizA[][indice], int *vetorB){
         scanf("%d", &matrizA[i][j]);
 }
 
-int* criarVetorC(int indice, int *matrizA[][indice], int *vetorB){
-  int i, j,  *vetorC = malloc(indice * sizeof(int));
+int* criarVetorC(int indice, int matrizA[][indice], int *vetorB){
+  int i, j,  *vetorC;
+  vetorC = malloc(indice * sizeof(int));
   if (vetorC == NULL){
     printf("Nao espaco na memoria para alocacao");
     exit(1);
   }
   for(i = 0; i < indice; i++)
      for(j = 0; j < indice; j++)
-         vetorC[i] += matrizA[i*indice+j] * vetorB[j];
+         vetorC[i] += matrizA[i][j] * vetorB[j];
   return vetorC;
 }
 
