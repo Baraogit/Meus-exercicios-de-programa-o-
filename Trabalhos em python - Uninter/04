@@ -9,18 +9,20 @@ while True:
     else:
         contato_dict['idade'] = int(input('Informe a idade: '))
         contato_dict['telefone'] = int(input('Informe o telefone: '))
-        agenda_com_contatos_lista.append(contato_dict.copy())
+        agenda_com_contatos_lista.append(contato_dict.copy())#todos os contatos são armazenados nessa lista
 
-lista = sorted(agenda_com_contatos_lista, key=itemgetter('nome'))  # ordena os dict dentro da lista pelo nome
+agenda_com_contatos_lista_ordenada = sorted(agenda_com_contatos_lista, key=itemgetter('nome'))  # ordena os dict dentro da lista pelo nome
 
 print('Lista de contatos:')
-for i in agenda_com_contatos_lista:
+for i in agenda_com_contatos_lista_ordenada:#imprime a lista de contatos
     print(i)
 
 agenda_com_contatos_maior_de_18_dict = {}
 agenda_com_contatos_menor_de_18_dict = {}
 
-for 
+for e in agenda_com_contatos_lista_ordenada:
+    for i, j in e.items():
+        print("valor {}." .format(j))
 
 ----------------------------------------------------------------------------------------------------------
 erro!!
