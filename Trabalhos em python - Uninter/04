@@ -1,19 +1,26 @@
 from operator import itemgetter
 
-contato_dict = {}# irá armazenar um contato
-agenda_com_contatos_lista = [] #irá armazenar os contatos
+contato_dict = {}  # irá armazenar um contato
+agenda_com_contatos_lista = []  # irá armazenar os contatos
 while True:
-    contato_dict['nome'] = input('Informe o nome do contato: ')#pede para o usuário digitar um nome
-    if contato_dict['nome'] == '':# se o usuário não digitar nada e der enter
-        break#sai do laço
+    contato_dict['nome'] = input('Informe o nome do contato: ')  # pede para o usuário digitar um nome
+    if contato_dict['nome'] == '':  # se o usuário não digitar nada e der enter
+        break  # sai do laço
     else:
         contato_dict['idade'] = int(input('Informe a idade: '))
         contato_dict['telefone'] = int(input('Informe o telefone: '))
         agenda_com_contatos_lista.append(contato_dict.copy())
 
-lista = sorted(agenda_com_contatos_lista, key=itemgetter('nome'))#ordena os dict dentro da lista pelo nome
+lista = sorted(agenda_com_contatos_lista, key=itemgetter('nome'))  # ordena os dict dentro da lista pelo nome
 
-print(lista)
+print('Lista de contatos:')
+for i in agenda_com_contatos_lista:
+    print(i)
+
+agenda_com_contatos_maior_de_18_dict = {}
+agenda_com_contatos_menor_de_18_dict = {}
+
+for 
 
 ----------------------------------------------------------------------------------------------------------
 erro!!
