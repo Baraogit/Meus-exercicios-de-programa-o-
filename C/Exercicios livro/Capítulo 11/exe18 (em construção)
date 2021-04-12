@@ -1,0 +1,47 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+int** criarMatriz(int linhas, int colunas){
+  int **matriz = malloc(linhas * sizeof(int*));
+  int i, j;
+  if (matriz == NULL){
+    printf("Sem espaco para alocacao");
+    exit(1);
+  }
+  for(i = 0; i < linhas; i++){
+    matriz = malloc(colunas * sizeof(int));
+    for (j = 0; j < colunas; j++){
+      scanf("%d", &matriz[i][j]);
+    }
+  }
+  return matriz;
+
+}
+
+int main(){
+  int i, linhas_matrizA, colunas_matrizA, linhas_matrizB, colunas_matrizB;
+  printf("Digite as linhas e colunas para a matrizA: ");
+  scanf("%d %d", &linhas_matrizA, &colunas_matrizA);
+  printf("Digite as linhas e colunas para a matrizB: ");
+  scanf("%d %d", &linhas_matrizB, &colunas_matrizB);
+
+  int **matrizA, **matrizB, **matrizC;
+
+  matrizA = criarMatriz(linhas_matrizA, colunas_matrizA);
+  matrizB = criarMatriz(linhas_matrizB, colunas_matrizB);
+  matrizC = alocarMatrizC(linhas_matrizA, colunas_matrizA, linhas_matrizB, colunas_matrizB, matrizA, matrizB);
+
+
+
+
+
+  free(matrizA);
+  free(matrizA);
+  free(matrizC);
+  matrizA = NULL;
+  matrizB = NULL;
+  matrizC = NULL;
+
+  return 0;
+}
