@@ -13,9 +13,9 @@ int** criarMatriz(int linhas, int colunas){
     printf("Sem espaco para alocacao");
     exit(1);
   }
-  printf("Digite os valores da matrizC:\n");
+  printf("Digite os valores da matriz:\n");
   for(i = 0; i < linhas; i++){
-    matriz = malloc(colunas * sizeof(int));
+    matriz[i] = malloc(colunas * sizeof(int));
     for (j = 0; j < colunas; j++){
       scanf("%d", &matriz[i][j]);
     }
@@ -23,15 +23,14 @@ int** criarMatriz(int linhas, int colunas){
   return matriz;
 }
 
-int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB, int colunas_matrizB,
-  int matrizA[linhas_matrizA][colunas_matrizA], int matrizB[linhas_matrizB][colunas_matrizB]){
+int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB, int colunas_matrizB, int matrizA[linhas_matrizA][colunas_matrizA], int matrizB[linhas_matrizB][colunas_matrizB]){
     int i, j, **matrizC;
-    if (linhas_matrizA != linhas_matrizB && colunas_matrizA != colunas_matrizB){
+    if (linhas_matrizA != linhas_matrizB || colunas_matrizA != colunas_matrizB){
       matrizC = NULL;
       return matrizC;
     }
     else
-       matrizC = malloc (linhas_matrizA * sizeof(int*));
+       matrizC = malloc(linhas_matrizA * sizeof(int*));
 
     if (matrizC == NULL){
       printf("Nao ha espaco na memoria para alocacao");
@@ -44,20 +43,20 @@ int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB,
       }
     }
     return matrizC;
-
 }
 
 int main(){
   int i, j, linhas_matrizA, colunas_matrizA, linhas_matrizB, colunas_matrizB;
+  int **matrizA, **matrizB, **matrizC;
+  
   printf("Digite as linhas e colunas para a matrizA: ");
   scanf("%d %d", &linhas_matrizA, &colunas_matrizA);
+  matrizA = criarMatriz(linhas_matrizA, colunas_matrizA);
+  
   printf("Digite as linhas e colunas para a matrizB: ");
   scanf("%d %d", &linhas_matrizB, &colunas_matrizB);
-
-  int **matrizA, **matrizB, **matrizC;
-
-  matrizA = criarMatriz(linhas_matrizA, colunas_matrizA);
   matrizB = criarMatriz(linhas_matrizB, colunas_matrizB);
+
   matrizC = alocarMatrizC(linhas_matrizA, colunas_matrizA, linhas_matrizB, colunas_matrizB, matrizA, matrizB);
 
   if (matrizC != NULL){
