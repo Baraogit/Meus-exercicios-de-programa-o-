@@ -23,7 +23,7 @@ int** criarMatriz(int linhas, int colunas){
   return matriz;
 }
 
-int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB, int colunas_matrizB, int matrizA[linhas_matrizA][colunas_matrizA], int matrizB[linhas_matrizB][colunas_matrizB]){
+int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB, int colunas_matrizB, int **matrizA, int **matrizB){
     int i, j, **matrizC;
     if (linhas_matrizA != linhas_matrizB || colunas_matrizA != colunas_matrizB){
       printf("Nao foi possivel criar a matrizC: linhas e colunas da matrizA e MatrizB, diferem");
@@ -43,6 +43,7 @@ int** alocarMatrizC(int linhas_matrizA, int colunas_matrizA, int linhas_matrizB,
         matrizC[i][j] = matrizA[i][j] * matrizB[i][j];
       }
     }
+  
     return matrizC;
 }
 
@@ -70,15 +71,16 @@ int main(){
     }
   }
 
-  for (i = 0; i < colunas_matrizA; i++)
+
+  for (i = 0; i < linhas_matrizA; i++)
     free(matrizC[i]);
-  for (i = 0; i < colunas_matrizA; i++)
+  for (i = 0; i < linhas_matrizA; i++)
     free(matrizA[i]);
-  for (i = 0; i < colunas_matrizB; i++)
+  for (i = 0; i < linhas_matrizB; i++)
     free(matrizB[i]);
-  
+
   free(matrizA);
-  free(matrizA);
+  free(matrizB);
   free(matrizC);
   matrizA = NULL;
   matrizB = NULL;
