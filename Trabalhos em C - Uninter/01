@@ -4,15 +4,15 @@
 
 struct funcionario{
   char nome[50];
-  float salario; 
-} funcionario, *ponteiro_para_struct_funcionario; 
+  float salario;
+} funcionario, *ponteiro_para_struct_funcionario;
 
 int main(){
-  float aliquota_imposto, salario_deduzido; 
+  float aliquota_imposto, salario_deduzido;
   printf("Digite o nome do funcionario: ");
   fgets(funcionario.nome,50, stdin);
   printf("Digite o seu salario: ");
-  scanf("%f", &funcionario.salario); 
+  scanf("%f", &funcionario.salario);
 
   ponteiro_para_struct_funcionario = &funcionario;
 
@@ -36,10 +36,10 @@ int main(){
     aliquota_imposto = 27.50;
     salario_deduzido = (*ponteiro_para_struct_funcionario).salario - ((*ponteiro_para_struct_funcionario).salario * 0.2750);
   }
-  
+
   printf("Nome do funcionario: %s", (*ponteiro_para_struct_funcionario).nome);
-  printf("Salario = %.2f\n", (*ponteiro_para_struct_funcionario).salario); 
-  printf("Aliquota = %.2f\nSalario deduzido = %.2f", aliquota_imposto, salario_deduzido);
+  printf("Salario = R$%.2f\n", (*ponteiro_para_struct_funcionario).salario);
+  printf("Aliquota = %.2f %\nSalario deduzido = R$%.2f", aliquota_imposto, salario_deduzido);
 
 
   return 0;
