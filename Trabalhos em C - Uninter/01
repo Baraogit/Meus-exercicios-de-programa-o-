@@ -8,14 +8,38 @@ struct funcionario{
 } funcionario, *ponteiro_para_struct_funcionario; 
 
 int main(){
+  float aliquota_imposto, salario_deduzido; 
   printf("Digite o nome do funcionario: ");
   fgets(funcionario.nome,50, stdin);
   printf("Digite o seu salario: ");
   scanf("%f", &funcionario.salario); 
+
   ponteiro_para_struct_funcionario = &funcionario;
 
-
-
+  if ((*ponteiro_para_struct_funcionario).salario <= 1903.98){
+    aliquota_imposto = 0;
+    salario_deduzido = (*ponteiro_para_struct_funcionario).salario;
+  }
+  if ((*ponteiro_para_struct_funcionario).salario >= 1903.99 && (*ponteiro_para_struct_funcionario).salario <= 2826.65){
+    aliquota_imposto = 7.50;
+    salario_deduzido = (*ponteiro_para_struct_funcionario).salario - ((*ponteiro_para_struct_funcionario).salario * 0.075);
+  }
+  if ((*ponteiro_para_struct_funcionario).salario >= 2826.66 && (*ponteiro_para_struct_funcionario).salario <= 3751.05){
+    aliquota_imposto = 15.00;
+    salario_deduzido = (*ponteiro_para_struct_funcionario).salario - ((*ponteiro_para_struct_funcionario).salario * 0.15);
+  }
+  if ((*ponteiro_para_struct_funcionario).salario >= 3751.06 && (*ponteiro_para_struct_funcionario).salario <= 4664.68){
+    aliquota_imposto = 22.50;
+    salario_deduzido = (*ponteiro_para_struct_funcionario).salario - ((*ponteiro_para_struct_funcionario).salario * 0.2250);
+  }
+  if ((*ponteiro_para_struct_funcionario).salario > 4664.68){
+    aliquota_imposto = 27.50;
+    salario_deduzido = (*ponteiro_para_struct_funcionario).salario - ((*ponteiro_para_struct_funcionario).salario * 0.2750);
+  }
+  
+  printf("Nome do funcionario: %s", (*ponteiro_para_struct_funcionario).nome);
+  printf("Salario = %.2f\n", (*ponteiro_para_struct_funcionario).salario); 
+  printf("Aliquota = %.2f\nSalario deduzido = %.2f", aliquota_imposto, salario_deduzido);
 
 
   return 0;
