@@ -14,26 +14,29 @@ int main(){
     printf("Cadastro %d:\n", i+1);
     printf("Digite o nome: ");
     fgets(cadastro[i].nome, 50, stdin);
-    setbuf(stdin, NULL); 
+    setbuf(stdin, NULL);
     printf("Digite o email: ");
-    fgets(cadastro[i].email, 50, stdin);
+    scanf("%s", cadastro[i].email);
     printf("Digite o CPF: ");
     scanf("%d", &cadastro[i].CPF);
     printf("Digite o telefone: ");
     scanf("%d", &cadastro[i].telefone);
   }
 
-
-  FILE *ponteiro_para_arquivo = fopen("C:\\Users\\will0\\Desktop\\Temporarios\\c.uninter\\115709.csv", "w");
+  FILE *ponteiro_para_arquivo = fopen("C:\\Users\\will0\\Desktop\\Temporarios\\c.uninter\\1157909.csv", "w");
   if (ponteiro_para_arquivo == NULL){
     perror("Erro na abertura do arquivo: ");
     exit(1);
   }
+  int resultado;
+  for (i = 0; i < 6; i++){
+    resultado = fprintf(ponteiro_para_arquivo, "Cadastro %d - Nome: %sEmail: %s; CPF: %d; Telefone: %d\n", i+1, cadastro[i].nome,
+    cadastro[i].email, cadastro[i].CPF, cadastro[i].telefone);
+    if (resultado < 0)
+       printf("Erro na escrita\n");
+  }
+
   fclose(ponteiro_para_arquivo);
-
-
-
-
 
   return 0;
 }
