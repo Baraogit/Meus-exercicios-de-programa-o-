@@ -1,1 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
 
+struct cadastro{
+  char nome[50], email[50];
+  int CPF, telefone;
+}cadastro[6];
+
+
+int main(){
+  int i;
+
+  for (i = 0; i < 6; i++){
+    printf("Cadastro %d:\n", i+1);
+    printf("Digite o nome: ");
+    fgets(cadastro[i].nome, 50, stdin);
+    setbuf(stdin, NULL); 
+    printf("Digite o email: ");
+    fgets(cadastro[i].email, 50, stdin);
+    printf("Digite o CPF: ");
+    scanf("%d", &cadastro[i].CPF);
+    printf("Digite o telefone: ");
+    scanf("%d", &cadastro[i].telefone);
+  }
+
+
+  FILE *ponteiro_para_arquivo = fopen("C:\\Users\\will0\\Desktop\\Temporarios\\c.uninter\\115709.csv", "w");
+  if (ponteiro_para_arquivo == NULL){
+    perror("Erro na abertura do arquivo: ");
+    exit(1);
+  }
+  fclose(ponteiro_para_arquivo);
+
+
+
+
+
+  return 0;
+}
