@@ -1,0 +1,46 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+void calc_soma(int *matrizA, int *matrizB, int *matrizC){
+  int i;
+
+  for (i = 0; i < 16; i++)
+    matrizC[i] = matrizA[i] + matrizB[i];
+
+  printf("Valores da matrizC: ");
+  for (i = 0; i < 16; i++)
+     printf("%d ", matrizC[i]);
+
+}
+
+
+int main(){
+  int matrizA[4][4], matrizB[4][4], matrizC[4][4];
+  int i, j;
+
+  printf("Digite os valores da matrizA.\n");
+  for (i = 0; i < 4; i++)
+    for (j = 0; j < 4; j++){
+      scanf("%d", &matrizA[i][j]);
+      if (matrizA[i][j] < 0){
+        printf("Voce digitou um valor negativo. Programa encerrado...");
+        exit(1);
+      }
+    }
+
+  printf("Digite os valores da matrizB.\n");
+  for (i = 0; i < 4; i++)
+    for (j = 0; j < 4; j++){
+      scanf("%d", &matrizB[i][j]);
+      if (matrizB[i][j] < 0){
+        printf("Voce digitou um valor negativo. Programa encerrado...");
+        exit(1);
+      }
+    }
+
+    calc_soma(&matrizA[4][4], &matrizB[4][4], &matrizC[4][4]);
+
+
+  return 0;
+}
