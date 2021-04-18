@@ -1,1 +1,22 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
+struct funcionario{
+  char nome[50];
+  float salario; 
+} funcionario, *ponteiro_para_struct_funcionario; 
+
+int main(){
+  printf("Digite o nome do funcionario: ");
+  fgets(funcionario.nome,50, stdin);
+  printf("Digite o seu salario: ");
+  scanf("%f", &funcionario.salario); 
+  ponteiro_para_struct_funcionario = &funcionario;
+
+
+
+
+
+  return 0;
+}
