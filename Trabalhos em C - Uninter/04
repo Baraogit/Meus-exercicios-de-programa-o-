@@ -1,1 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
 
+int multiplicacao(int numero, int multiplicador){
+  if (multiplicador == 0)
+     return 0;
+  else
+     return numero + multiplicacao(numero, multiplicador - 1);
+}
+
+int main(){
+  int numero, multiplicador;
+  printf("Digite um valor e quantas vezes ele sera multiplicado: ");
+  scanf("%d %d", &numero, &multiplicador);
+
+  printf("Resultado da operacao de multipicao = %d", multiplicacao(numero, multiplicador));
+
+  return 0;
+}
