@@ -46,38 +46,38 @@ int main(){
 #include <stdio.h>
 
 int main(){
-  char nome_arquivo1[50], nome_arquivo2[50]; 
+  char nome_arquivo1[50], nome_arquivo2[50];
   char caractere_do_arquivo;
-  printf("Digite o nome do arquivo1: "); 
+  printf("Digite o nome do arquivo1: ");
   scanf("%s", nome_arquivo1);
-  printf("Digite o nome do arquivo2: "); 
+  printf("Digite o nome do arquivo2: ");
   scanf("%s", nome_arquivo2);
-  
+
   FILE *ponteiro_para_arquivo1 = fopen(nome_arquivo1, "r");
   FILE *ponteiro_para_arquivo2 = fopen(nome_arquivo2, "r");
   FILE *ponteiro_para_arquivo3 = fopen("nome_arquivo3", "w");
   if (ponteiro_para_arquivo1 == NULL || ponteiro_para_arquivo2 == NULL || ponteiro_para_arquivo3 == NULL){
     perror("Erro na abertura do arquivo: ");
-    exit(1); 
+    exit(1);
   }
-  caractere_do_arquivo = fgetc(ponteiro_para_arquivo1); 
+  caractere_do_arquivo = fgetc(ponteiro_para_arquivo1);
   while(1){
     if (feof(ponteiro_para_arquivo1))
       break;
-    fputc(caractere_do_arquivo, ponteiro_para_arquivo3)
-    caractere_do_arquivo = fgetc(ponteiro_para_arquivo1); 
+    fputc(caractere_do_arquivo, ponteiro_para_arquivo3);
+    caractere_do_arquivo = fgetc(ponteiro_para_arquivo1);
   }
 
-  caractere_do_arquivo = fgetc(ponteiro_para_arquivo2); 
+  caractere_do_arquivo = fgetc(ponteiro_para_arquivo2);
   while(1){
     if (feof(ponteiro_para_arquivo2))
        break;
-    fputc(caractere_do_arquivo, ponteiro_para_arquivo3)
-    caractere_do_arquivo = fgetc(ponteiro_para_arquivo2); 
+    fputc(caractere_do_arquivo, ponteiro_para_arquivo3);
+    caractere_do_arquivo = fgetc(ponteiro_para_arquivo2);
   }
-  
-  fclose(ponteiro_para_arquivo1); 
-  fclose(ponteiro_para_arquivo2); 
+
+  fclose(ponteiro_para_arquivo1);
+  fclose(ponteiro_para_arquivo2);
   fclose(ponteiro_para_arquivo3);
 
   return 0;
