@@ -1,0 +1,41 @@
+2) Escreva um programa que leia do usuário os nomes de dois arquivos texto. 
+Crie um terceiro arquivo texto com o conteúdo dos dois primeiros juntos (o conteúdo do primeiro seguido do conteúdo do segundo).
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+  char nome_arquivo1[50], nome_arquivo2[50]; 
+  printf("Digite o nome do arquivo1: "); 
+  scanf("%s", nome_arquivo1);
+  printf("Digite o nome do arquivo2: "); 
+  scanf("%s", nome_arquivo2);
+  
+  FILE *ponteiro_para_arquivo1 = fopen(nome_arquivo1, "r");
+  if (ponteiro_para_arquivo1 == NULL){
+    perror("Erro na abertura do arquivo: ");
+    exit(1); 
+  }
+  FILE *ponteiro_para_arquivo2 = fopen(nome_arquivo2, "r");
+  if (ponteiro_para_arquivo2 == NULL){
+    perror("Erro na abertura do arquivo: ");
+    exit(1); 
+  }
+  FILE *ponteiro_para_arquivo3 = fopen("nome_arquivo3", "w");
+  if (ponteiro_para_arquivo3 == NULL){
+    perror("Erro na abertura do arquivo: ");
+    exit(1); 
+  }
+
+  
+
+  
+
+  fclose(ponteiro_para_arquivo1); 
+  fclose(ponteiro_para_arquivo2); 
+  fclose(ponteiro_para_arquivo3);
+  
+
+
+  return 0;
+}
