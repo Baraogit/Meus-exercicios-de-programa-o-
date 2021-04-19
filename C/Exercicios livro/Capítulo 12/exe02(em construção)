@@ -12,23 +12,17 @@ int main(){
   scanf("%s", nome_arquivo2);
   
   FILE *ponteiro_para_arquivo1 = fopen(nome_arquivo1, "r");
-  if (ponteiro_para_arquivo1 == NULL){
-    perror("Erro na abertura do arquivo: ");
-    exit(1); 
-  }
   FILE *ponteiro_para_arquivo2 = fopen(nome_arquivo2, "r");
-  if (ponteiro_para_arquivo2 == NULL){
-    perror("Erro na abertura do arquivo: ");
-    exit(1); 
-  }
   FILE *ponteiro_para_arquivo3 = fopen("nome_arquivo3", "w");
-  if (ponteiro_para_arquivo3 == NULL){
+  if (ponteiro_para_arquivo1 == NULL || ponteiro_para_arquivo2 == NULL || ponteiro_para_arquivo3 == NULL){
     perror("Erro na abertura do arquivo: ");
     exit(1); 
   }
-
-  
-
+  char caractere_do_arquivo = fgetc(ponteiro_para_arquivo1);//o primeiro caractere é lido e armazenado
+  while (!feof(ponteiro_para_arquivo1)){
+    fputc(caractere_do_arquivo, ponteiro_para_arquivo3);//esse caractere é escrito no arquivo3
+    caractere_do_arquivo = fgetc(ponteiro_para_arquivo1); // lê  o próximo caractere do arquivo1
+  }
   
 
   fclose(ponteiro_para_arquivo1); 
