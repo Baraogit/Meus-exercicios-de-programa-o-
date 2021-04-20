@@ -18,6 +18,10 @@ cap 6 - exe 12/13 (estudar) (vetor) (algoritmos difíceis)
 
 cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)  (matemático)
 
+cap 7 - exe 08 (string dentro de string)
+
+cap 7 - exe 09 (string dentro de string / quantidade de vezes)
+
 cap 8 - exe 04 (não entendi o enuciado) (algoritmos difíceis)
 
 cap 8 - exe 05 (falta fazer, parecido com o exe04)
