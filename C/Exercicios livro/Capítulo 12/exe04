@@ -1,5 +1,4 @@
 4) Elabore um programa no qual o usuário informe o nome de um arquivo texto e uma palavra, e o programa informe o número de vezes que aquela palavra aparece dentro do arquivo.
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -18,17 +17,10 @@ int main(){
     perror("Erro na abertura do arquivo: ");
     exit(1);
   }
-  resultado = fgets(buffer, 7, arquivo);
-  while(1){
-    if (feof(arquivo))
-      break;
-    if (resultado == NULL)
-      printf("Erro na leitura.");
-    else
-       if(buffer == palavra)
-         printf("%d", buffer);
-    resultado = fgets(buffer, 7, arquivo);
-  }
+
+  fgets(buffer, strlen(palavra) + 3, arquivo);
+
+     printf("%s", buffer);
 
   fclose(arquivo);
 
