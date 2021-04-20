@@ -6,10 +6,6 @@ programa então exibe o total da compra.
 #include <stdio.h>
 #include <string.h>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
 int main(){
   FILE *arquivo = fopen("arquivo_para_leitura.txt", "r");
   if (arquivo == NULL){
