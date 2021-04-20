@@ -22,7 +22,7 @@ int main(){
     //se não repete duas vezes a última linha do arquivo
     fscanf(arquivo, "%s %d %f", produto, &quantidade, &preco);//
     if (feof(arquivo))
-      break;3
+      break;
     // mostra o que tem no arquivo
     printf("%s %d %f\n", produto, quantidade, preco);
     total += preco * quantidade;                    
@@ -32,4 +32,3 @@ int main(){
 
   return 0;
 }
-
