@@ -18,6 +18,8 @@ cap 8 - exe 05 (falta fazer, parecido com o exe04)
 
 cap 8 - exe 11 (algoritmos difíceis)
 
+cap 12 - exe 04 (string contida dentro de um string) 
+
 
 
 
