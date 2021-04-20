@@ -1,0 +1,30 @@
+6) Faça um programa que leia um arquivo texto contendo uma lista de compras.
+Cada linha do arquivo possui nome, quantidade e valor unitário do produto. O
+programa então exibe o total da compra.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+int main(){
+  FILE *arquivo = fopen("arquivo_para_leitura.txt", "r");
+  if (arquivo == NULL){
+    perror("Erro na abertura do arquivo: ");
+    exit(1);
+  }
+  int i, quantidade;
+  char produto[50];
+  float preco,  total = 0;
+
+  while (1){
+    fscanf(arquivo, "%s %d %f", produto, &quantidade, &preco);
+    if (feof(arquivo))
+      break;
+    total += preco * quantidade;
+  }
+  printf("Valor total: %.2f", total);
+  fclose(arquivo);
+
+  return 0;
+}
