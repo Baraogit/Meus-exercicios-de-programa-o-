@@ -4,13 +4,19 @@
 
 Exercícios que faltam fazer:
 
+cap 3 - exe52 (site)
+
 cap 4 - exe15 (não fiz, por pura preguiça) (matemático)
+
+cap 6 - exe 08 
+
+cap 6 - exe 09 
+
+cap 6 - exe 10 (entender o enunciado) (matriz)
 
 cap 6 - exe 12/13 (estudar) (vetor) (algoritmos difíceis) 
 
 cap 6 - exe 14 (vetor) (não fiz, por pura preguiça)  (matemático)
-
-cap 6 - exe 10 (entender o enunciado) (matriz)
 
 cap 8 - exe 04 (não entendi o enuciado) (algoritmos difíceis)
 
