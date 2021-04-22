@@ -1,3 +1,6 @@
+ 8) Dado um arquivo contendo um conjunto de nomes e datas de nascimento (dia, mês e ano, isto é, três inteiros seguidos),
+ escrever um programa que leia esse arquivo e a data atual e gere outro arquivo contendo o nome e a idade.
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
