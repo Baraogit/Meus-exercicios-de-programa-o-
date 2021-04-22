@@ -1,0 +1,56 @@
+7) Faça um programa que permita que o usuário entre com diversos nomes e telefone
+para cadastro. Crie um arquivo com essas informações, uma por linha. O usuário
+finaliza a entrada com o valor 0 para o telefone.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+struct Cadastro {
+  char nome[50];
+  int telefone;
+} cadastro;
+
+void retirarEspacoString(char *nome) {
+  int i;
+  for (i = 0; i < strlen(nome); i++){
+    if (nome[i] == '\n')
+      nome[i] = '\0';
+  }
+
+}
+
+void escreverNoArquivo(struct Cadastro *cadastro) {
+  FILE *arquivo = fopen("cadastro.txt", "w");
+  if (arquivo == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
+
+  fprintf(arquivo, "Nome: %s Telefone: %d\n", (*cadastro).nome, (*cadastro).telefone);
+  fclose(arquivo);
+}
+
+int main(){
+
+  while(1) {
+    setbuf(stdin, NULL);
+    printf("Informe o nome: ");
+    fgets(cadastro.nome, 50, stdin);
+    retirarEspacoString(cadastro.nome);
+    printf("Informe o telefone: ");
+    scanf("%d", &cadastro.telefone);
+
+    if (cadastro.telefone == 0){
+      printf("Programa finalizado! Voce digitou 0 ");
+      exit(1);
+    }
+    else{
+      escreverNoArquivo(&cadastro);
+    }
+
+  }
+
+
+  return 0;
+}
