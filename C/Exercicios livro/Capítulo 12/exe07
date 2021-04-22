@@ -21,9 +21,9 @@ void retirarEspacoString(char *nome) {
 }
 
 void escreverNoArquivo(struct Cadastro *cadastro, FILE *arquivo) {
-  
+
   fprintf(arquivo, "Nome: %s Telefone: %d\n", (*cadastro).nome, (*cadastro).telefone);
-  fclose(arquivo);
+
 }
 
 int main(){
@@ -50,6 +50,8 @@ int main(){
     }
 
   }
+
+  fclose(arquivo);
 
 
   return 0;
