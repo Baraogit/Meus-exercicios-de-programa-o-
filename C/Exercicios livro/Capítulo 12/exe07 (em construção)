@@ -20,18 +20,18 @@ void retirarEspacoString(char *nome) {
 
 }
 
-void escreverNoArquivo(struct Cadastro *cadastro) {
-  FILE *arquivo = fopen("cadastro.txt", "w");
-  if (arquivo == NULL){
-    perror("Erro na abertura: ");
-    exit(1);
-  }
-
+void escreverNoArquivo(struct Cadastro *cadastro, FILE *arquivo) {
+  
   fprintf(arquivo, "Nome: %s Telefone: %d\n", (*cadastro).nome, (*cadastro).telefone);
   fclose(arquivo);
 }
 
 int main(){
+  FILE *arquivo = fopen("cadastro.txt", "w");
+  if (arquivo == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
 
   while(1) {
     setbuf(stdin, NULL);
@@ -46,7 +46,7 @@ int main(){
       exit(1);
     }
     else{
-      escreverNoArquivo(&cadastro);
+      escreverNoArquivo(&cadastro, arquivo);
     }
 
   }
