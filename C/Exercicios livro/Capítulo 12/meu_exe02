@@ -4,10 +4,8 @@ Digitar uma string, essa string será escrita em um arquivo, depois ler esse arq
 #include <stdio.h>
 #include <string.h>
 
-
-
 int main(){
-  FILE *arquivo_para_escrever_string = fopen("escrever_string", "w");
+  FILE *arquivo_para_escrever_string = fopen("escrever_string.txt", "w");
   if (arquivo_para_escrever_string == NULL){
     perror("Erro na abertura: ");
     exit(1);
@@ -20,7 +18,7 @@ int main(){
 
   fclose(arquivo_para_escrever_string);
 
-  arquivo_para_escrever_string = fopen("escrever_string", "r");
+  arquivo_para_escrever_string = fopen("escrever_string.txt", "r");
   if (arquivo_para_escrever_string == NULL){
     perror("Erro na abertura: ");
     exit(1);
