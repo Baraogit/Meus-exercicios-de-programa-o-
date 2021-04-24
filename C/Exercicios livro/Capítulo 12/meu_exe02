@@ -1,0 +1,39 @@
+Digitar uma string, essa string será escrita em um arquivo, depois ler esse arquivo e apresentar na tela. 
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+
+int main(){
+  FILE *arquivo_para_escrever_string = fopen("escrever_string", "w");
+  if (arquivo_para_escrever_string == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
+
+  int i;
+  char string[100] = "keketiquibom parapatapi - giria de pirata";
+  for (i = 0;  i < strlen(string); i++)
+     fputc(string[i], arquivo_para_escrever_string);
+
+  fclose(arquivo_para_escrever_string);
+
+  arquivo_para_escrever_string = fopen("escrever_string", "r");
+  if (arquivo_para_escrever_string == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
+
+  char caractere;
+  caractere = fgetc(arquivo_para_escrever_string);
+  while(caractere != EOF){
+    printf("%c", caractere);
+    caractere = fgetc(arquivo_para_escrever_string);
+  }
+
+  fclose(arquivo_para_escrever_string);
+
+  return 0;
+}
