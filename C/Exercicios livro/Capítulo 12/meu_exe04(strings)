@@ -1,6 +1,6 @@
 Escreva 3 strings, cada uma em uma linha e salve em um arquivo. Depois leia esse arquivo e use o loop para ler as três linhas.
 Mas digamos que você não sabia quantas linhas tem o arquivo, faça um programa para verificar quantas linhas há. 
-A quantidade de linhas será usada como condicional do loop, ou seja  i < linhas_do_arquivo. 
+A quantidade de linhas será usada como condicional do loop, ou seja  i < linhas_do_arquivo --> ese loop é para printar cada linha do arquivo.
 
 
 #include <stdlib.h>
