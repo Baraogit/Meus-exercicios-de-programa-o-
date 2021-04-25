@@ -1,0 +1,56 @@
+Escreva 3 strings, cada uma em uma linha e salve em um arquivo. Depois leia esse arquivo e use o loop para ler as três linhas.
+Mas digamos que você não sabia quantas linhas tem o arquivo, faça um programa para verificar quantas linhas há. 
+A quantidade de linhas será usada como condicional do loop, ou seja  i < linhas_do_arquivo. 
+
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  FILE *arquivo_tres_strings = fopen("tres_strings.txt", "w");
+  if (arquivo_tres_strings == NULL){
+    perror("Falha: ");
+    exit(1);
+  }
+  char string[100];
+  int i;
+
+  for (i = 0; i < 3; i++){
+    printf("Digite a string %d: ", 1+i);
+    fgets(string, 100, stdin);// add linha automaticamente
+    setbuf(stdin, NULL);
+    fputs(string, arquivo_tres_strings);
+  }
+  fclose(arquivo_tres_strings);
+
+  //leitura do arquivo
+  arquivo_tres_strings = fopen("tres_strings.txt", "r");
+  if (arquivo_tres_strings == NULL){
+    perror("Falha: ");
+    exit(1);
+  }
+// para verificar quantas linhas tem o arquivo
+  int linhas_do_arquivo = 0;
+  while(1){
+    fgets(string, 100, arquivo_tres_strings);//a cada loop lê uma linha
+
+    if (feof(arquivo_tres_strings))//verifica se cehgou ao final do arquivo
+      break;
+// confere se na linha atual da string, há o caractere \n
+    for (i = 0; i < strlen(string); i++){
+      if (string[i] == '\n') //se houver
+        linhas_do_arquivo++; // soma
+    }
+  }
+  // Lê e imprime cada linha
+  rewind(arquivo_tres_strings);//faz o ponteiro apontar para o início do arqui.
+  for (i = 0; i < linhas_do_arquivo; i++){ 
+    fgets(string, 100, arquivo_tres_strings);
+    printf("Linha = %s", string);
+  }
+
+  fclose(arquivo_tres_strings);
+
+  return 0;
+}
