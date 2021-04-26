@@ -16,7 +16,7 @@ void alimentarMatriz(int linhas, int colunas,int matriz[][colunas]){
     for (j = 0; j < colunas; j++){
       scanf("%d", &matriz[i][j]);
       fprintf(arquivo, "%d ", matriz[i][j]);
-      if (j == 2)
+      if (j == colunas - 1)
         fprintf(arquivo, "%c", '\n');
     }
   }
@@ -24,11 +24,9 @@ void alimentarMatriz(int linhas, int colunas,int matriz[][colunas]){
 
 }
 
-
 int main(){
   int matriz[3][3];
   alimentarMatriz(3, 3, matriz);
-
 
   return 0;
 }
