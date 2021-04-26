@@ -1,0 +1,61 @@
+
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int** criarMatriz(char *nome_arquivo){
+  int **matriz, i , j;
+  FILE *arquivo_para_leitura = fopen(nome_arquivo, "r");
+  if(arquivo_para_leitura == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
+
+  int linhas, colunas, elemento;
+  fscanf(arquivo_para_leitura, "%d %d", &linhas, &colunas);
+  rewind(arquivo_para_leitura);
+
+  matriz = malloc(linhas * sizeof(int*));
+  for(i = 0; i < linhas; i++){
+    matriz[i] = malloc(colunas * sizeof(int));
+    for (j = 0; j < colunas; j++){
+      fscanf(arquivo_para_leitura, "Elemento = %d", &elemento);
+      matriz[i][j] = elemento;
+    }
+  }
+
+
+
+  fclose(arquivo_para_leitura);
+
+  return matriz;
+}
+
+int main(){
+  char nome_arquivo[100]; // arquivo_para_leitura.txt
+  printf("Digite o nome do arquivo: ");
+  scanf("%s", nome_arquivo);
+
+  int linhas, colunas, elemento;
+  fscanf(arquivo_para_leitura, "%d %d", &linhas, &colunas);
+  rewind(arquivo_para_leitura);
+
+
+  int i, j, **matriz = criarMatriz(nome_arquivo);
+
+  printf("Valores da matriz: ");
+  for(i = 0; i < linhas; i++){
+    matriz[i] = malloc(colunas * sizeof(int));
+    for (j = 0; j < colunas; j++){
+      printf("%d", matriz[i][j]);
+    }
+    printf("\n");
+  }
+
+  for (i = 0; i < colunas; i++)
+    free(matriz[i]);
+
+  free(matriz);
+  return 0;
+}
