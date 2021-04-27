@@ -28,7 +28,7 @@ int main(){
       break;
 
     for (i = 0; i < strlen(string); i++){
-      if (string != ' ')
+      if (string[i] == 10 || string[i] == 32) // 10 == '\0'  32 == espaço(' ')
         conta_string++;
     }
   }
@@ -62,7 +62,7 @@ int main(){
 
  caractere = fgetc(arquivo);
   while (caractere != EOF){
-    if (caractere == 10 || caractere == 32)
+    if (caractere == 10 || caractere == 32) // 10 == '\0'  32 == espaço(' ')
        conta_string++;
     caractere = fgetc(arquivo);
   }
@@ -91,7 +91,7 @@ int main(){
   }
 
   char string[200];
-  int i, conta_string = 0;
+  int conta_string = 0;
 
   while(1){
     fscanf(arquivo, "%s", string);
