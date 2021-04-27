@@ -32,3 +32,40 @@ int main(){
 
   return 0;
 }
+----------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+struct cadastro_aluno{
+  char nome[50];
+  int matricula;
+  float nota[3];
+} aluno[3];
+
+
+int main(){
+  FILE *arquivo_aluno = fopen("struct_aluno.txt", "r");
+  if (arquivo_aluno == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
+
+  int i = 0;
+  char matricula[50], nome[50], nota[50];
+  while(1){
+    fscanf(arquivo_aluno, "%s %d %s %s %s %f %f %f\n", matricula, &aluno[i].matricula, nome, &aluno[i].nome, 
+    nota, &aluno[i].nota[0], &aluno[i].nota[1], &aluno[i].nota[2]);
+
+    printf("%s: %d %s: %s %s: %f %f %f\n", matricula, aluno[i].matricula, nome, aluno[i].nome, 
+    nota, aluno[i].nota[0], aluno[i].nota[1], aluno[i].nota[2]);
+
+    if(feof(arquivo_aluno))
+      break;
+    i++;
+  }
+
+  fclose(arquivo_aluno);
+
+  return 0;
+}
