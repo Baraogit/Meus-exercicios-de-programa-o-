@@ -12,16 +12,14 @@ int main(){
     exit(1);
   }
 
-  int i, total_dados_gravados, vetor[100];
-  for (i = 1; i <= 100; i++){
+  int i, vetor[100], tamanho_vetor = 100;
+  for (i = 0; i < 100; i++){//0 até 99
     vetor[i] = i;
   }
-
-  total_dados_gravados = fwrite(vetor, sizeof(int), 100, arquivo);
-  if (total_dados_gravados != 100){
-    perror("Erro na escrita do arquivo!");
-    exit(1);
-  }
+  
+  fwrite(&tamanho_vetor, sizeof(int), 1, arquivo);//grava antes o tamanho do vetor
+  fwrite(vetor, sizeof(int), tamanho_vetor, arquivo);
+  
   fclose(arquivo);
 
   return 0;
