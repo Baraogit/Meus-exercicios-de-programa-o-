@@ -1,0 +1,28 @@
+16) Faça um programa que leia 100 números. Esse programa deverá, em seguida,
+armazenar esses números em um arquivo binário.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  FILE *arquivo = fopen("100_numeros.txt", "wb");
+  if (arquivo == NULL){
+    perror("Erro: ");
+    exit(1);
+  }
+
+  int i, total_dados_gravados, vetor[100];
+  for (i = 1; i <= 100; i++){
+    vetor[i] = i;
+  }
+
+  total_dados_gravados = fwrite(vetor, sizeof(int), 100, arquivo);
+  if (total_dados_gravados != 100){
+    perror("Erro na escrita do arquivo!");
+    exit(1);
+  }
+  fclose(arquivo);
+
+  return 0;
+}
