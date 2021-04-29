@@ -5,25 +5,33 @@ O usuário deverá informar o nome do arquivo.
 #include <stdio.h>
 #include <string.h>
 
-void verificarOcorrenciaCaractere(char caractere, FILE *arquivo){
-  char vetor_letras[51] = {0}, string[200];
-  int i, count_letra = 0;
+char* criarString(FILE *arquivo){ 
+  int i = 0, indice_da_string = 0;
 
-  while(1){
-    fgets(string, 200, arquivo);
-
-    
-    if(feof(arquivo))
-      break;
-
-      for (i = 0; i < strlen(string); i++){
-        if (string[i] == caractere)
-           count_letra++;
-      }  
-
+  char caractere = fgetc(arquivo);
+  while(caractere != EOF){
+    if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122))
+       indice_da_string++;// número de letras no arquivo, será a quantidade de elementos da string
+    caractere = fgetc(arquivo);
   }
-  printf("%c = %d", caractere, count_letra);
+  rewind(arquivo);// retorna o arquivo ao ponto inicial
+                                             // letras + 1 ('\0')
+  char *string_com_letras_do_arquivo = malloc((indice_da_string + 1) * sizeof(char));
+
+  caractere = fgetc(arquivo);
+  while(caractere != EOF){
+    if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122)){
+      string_com_letras_do_arquivo[i] = caractere;
+      i++;
+    }
+    caractere = fgetc(arquivo);
+  }
+  
+  string_com_letras_do_arquivo[i] = '\0';
+
+  return string_com_letras_do_arquivo;
 }
+
 
 int main(){
   char nome_arquivo[50];
@@ -35,13 +43,12 @@ int main(){
     exit(1);
   }
 
-  char caractere = fgetc(arquivo);
-  while(caractere != EOF){
-    if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122))
-       verificarOcorrenciaCaractere(caractere, arquivo);
-    caractere = fgetc(arquivo);
-  }
+  char *string_com_letras_do_arquivo = criarString(arquivo);
+
+
+
   fclose(arquivo);
+  free(string_com_letras_do_arquivo);
 
   return 0;
 }
