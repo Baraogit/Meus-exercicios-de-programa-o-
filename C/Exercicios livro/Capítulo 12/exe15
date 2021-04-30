@@ -8,6 +8,8 @@ O usuário deverá informar o nome do arquivo.
 char* criarStringComLetrasDoArquivo(FILE *arquivo){
   int i = 0, indice_da_string = 0;
 
+
+//esse bloco cria o tamanho da string que irá receber somente as letras do arquivo
   char caractere = fgetc(arquivo);
   while(caractere != EOF){
     if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122))
@@ -15,9 +17,12 @@ char* criarStringComLetrasDoArquivo(FILE *arquivo){
     caractere = fgetc(arquivo);
   }
   rewind(arquivo);// retorna o arquivo ao ponto inicial
-                                             // letras + 1 ('\0')
+  
+  //cria uma string dinâmicamente          // letras + 1 ('\0')
   char *string_com_letras_do_arquivo = malloc((indice_da_string + 1) * sizeof(char));
 
+
+ //cada índice da string recebe uma letra do arquivo
   caractere = fgetc(arquivo);
   while(caractere != EOF){
     if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122)){
@@ -35,11 +40,12 @@ char* criarStringComLetrasDoArquivo(FILE *arquivo){
 void ocorrenciaDaLetraNoArquivo(char caractere, char *string_com_letras_do_arquivo){
   int i, conta_ocorrencia_letra = 0;
 
+  //compara se há a letra na string e conta quantas vezes ela aparece na string
   for (i = 0; i < strlen(string_com_letras_do_arquivo); i++){
     if (string_com_letras_do_arquivo[i] == caractere){
       conta_ocorrencia_letra++;
-      string_com_letras_do_arquivo[i] = '.';
-    }
+      string_com_letras_do_arquivo[i] = '.';// a letra é substituida por ponto
+    }   // para não ficar  repetindo a mesma letra quando ela for verificada de novo
   }
   if (conta_ocorrencia_letra > 0){
     printf("%c aparece no arquivo %d\n", caractere, conta_ocorrencia_letra);
