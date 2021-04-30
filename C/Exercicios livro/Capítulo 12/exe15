@@ -5,7 +5,7 @@ O usuário deverá informar o nome do arquivo.
 #include <stdio.h>
 #include <string.h>
 
-char* criarString(FILE *arquivo){ 
+char* criarStringComLetrasDoArquivo(FILE *arquivo){
   int i = 0, indice_da_string = 0;
 
   char caractere = fgetc(arquivo);
@@ -26,12 +26,26 @@ char* criarString(FILE *arquivo){
     }
     caractere = fgetc(arquivo);
   }
-  
   string_com_letras_do_arquivo[i] = '\0';
 
+  rewind(arquivo);
   return string_com_letras_do_arquivo;
 }
 
+void ocorrenciaDaLetraNoArquivo(char caractere, char *string_com_letras_do_arquivo){
+  int i, conta_ocorrencia_letra = 0;
+
+  for (i = 0; i < strlen(string_com_letras_do_arquivo); i++){
+    if (string_com_letras_do_arquivo[i] == caractere){
+      conta_ocorrencia_letra++;
+      string_com_letras_do_arquivo[i] = '.';
+    }
+  }
+  if (conta_ocorrencia_letra > 0){
+    printf("%c aparece no arquivo %d\n", caractere, conta_ocorrencia_letra);
+  }
+
+}
 
 int main(){
   char nome_arquivo[50];
@@ -43,9 +57,15 @@ int main(){
     exit(1);
   }
 
-  char *string_com_letras_do_arquivo = criarString(arquivo);
+  char *string_com_letras_do_arquivo = criarStringComLetrasDoArquivo(arquivo);
 
-
+  char caractere = fgetc(arquivo);
+  while(caractere != EOF){
+    if ((caractere >= 64 && caractere <= 90) || (caractere >= 97 && caractere <= 122)){
+      ocorrenciaDaLetraNoArquivo(caractere, string_com_letras_do_arquivo);
+    }
+    caractere = fgetc(arquivo);
+  }
 
   fclose(arquivo);
   free(string_com_letras_do_arquivo);
