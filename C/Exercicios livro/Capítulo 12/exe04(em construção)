@@ -2,15 +2,25 @@
 uma palavra, e o programa informe o número de vezes que aquela palavra aparece
 dentro do arquivo.
 
+// se a palavra terminar com ponto, vírgula ou qualquer outro sinal, ela não fará parte da contagem.
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
 int main(){
-  FILE *arquivo = fopen("arquivo_para_leitura.txt", "r");
-  int i, contadora_de_string = 0;
+  char nome_arquivo[50];
+  printf("Digite o nome do arquivo: ");
+  scanf("%s", nome_arquivo);
+  FILE *arquivo = fopen(nome_arquivo, "r");// arquivo_para_leitura.txt
+  if (arquivo == NULL){
+    perror("Erro na abertura: ");
+    exit(1);
+  }
 
-  char palavra[50], string_arquivo[50], string_arquivo_copia[50];
+  int contadora_de_string = 0;
+  char palavra[50], string_arquivo[50];
+
   printf("Digite uma string: ");
   scanf("%s", palavra);
 
@@ -19,15 +29,12 @@ int main(){
 
    if (feof(arquivo))
      break;
-     
-   strcpy(string_arquivo_copia, string_arquivo);
-   if (strcmp(string_arquivo_copia, palavra) == 0)
+
+   if (strcmp(string_arquivo, palavra) == 0)
        contadora_de_string++;
  }
- if (contadora_de_string > 0)
-    printf("%d", contadora_de_string);
- else
-  printf("Nao ha no arquivo");
+
+ printf("Numero de vezes que a <%s> aparece no arquivo: %d",  palavra, contadora_de_string);
 
  fclose(arquivo);
 
