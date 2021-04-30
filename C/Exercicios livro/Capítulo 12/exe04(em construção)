@@ -1,0 +1,33 @@
+ 4) Elabore um programa no qual o usuário informe o nome de um arquivo texto e
+uma palavra, e o programa informe o número de vezes que aquela palavra aparece
+dentro do arquivo.
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  FILE *arquivo = fopen("arquivo_para_leitura.txt", "r");
+  int i, contadora_de_string = 0;
+
+  char string_digitada[50], string_arquivo[50], string_arquivo_copia[50];
+  printf("Digite uma string: ");
+  scanf("%s", string_digitada);
+
+ while(1){
+   fscanf(arquivo, "%s", string_arquivo);
+   strcpy(string_arquivo_copia, string_arquivo);
+   if (strcmp(string_arquivo_copia, string_digitada) == 0)
+     contadora_de_string++;
+   if (feof(arquivo))
+     break;
+ }
+ if (contadora_de_string > 0)
+    printf("%d", contadora_de_string);
+ else
+  printf("Nao ha no arquivo");
+
+ fclose(arquivo);
+
+  return 0;
+}
