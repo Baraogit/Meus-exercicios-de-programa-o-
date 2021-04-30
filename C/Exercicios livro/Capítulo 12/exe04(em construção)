@@ -34,7 +34,7 @@ int main(){
        contadora_de_string++;
  }
 
- printf("Numero de vezes que a <%s> aparece no arquivo: %d",  palavra, contadora_de_string);
+ printf("Numero de vezes que a palavra: <%s> aparece no arquivo: %d",  palavra, contadora_de_string);
 
  fclose(arquivo);
 
