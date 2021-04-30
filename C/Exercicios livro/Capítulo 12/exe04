@@ -3,7 +3,7 @@ uma palavra, e o programa informe o número de vezes que aquela palavra aparece
 dentro do arquivo.
 
 // se a palavra terminar com ponto, vírgula ou qualquer outro sinal, ela não fará parte da contagem.
-
+// se a palavra tiver algum tipo de acentuação ou caractere especial, não fará parte da contagem.
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
