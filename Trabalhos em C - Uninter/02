@@ -19,6 +19,7 @@ int main(){
   }
 
   printf("Soma dos digitos do RU = %d", soma_digitos_ru);
-
+ 
+  system("pause");
   return 0;
 }
