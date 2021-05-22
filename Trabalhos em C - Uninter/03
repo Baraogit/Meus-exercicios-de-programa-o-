@@ -39,6 +39,6 @@ int main(){
 
   calc_soma(&matrizA[0][0], &matrizB[0][0], &matrizC[0][0]);
 
-
+  system("pause");
   return 0;
 }
