@@ -23,7 +23,7 @@ int main(){
     scanf("%d", &cadastro[i].telefone);
   }
 
-  FILE *ponteiro_para_arquivo = fopen("C:\\Users\\will0\\Desktop\\Temporarios\\c.uninter\\1157909.csv", "w");
+  FILE *ponteiro_para_arquivo = fopen(1157909.csv, "w");
   if (ponteiro_para_arquivo == NULL){
     perror("Erro na abertura do arquivo: ");
     exit(1);
@@ -37,6 +37,7 @@ int main(){
   }
 
   fclose(ponteiro_para_arquivo);
-
+  
+  system("pause");
   return 0;
 }
