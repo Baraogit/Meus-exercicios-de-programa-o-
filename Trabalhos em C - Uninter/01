@@ -41,6 +41,6 @@ int main(){
   printf("Salario = R$%.2f\n", (*ponteiro_para_struct_funcionario).salario);
   printf("Aliquota = %.2f%%\nSalario deduzido = R$%.2f", aliquota_imposto, salario_deduzido);
 
-
+  system("pause");
   return 0;
 }
