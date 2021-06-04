@@ -14,8 +14,5 @@ def bubble_sort(lista):
 
 ###Main###
 lista = [5 , 3 , 2, 1, 4]
-
 bubble_sort(lista)
-
-for i in lista:
-    print(i)
+print(lista)
