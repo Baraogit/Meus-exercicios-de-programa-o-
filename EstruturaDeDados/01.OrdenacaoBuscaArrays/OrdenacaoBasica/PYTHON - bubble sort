@@ -1,0 +1,21 @@
+def bubble_sort(lista):
+    final_lista = len(lista) - 1
+
+    for j in range(len(lista) - 1):
+        continue_loop_for = False
+        for i in range(final_lista):
+            if(lista[i] > lista[i+1]):
+                lista[i], lista[i+1] = lista[i+1], lista[i]
+                continue_loop_for = True
+
+        final_lista-= 1
+        if (continue_loop_for == False):
+            break
+
+###Main###
+lista = [5 , 3 , 2, 1, 4]
+
+bubble_sort(lista)
+
+for i in lista:
+    print(i)
