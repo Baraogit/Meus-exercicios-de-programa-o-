@@ -4,15 +4,19 @@
 void selectionSort(int *vetor, int n){
     int i, j, menor, trocaPosicao;
 
-    for (i = 0; i < n - 1; i++){// 0 1 2 3 4
-        menor = i; //premissa que o menor está na posição 0
-        for (j = i + 1; j < n; j++){ // começa da posição 1
-            if(vetor[j] < vetor[menor]) // se elemento na posição[1] for menor que elemento na posição[0]
-                menor = j; // menor posição([0]) recebe a posição [1]
+    for (i = 0; i < n - 1; i++){// 0 1 2 3    4
+        menor = i; //premissa que o menor está na posição [0]
+        for (j = i + 1; j < n; j++){ // começa da posição posterior a posição atual [1]
+            if(vetor[j] < vetor[menor]) // se o elemento na posição[1] for menor que elemento na posição-atual[0]
+                menor = j; /* eu atualizo o menor com o índice de j[1], ou seja, eu atualizo com o índice posterior ao
+                índice-atual */
         }
-        if (i != menor){ // se posição [0] for diferente da posição [1], ocorre a troca
-            trocaPosicao = vetor[i]; //troca posição recebe elemento na posição [0]
-            vetor[i] = vetor[menor]; // elemento na posição [0] recebe elemento na posição[1]
+        
+        /*se var-menor não tem mais o mesmo valor que var-i, significa var-menor mudou de valor, significa que um menor elemento
+        fora encontrado e não está mais na posição var-i e sim na posição var-menor. Haverá então uma troca*/
+        if (i != menor){ 
+            trocaPosicao = vetor[i]; 
+            vetor[i] = vetor[menor]; 
             vetor[menor] = trocaPosicao;
         }
     }
@@ -30,3 +34,4 @@ int main(){
 
   return 0;
 }
+
