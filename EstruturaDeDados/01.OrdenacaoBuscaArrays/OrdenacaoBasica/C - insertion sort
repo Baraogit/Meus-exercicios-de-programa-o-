@@ -3,7 +3,7 @@ void insertionSort(int *vetor, int n){
 
     for(i = 1; i < n; i++){
         atual = vetor[i];
-        for(j = i; (j > 0) && (atual < vetor[j - 1]); j--){
+        for(j = i; (j > 0) && (vetor[j - 1] > atual); j--){
             vetor[j] = vetor[j - 1];
         }
         vetor[j] = atual;
