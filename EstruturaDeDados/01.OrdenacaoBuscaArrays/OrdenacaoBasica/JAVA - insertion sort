@@ -17,7 +17,7 @@ public class Main {
 		
 		for (int i = 1; i < vetor.length; i++) {
 			elementoAtual = vetor[i];
-			for (j = i; (j > 0) && (elementoAtual < vetor[j - 1]); j--) {
+			for (j = i; (j > 0) && (vetor[j - 1] > elementoAtual); j--) {
 				vetor[j] = vetor[j - 1];
 			}
 			vetor[j] = elementoAtual; 
