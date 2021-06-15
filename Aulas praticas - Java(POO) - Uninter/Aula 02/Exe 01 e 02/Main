@@ -1,0 +1,31 @@
+package teste;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Digite nome e curso do aluno: ");
+		String nome = input.nextLine();
+		String curso = input.nextLine();
+		
+		System.out.println("Digite as 3 notas do aluno: ");
+		float nota1 = input.nextFloat();
+		float nota2 = input.nextFloat();
+		float nota3 = input.nextFloat();
+		
+		Aluno aluno = new Aluno(nome, curso, new Avaliacao(nota1, nota2, nota3));
+		
+		aluno.status();
+
+		input.close();
+	
+	}// fim do método main
+	
+	
+}// fim da classe Main
