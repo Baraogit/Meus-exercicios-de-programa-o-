@@ -1,0 +1,21 @@
+package teste;
+
+public class Aluno {
+	
+	public String nome, curso;
+	public Avaliacao avaliacao; 
+	
+	public Aluno(String nome, String curso, Avaliacao avaliacao) {
+		this.nome = nome;
+		this.curso = curso;
+		this.avaliacao = avaliacao;
+	}
+
+	public void status() {
+		System.out.println("Nome: " + nome);
+		System.out.println("Curso: " + curso);
+		System.out.println("Media aritimética: " + avaliacao.mediaAritmetica());
+		System.out.println("Media ponderada: " + avaliacao.mediaPonderada());
+	}
+
+}
