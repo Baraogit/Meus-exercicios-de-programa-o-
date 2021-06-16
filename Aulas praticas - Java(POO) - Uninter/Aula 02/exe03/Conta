@@ -1,0 +1,55 @@
+package teste;
+
+public class Conta {
+	int numero;
+	String titular;
+	float saldo;
+	final float LIMITE = 5000.0f;
+	
+	
+	public Conta(int numero, String titular, float valorInicial) {
+		this.numero = numero;
+		this.titular = titular;
+		this.depositar(valorInicial);
+	}
+	
+	private void depositar(float valor) {
+		    saldo+= valor; 
+	}
+	
+	public void validarDeposito(float valor) {
+		if (valor > LIMITE)
+			System.out.println("O valor para depósito é maior que o seu limite de R$ " + LIMITE);
+		else if ((saldo + valor) > LIMITE)
+			System.out.println("A soma do valor para depósito mais o seu saldo," +
+					 "ultrapassa o seu de limite de R$ " + LIMITE);
+		else if (saldo > LIMITE)
+			System.out.println("Seu saldo já está no limite " + LIMITE);
+		else    
+		    depositar(valor); 
+		
+		
+	}
+	
+	public void sacar(float valor) {
+		if (valor > saldo)
+			System.out.println("Não há saldo suficiente para saque. Saldo em conta = " + saldo);
+		else
+		  saldo-= valor; 
+	}
+	
+	public void status() {
+		System.out.println("Número da conta: " + numero);
+		System.out.println("Nome do titutar: " + titular);
+		System.out.println("Saldo da conta: " + saldo);
+		System.out.println("Seu limite para depósito: " + LIMITE);
+		System.out.println("Saldo do seu limite: " + (LIMITE - saldo));
+	}
+	
+	
+	
+
+	
+	
+
+}
