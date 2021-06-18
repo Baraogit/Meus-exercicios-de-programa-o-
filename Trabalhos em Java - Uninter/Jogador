@@ -1,0 +1,56 @@
+public class Jogador {
+	
+	public char jogada = 'O';
+	
+	public boolean jogar(int posicao, char[][] mesa) {
+		switch(posicao) {
+		case 1:
+			if (mesa[0][0] == 'O' || mesa[0][0] == 'X') 
+				return false;
+			else 
+				mesa[0][0] = this.jogada; break;
+		case 2:
+			if (mesa[0][1] == 'O' || mesa[0][1] == 'X') 
+				return false;
+			else 
+				mesa[0][1] = this.jogada; break;
+		case 3:
+			if (mesa[0][2] == 'O' || mesa[0][2] == 'X') 
+				return false;
+			else 
+				mesa[0][2] = this.jogada; break;
+		case 4:
+			if (mesa[1][0] == 'O' || mesa[1][0] == 'X') 
+				return false;
+			else 
+				mesa[1][0] = this.jogada; break;
+		case 5:
+			if (mesa[1][1] == 'O' || mesa[1][1] == 'X') 
+				return false;
+			else 
+				mesa[1][1] = this.jogada; break;
+		case 6:
+			if (mesa[1][2] == 'O' || mesa[1][2] == 'X') 
+				return false;
+			else 
+				mesa[1][2] = this.jogada; break;
+		case 7:
+			if (mesa[2][0] == 'O' || mesa[2][0] == 'X') 
+				return false;
+			else 
+				mesa[2][0] = this.jogada; break;
+		case 8:
+			if (mesa[2][1] == 'O' || mesa[2][1] == 'X') 
+				return false;
+			else 
+				mesa[2][1] = this.jogada; break;
+		case 9:
+			if (mesa[2][2] == 'O' || mesa[2][2] == 'X') 
+				return false;
+			else 
+				mesa[2][2] = this.jogada; break;
+		}
+		return true;	
+	}
+
+}
