@@ -1,0 +1,23 @@
+public class Tabuleiro {
+	
+	public char mesa[][] = {
+			{'_','_','_'},
+			{'_','_','_'},
+			{'_','_','_'}
+	};
+	public boolean vencedor;
+	
+	
+	public void status() {
+		for(int i = 0; i < mesa.length; i++) {
+			for(int j = 0; j < mesa.length; j++) {
+				System.out.print(mesa[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+
+	
+
+}
