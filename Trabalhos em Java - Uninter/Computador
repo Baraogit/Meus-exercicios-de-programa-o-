@@ -3,17 +3,30 @@ public class Computador {
 	public char jogada = 'X';
 	
 	public void jogar1(char[][] mesa) {
+	    boolean flag = false;
 		for(int i = 0; i < mesa.length; i++) {
 			for(int j = 0; j < mesa.length; j++) {
 				if(mesa[i][j] != '_')
-					continue;
-				else {
-					mesa[i][j] = this.jogada;
-					break;
+				  continue;
+				else{
+				    mesa[i][j] = this.jogada;
+				    flag = true;
+				    break;
 				}
-					
 			}
+			if(flag == true)
+			   break;
 		}
+	
+	}//fim do método
+	
+	public void jogar2(char[][] mesa) {
+
+	
+	}//fim do método
+	
+	public void jogar3(char[][] mesa) {
+
 	
 	}//fim do método
 
