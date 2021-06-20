@@ -1,56 +1,62 @@
 public class Jogador {
 	
-	public char jogada = 'O';
+	private char pecaTabuleiro;
 	
-	public boolean jogar(int posicao, char[][] mesa) {
+	public Jogador(char pecaTabuleiro) {
+		this.pecaTabuleiro = pecaTabuleiro;
+	}
+	
+	public boolean validarIntervaloPosicao(int posicao) {
+		boolean validade; 
+		if(posicao < 1 || posicao > 9)
+			validade = false;
+		else
+			validade = true;
+	    
+		return validade;
+	}
+
+	public boolean jogar(int posicao, char[][] campo) {
 		switch(posicao) {
 		case 1:
-			if (mesa[0][0] == 'O' || mesa[0][0] == 'X') 
-				return false;
-			else 
-				mesa[0][0] = this.jogada; break;
+			if (campo[0][0] != '_') 
+				return false;			
+			campo[0][0] = pecaTabuleiro; break;
 		case 2:
-			if (mesa[0][1] == 'O' || mesa[0][1] == 'X') 
+			if (campo[0][1] != '_') 
 				return false;
-			else 
-				mesa[0][1] = this.jogada; break;
+			campo[0][1] = pecaTabuleiro; break; 
 		case 3:
-			if (mesa[0][2] == 'O' || mesa[0][2] == 'X') 
-				return false;
-			else 
-				mesa[0][2] = this.jogada; break;
+			if (campo[0][2] != '_') 
+				return false;		
+			campo[0][2] = pecaTabuleiro; break;
 		case 4:
-			if (mesa[1][0] == 'O' || mesa[1][0] == 'X') 
-				return false;
-			else 
-				mesa[1][0] = this.jogada; break;
+			if (campo[1][0] != '_') 
+				return false;		
+			campo[1][0] = pecaTabuleiro; break;
 		case 5:
-			if (mesa[1][1] == 'O' || mesa[1][1] == 'X') 
-				return false;
-			else 
-				mesa[1][1] = this.jogada; break;
+			if (campo[1][1] != '_') 
+				return false;	
+			campo[1][1] = pecaTabuleiro; break;
 		case 6:
-			if (mesa[1][2] == 'O' || mesa[1][2] == 'X') 
+			if (campo[1][2] != '_') 
 				return false;
-			else 
-				mesa[1][2] = this.jogada; break;
+			campo[1][2] = pecaTabuleiro; break;
 		case 7:
-			if (mesa[2][0] == 'O' || mesa[2][0] == 'X') 
+			if (campo[2][0] != '_') 
 				return false;
-			else 
-				mesa[2][0] = this.jogada; break;
+			campo[2][0] = pecaTabuleiro; break;
 		case 8:
-			if (mesa[2][1] == 'O' || mesa[2][1] == 'X') 
+			if (campo[2][1] != '_') 
 				return false;
-			else 
-				mesa[2][1] = this.jogada; break;
+			campo[2][1] = pecaTabuleiro; break;
 		case 9:
-			if (mesa[2][2] == 'O' || mesa[2][2] == 'X') 
+			if (campo[2][2] != '_') 
 				return false;
-			else 
-				mesa[2][2] = this.jogada; break;
+			campo[2][2] = pecaTabuleiro; break;
 		}
 		return true;	
 	}
 
 }
+
