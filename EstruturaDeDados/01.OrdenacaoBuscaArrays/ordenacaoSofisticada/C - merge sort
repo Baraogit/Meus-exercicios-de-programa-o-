@@ -3,37 +3,38 @@
 #include <math.h>
 
 void merge(int *vetor, int inicio, int meio, int fim){
-    int parte1, parte2, tamanho, i, j, k;
-    int fim1 = 0, fim2 = 0;
+    int  i, j, k;
 
-    tamanho = fim - inicio + 1;
-    parte1 = inicio;
-    parte2 = meio+1;
+    int fim1 = 0, fim2 = 0; //recebe falso
+    int tamanho = fim - inicio + 1; // tamanho recebe o tamanho do vetor
+    int parte1 = inicio; // 1º posição da 1º parte do vetor
+    int parte2 = meio+1; // 1º posição da 2º parte do vetor
 
-    int *temp = malloc(tamanho * sizeof(int));
+    // vetor que irá receber a ordenação
+    int *vetorAux = malloc(tamanho * sizeof(int));
 
-    if(temp != NULL){
-        for(i = 0; i < tamanho; i++){
-            if(!fim1 && !fim2){
+    if(vetorAux != NULL){
+        for(i = 0; i < tamanho; i++){ // percorro o tamanho do vetorAux
+            if(!fim1 && !fim2){ // diferente de falso, ou seja, verdadeiro
                 if(vetor[parte1] < vetor[parte2])
-                    temp[i]  = vetor[parte1++];
+                    vetorAux[i]  = vetor[parte1++];
                 else
-                    temp[i] = vetor[parte2++];
+                    vetorAux[i] = vetor[parte2++];
 
                 if(parte1 > meio) fim1 = 1;
                 if(parte2 > fim) fim2 = 1;
             }else{
                 if(!fim1)
-                    temp[i] = vetor[parte1++];
+                    vetorAux[i] = vetor[parte1++];
                 else
 
-                    temp[i] = vetor[parte2++];
+                    vetorAux[i] = vetor[parte2++];
             }
         }
         for(j = 0, k = inicio; j < tamanho; j++, k++)
-            vetor[k] = temp[j];
+            vetor[k] = vetorAux[j];
     }
-    free(temp);
+    free(vetorAux);
 }
 
 
@@ -60,4 +61,3 @@ int main(){
 
   return 0;
 }
-
