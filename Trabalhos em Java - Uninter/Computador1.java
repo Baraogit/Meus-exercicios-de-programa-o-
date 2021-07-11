@@ -6,6 +6,7 @@ public class Computador1 extends Computador {
 		this.pecaTabuleiro = pecaTabuleiro;
 	}
 
+
 	@Override
 	public void jogar(char[][] campo) {
 		boolean flag = false;
@@ -15,7 +16,7 @@ public class Computador1 extends Computador {
 				if(campo[i][j] != '_')
 					continue;
 				else{
-					campo[i][j] = pecaTabuleiro;
+					campo[i][j] = this.pecaTabuleiro;
 					flag = true;
 					break;
 				}
