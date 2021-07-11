@@ -13,13 +13,14 @@ public class Computador3 extends Computador {
 		int i, j;
 		
 		while(true) {
-			i = aleatorio.nextInt(3);
+			i = aleatorio.nextInt(3);//cria aleatorios de 0 a 2
 			j = aleatorio.nextInt(3);
 			
+			//se o campo estiver já marcado, retorna o loop até encontrar um campo disponível
 			if(campo[i][j] != '_')
 				continue;
 			else {
-				campo[i][j] = pecaTabuleiro;
+				campo[i][j] = this.pecaTabuleiro;
 				break;
 			}	
 		}
@@ -27,3 +28,4 @@ public class Computador3 extends Computador {
 	}//fim do método
 
 }
+
