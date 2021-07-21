@@ -14,7 +14,7 @@
 
 * Trabalho em Java da disciplina "programação orientada a objetos" - UNINTER.
 
-* Exercicios das aulas práticas da disciplina "programação orientada a objetos" - UNINTER.
+
 
 
 
